@@ -8,15 +8,19 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="index.js"></script>
+	<script src="navigator.js"></script>
 </head>
 
-<body ng-app="">
-	<div ng-include="'navigator.html'"></div>
-	<div class="container">
-		<h1>My First Bootstrap Page</h1>
-		<p>This is some text.</p>
-	</div>
-
+<body ng-app="" onload="copyFrame('navigator','navBar')">
+	<div id="navBar"></div>
+	<div id="content"></div>
+	
+	<iframe src="navigator.html" id="navigator" onload="document.getElementById('navigator').style.display='none';"></iframe>
+	<iframe src="home.html" id="homeFrame" onload="document.getElementById('homeFrame').style.display='none';"></iframe>
+	<iframe src="math.html" id="mathFrame" onload="document.getElementById('mathFrame').style.display='none';"></iframe>
+	<iframe src="physics.html" id="physicsFrame" onload="document.getElementById('physicsFrame').style.display='none';"></iframe>
+	<iframe src="architecture.html" id="archFrame" onload="document.getElementById('archFrame').style.display='none';"></iframe>
 </body>
 
 </html>
