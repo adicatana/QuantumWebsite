@@ -11,9 +11,3 @@ function deactivator(element, suffix) {
 		document.getElementById(elements[i]).className = '';
 	}
 }
-
-function changeTitle(name) { // dependency on index.js
-	document.title = name;
-	copyFrame(frameMap[name], 'content');
-}
-

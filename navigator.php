@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+#!/usr/bin/php
 <!-- General site navigation bar -->
-
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -8,10 +7,24 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="navigator.js"></script>
+	<!--<script src="navigator.js"></script>-->
 </head>
 
+
 <body>
+<?php
+	$pages = array(
+		"Home" => "home.html",
+		"Maths" => "math.html",
+		"Physics" => "physics.html",
+		"Architecture" => "architecture"
+	);
+
+	function changeTitle($name, $pages) {
+		include ($pages[$name]);
+	}
+?>
+
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -31,16 +44,16 @@
 			<div id="navbar" class="navbar-collapse collapse navbar-nav navbar-right">
 				<ul class="nav navbar-nav">
 					<li id="navBar1" onclick="deactivator('navBar','1234'); activator('navBar1');">
-						<a onclick="changeTitle('Home')">Home</a>
+						<a href='navigator.php?Home=true'>Home</a>
 					</li>
 					<li id="navBar2" onclick="deactivator('navBar','1234'); activator('navBar2');">
-						<a onclick="changeTitle('Maths')">Maths</a>
+						<a href='navigator.php?Maths=true'>Maths</a>
 					</li>
 					<li id="navBar3" onclick="deactivator('navBar','1234'); activator('navBar3');">
-						<a onclick="changeTitle('Physics')">Physics</a>
+						<a href='navigator.php?Physics=true'>Physics</a>
 					</li>
 					<li id="navBar4" onclick="deactivator('navBar','1234'); activator('navBar4');">
-						<a onclick="changeTitle('Architecture')">Architecture</a>
+						<a href='navigator.php?Architecture=true'>Architecture</a>
 					</li>
 					<li class="dropdown">
 						<a href="#" 
@@ -63,4 +76,12 @@
 			</div>
 		</div>
 	</nav>
+	
+	<?php
+		foreach ($pages as $from=>$to) {
+			if (isset($_GET[$from])) {
+				changeTitle($from, $pages);
+			}
+		}
+	?>
 </body>

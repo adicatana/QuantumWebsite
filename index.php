@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+#!/usr/bin/php
 <html lang="en">
 <head>
 	<title>Quantum Computing</title>
@@ -11,9 +11,12 @@
 	<script src="navigator.js"></script>
 </head>
 
-<body ng-app="" onload="copyFrame('navigator','navBar')">
+<body ng-app="">
 	<div id="navBar"></div>
 	<div id="content"></div>
+	<?php
+		include "navigator.php";
+	?>
 	
 	<iframe src="navigator.html" id="navigator" onload="document.getElementById('navigator').style.display='none';"></iframe>
 	<iframe src="home.html" id="homeFrame" onload="document.getElementById('homeFrame').style.display='none';"></iframe>
