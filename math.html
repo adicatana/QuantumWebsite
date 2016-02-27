@@ -8,15 +8,19 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="latex.js"></script>
+	<script src="formulas.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="/public/path/to/katex.min.css">
 </head>
 
-<body ng-app="">
-		<img src="http://latex.codecogs.com/gif.latex?\frac{1+sin(x)}{y}" border="0"/>
-		<img src="http://latex.codecogs.com/gif.latex? \left( \begin{array}{ccc}
-			a & b & c \\
-			d & e & f \\
-			g & h & i \end{array} \right) " border="0"/>
+<body ng-app="" onload="go()">
+		<div class="jumbotron" onmouseover="parser.parse(formulas.formula1, 't1')" id="t1">
+			Lorem ipsum dolor sit amet, aperiam tamquam sea eu, erat assum an vis, eu tation graeco abhorreant vis. Ex mei fabulas placerat, mei ut tota luptatum. Ne vel recusabo principes. Ut etiam numquam senserit quo, per labore scriptorem ne. Sea ad eros utroque.
+		</div>
+		<div class="jumbotron" onmouseover="parser.parse(formulas.formula2, 't2')" id="t2">
+			Lorem ipsum dolor sit amet, aperiam tamquam sea eu, erat assum an vis, eu tation graeco abhorreant vis. Ex mei fabulas placerat, mei ut tota luptatum. Ne vel recusabo principes. Ut etiam numquam senserit quo, per labore scriptorem ne. Sea ad eros utroque.
+		</div>
 </body>
 
 </html>
