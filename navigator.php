@@ -18,7 +18,7 @@
 		"Home" => "home.html",
 		"Maths" => "math.html",
 		"Physics" => "physics.html",
-		"Architecture" => "architecture"
+		"Architecture" => "architecture.html"
 	);
 
 	function changeTitle($name, $pages) {

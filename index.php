@@ -17,12 +17,6 @@
 	<?php
 		include "navigator.php";
 	?>
-	
-	<iframe src="navigator.html" id="navigator" onload="document.getElementById('navigator').style.display='none';"></iframe>
-	<iframe src="home.html" id="homeFrame" onload="document.getElementById('homeFrame').style.display='none';"></iframe>
-	<iframe src="math.html" id="mathFrame" onload="document.getElementById('mathFrame').style.display='none';"></iframe>
-	<iframe src="physics.html" id="physicsFrame" onload="document.getElementById('physicsFrame').style.display='none';"></iframe>
-	<iframe src="architecture.html" id="archFrame" onload="document.getElementById('archFrame').style.display='none';"></iframe>
 </body>
 
 </html>
