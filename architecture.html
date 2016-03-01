@@ -9,16 +9,74 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="sphere.js"></script>
+	<script src="latex.js"></script>
+	<script src="formulas.js"></script>
 </head>
 
-<body ng-app="">
-	<div class="container">
-		<h1>My First Bootstrap Page</h1>
-		<p>This is some text.</p>
+<body class=".col-md-3">
+	<div style="margin-left:15%; margin-right:15%;">
+		<h2> Bits and Qubits </h2>
+		
+		<p> The concept of quantum computing is a generalisation
+		of classical computing, therefore the architecture of a quantum computer
+		has to be based on the classical logical layout. To begin with, the corresponding 
+		concept from classic computing's bit is the qubit. Following this idea, the quantum 
+		gates will be manipulating quantum bits rather than bits. </p>
+		
+		<div class="well well-sm">
+			A <b>bit</b> is a unit of information describing a classical system.
+		</div>
+		
+		<p>
+			From the list of a bit's characteristics we remind:
+			<ul>
+				<li>A bit holds two possible states: 0 or 1.</li>
+				<li>Bits can be grouped into clustres, therefore being capable of 
+				representing bigger states.</li>
+				<li>Bit states can be composed by usage of logic gates.</li>
+			</ul>
+		</p>
+		<p id="def0">
+			Generalising the bit concept we shall represent the states of qubits by a 2-by-1 matrix.
+		</p>
+		
+		<p> The main difference between a classical system is that a system can be in both states at the same time. 
+		Hence, we define a qubit:</p>
+		
+		<div class="well well-sm" id="def1">
+			A <b>quantum bit</b>(or <b>qubit</b>) is a unit of information describing a two-dimensional quantum system.
+		</div>
+		
+		<p id="eq1">
+			Interpreting the condition above, each module of the squared complex number would give a probability 
+			finding the bit in the specified index quantum state. Moreover, it is easy to observe that the two bits
+			are a canonical basis of our space.
+		</p>
+		
+		<p id="eq2">
+			We have already mentioned that bits are serializable, as we can represent a state just by grouping more bits. 
+			The same property holds for qubits. To achieve this we use the tensor product.
+		</p>
+		
+		<p id="eq3">
+			Making a parallel with a classic byte, we know that it holds 256 states. 
+			Therefore, it is a member of the set of natural numbers between 0 and 255 inclusively. 
+			Simlarly, a qubyte is a member of the complex vector space of dimension 256.
+		</p>
+		
+		<!-- <script>
+			sphere.build();
+			sphere.render();
+		</script> -->
 	</div>
+	
 	<script>
-		sphere.build();
-		sphere.render();
+		//document.getElementById("def0").onmouseover = function () { parser.parse(archFormulas.bitdefs, 'def0' ) }; //dynamic import example
+		parser.staticParse(archFormulas.bitdefs, 'def0');
+		parser.staticParse(archFormulas.bitdef, 'def1');
+		parser.staticParse(archFormulas.equality1, 'eq1');
+		parser.staticParse(archFormulas.equality2, 'eq2');
+		parser.staticParse(archFormulas.equality3, 'eq3');
 	</script>
 </body>
 

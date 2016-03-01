@@ -36,6 +36,15 @@ var parser = (function(){
 			} else {
 				$('#' + id).unbind('mouseenter mouseleave')
 			}
+		},
+		staticParse : function(formula, id) {
+			var linkage = "http://latex.codecogs.com/gif.latex?";
+			var attributeText = linkage + formula;
+			var panelId = "panel" + id;
+			var image = document.createElement("img");
+			image.setAttribute("src", attributeText);
+			image.setAttribute("id", panelId);
+			$("#" + id).after(image);
 		}
 	};
 })();
