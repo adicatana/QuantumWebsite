@@ -65,7 +65,7 @@ var archFormulas = (function() {
 	
 	var bit0def = bit("0") + "=" + bit0;
 	var bit1def = bit("1") + "=" + bit1;
-	var bitgdef = bit("q") + "=" + bitg + cond1;
+	var bitgdef = bit("\\psi") + "=" + bitg + cond1;
 	var equality1 = bit("q") + "=" + "c_0" + bit0 + "+ c_1" + bit1
 	+ "=" + "c_0" + bit("0") + "+ c_1" + bit("1") ;
 	
@@ -87,7 +87,7 @@ var archFormulas = (function() {
 	return {
 		bitdefs : halign(bit0def, bit1def),
 		bitdef : bitgdef,
-		equality1 : bit("q") + "=" + "c_0" + bit0 + "+ c_1" + bit1
+		equality1 : bit("\\psi") + "=" + "c_0" + bit0 + "+ c_1" + bit1
 					+ "=" + "c_0" + bit("0") + "+ c_1" + bit("1"),
 		equality2 : bit("1") + tp + bit("0") + tp + bit("1") 
 					+ "=" + bit1 + tp + bit0 + tp + bit1,

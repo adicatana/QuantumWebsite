@@ -34,13 +34,16 @@ var sphere = (function() {
 	};
 	
 	return {
-		build : function() {
+		getCanvas : function() {
+			return canvas;
+		},
+		build : function(where) {
 			objectPull.addObject("line", 
 				new objectUtils.buildLine(consts.x, consts.y, 3)
 			);
 			objectPull.addObject("zAxis", 
 				new objectUtils.buildLine(consts.x, consts.y - consts.r, 1)
-			)
+			);
 			objectPull.addObject("yAxis", 
 				new objectUtils.buildLine(consts.x + consts.r, consts.y, 1)
 			);
@@ -83,7 +86,7 @@ var sphere = (function() {
 			objectPull.addObject("text4",
 				new objectUtils.buildText("θ", 0, 0)
 			);
-			document.body.insertBefore(canvas, document.body.lastChild);
+			$("#" + where).after(canvas);
 			draw();
 		},
 		render : function() {
@@ -114,11 +117,13 @@ var mouseMove = (function() {
 	
 	return {
 		onMouseMove : function(event) {
-			cursorX = event.pageX;
-			cursorY = event.pageY;
+			var canv = sphere.getCanvas();
 			
-			var pX = cursorX - consts.cursorX;
-			var pY = cursorY - consts.cursorY;
+			cursorX = event.pageX - canv.offsetLeft;
+			cursorY = event.pageY - canv.offsetTop;
+			
+			var pX = cursorX;
+			var pY = cursorY;
 			
 			var len = Geo.length(pX, pY, consts.x, consts.y);
 			var perX = (pX - consts.x) / consts.r * 0.2;
@@ -283,3 +288,4 @@ var Geo = (function() {
 		}
 	};
 })();
+

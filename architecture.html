@@ -138,6 +138,27 @@
 		
 		<br>
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Fredkin_gate.svg/225px-Fredkin_gate.svg.png">
+		
+		<h2> Quantum gates </h2>
+		
+		<div class="well well-sm">
+			A <b>quantum gate</b> is a gate that operates on qubits.
+		</div>
+		
+		<p> We can represent a qunatum gate as a unitary matrix. As a reminder, a unitary matrix is a complex square matrix 
+		which has its conjugate transpose equal to its inverse. One can observe that the gates mentioned in the previous section are unitary,
+		therefore can be used also as quantum gates. Provided that a state is quite versatile one can think that there are many possiblities
+		for a single state to be manipulated. We do not know at each step if a qubit is 0 or 1, but after measuring we can tell exactly. 
+		Therefore, we need a simple way to think of a single state as we move on.</p>
+		
+		<p id="qg1"> Complex numbers are particularly nice to reason with as they can be represented as two dimensional vectors. If we fix their 
+		module they can be represented as fixed vectors on a circle. The fact that our states are bounded by a similar constraint makes
+		us thinking of a similar representation.</p>
+		
+		<!-- To add steps -->
+		
+		<p id="bloch1"> Finally, we can represent the state as a dependency of two angles. The representation is called the Bloch sphere.</p>
+		
 		<!-- <script>
 			sphere.build();
 			sphere.render();
@@ -168,6 +189,11 @@
 		parser.staticParse(archFormulas.toffliUni, 'rg3');
 		parser.staticParse(archFormulas.toffliDef, 'rg4');
 		parser.staticParse(archFormulas.fredkin, 'rg5');
+		
+		parser.staticParse(archFormulas.equality1, 'qg1');
+		
+		sphere.build("bloch1");
+		sphere.render();
 	</script>
 </body>
 
