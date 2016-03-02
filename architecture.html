@@ -64,10 +64,36 @@
 			Simlarly, a qubyte is a member of the complex vector space of dimension 256.
 		</p>
 		
+		<h2>
+			Classic gates
+		</h2>
+		
+		<p id="cg1">Starting with a simple gate example, a NOT gate would need to reverse the state of a qubit. 
+		In order to do that, we need to find a mathematical model that can tansform a 0 qubit to a 1 qubit and
+		viceversa. As both the input and the output are 2-by-1 matrices, we can simply multiply the left hand side with 
+		a 2-by-2 matrix.</p>
+		
+		<p id="cg2">Now we can simply define a NOT gate.</p>
+		<p id="cg3">The idea of using matrices as gates yelds us with much more possiblities than in a classical bit achitecture.
+		For creating operation on multiple variable we need them to be serialized. For this purpose we will use the tensor product and
+		for defining an operation we will use a 2-by-4 matrix. Following the same principle, gates will get bigger and bigger for composing 
+		multiple operands or we can add multiple parallel gates of size 2-by-4.</p>
+		
+		<p id="cg4">The interesting thing is that the input has not necesarly to be a qubit, but rather any member our complex space.</p>
+		
+		<p id="cg5">In the classcial world the only possible states are just 1 and 0. We can simulate exactly this process, but qunatum 
+		gates have more versatility. To continue with representing the classic gates let us define the OR gate.</p>
+		
+		<p id="cg6"> Let us take another example. We can simply see determine the form of the gate from the combinations of the output desired.
+		Furtermore, the NAND gate can be decomposed in a NOT gate and an AND gate.</p>
+		
+		<p id="cg7"> The concept above is called perfoming <b>sequential</b> operations. We can similarly compose NOT and OR gates and so on.</p>
+		
+		<p id="cg8"> Also, you can observe that negating not yelds the identity matrix.</p>
 		<!-- <script>
 			sphere.build();
 			sphere.render();
-		</script> -->
+		</script> --> 
 	</div>
 	
 	<script>
@@ -77,6 +103,14 @@
 		parser.staticParse(archFormulas.equality1, 'eq1');
 		parser.staticParse(archFormulas.equality2, 'eq2');
 		parser.staticParse(archFormulas.equality3, 'eq3');
+		parser.staticParse(archFormulas.classic1, 'cg1');
+		parser.staticParse(archFormulas.notGateDef, 'cg2');
+		parser.staticParse(archFormulas.andGateDef, 'cg3');
+		parser.staticParse(archFormulas.andGateEx, 'cg4');
+		parser.staticParse(archFormulas.orGateDef, 'cg5');
+		parser.staticParse(archFormulas.nandGateDef, 'cg6');
+		parser.staticParse(archFormulas.norGateDef, 'cg7');
+		parser.staticParse(archFormulas.notNot, 'cg8');
 	</script>
 </body>
 
