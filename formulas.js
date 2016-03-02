@@ -40,10 +40,22 @@ var archFormulas = (function() {
 		not : matrix(2, 2, [0,1,1,0]),
 		and : matrix(2, 4, [1,1,1,0,0,0,0,1]),
 		or : matrix(2, 4, [1,0,0,0,0,1,1,1]),
-		nand : matrix(2, 4, [0,0,0,1,1,1,1,0])
+		nand : matrix(2, 4, [0,0,0,1,1,1,1,0]),
+		nor : matrix(2, 4, [0,1,1,1,1,0,0,0]),
+		id : matrix(2, 2, [1,0,0,1]),
+		cnot : matrix(4, 4, [1,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0]),
+		toffli : matrix(8, 8, [1,0,0,0,0,0,0,0,
+		                       0,1,0,0,0,0,0,0,
+		                       0,0,1,0,0,0,0,0,
+		                       0,0,0,1,0,0,0,0,
+		                       0,0,0,0,1,0,0,0,
+		                       0,0,0,0,0,1,0,0,
+		                       0,0,0,0,0,0,0,1,
+		                       0,0,0,0,0,0,1,0])
 	};
 	
 	var tp = "\\otimes";
+	var xor = "\\oplus";
 	
 	var cond1 = sp + "where" + sp +" |c_0|^2 + |c_1|^2 = 1";
 	
@@ -96,7 +108,20 @@ var archFormulas = (function() {
 		andGateEx : cgates.and + matrix(4,1,[3.5,2,0,-4.1]) + "=" + matrix(2,1,[5.5,-4.1]),
 		orGateDef : "OR =" + cgates.or,
 		nandGateDef : "NOT * AND =" + cgates.not + cgates.and + "=" + cgates.nand + "= NAND",
-		norGateDef : "NOT * AND =" + cgates.not + cgates.and + "=" + cgates.nand + "= NAND",
-		notNot : "NOT * AND =" + cgates.not + cgates.and + "=" + cgates.nand + "= NAND"
+		norGateDef : "NOT * OR =" + cgates.not + cgates.or + "=" + cgates.nor + "= NOR",
+		notNot : "NOT * NOT =" + cgates.not + cgates.not + "=" + cgates.id + "= ID",
+		classic2 : "(NOT" + tp + "{NOR}) *" + bit("100") + "=" + bit("01"),
+		classic3 : "(OR * (NOT" + tp + "{NOR})) *" + bit("100") + "= OR *" + bit("01") + "=" + bit("1"),
+		cnotCnot : "CNOT * CNOT = " + cgates.cnot + "*" + cgates.cnot + "= ID",
+		toffli : bit("x, y, z") + sp + "to" + sp + bit("x, y, z" + xor + "(x \\land y)"),
+		toffliUni : halign( 
+			bit("x, y, 0") + sp + "to" + sp + bit("x, y, x \\land y"),
+			bit("1, 1, z") + sp + "to" + sp + bit("1, 1, \\lnot z")
+		),
+		toffliDef : "TOFFLI = " + cgates.toffli,
+		fredkin : halign( 
+			bit("0, y, z") + sp + "to" + sp + bit("0, y, z"),
+			bit("1, y, z") + sp + "to" + sp + bit("1, z, y")
+		)
 	};
 })();
