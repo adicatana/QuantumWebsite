@@ -1,6 +1,6 @@
 
 #background {
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: -1;
 }
@@ -15,4 +15,20 @@
 
 .container {
     width: 100%;
+}
+
+.main {
+  background-color: white;
+  margin-top: 0;
+}
+
+.foot {
+  background: white;
+  margin: auto;
+}
+
+.topButton {
+  margin: auto;
+  width: 14px;
+  height: 16px;
 }
