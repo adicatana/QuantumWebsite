@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<!--<script src="navigator.js"></script>-->
+	<script src="navigator.js"></script>
 	<link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,7 +18,9 @@
 		"Home" => "home.html",
 		"Maths" => "math.html",
 		"Physics" => "physics.html",
-		"Architecture" => "architecture.html"
+		"Architecture" => "architecture.html",
+		"Algorithms" => "algorithms.html",
+		"References" => "references.html"		
 	);
 
 	function changeTitle($name, $pages) {
@@ -44,35 +46,26 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse navbar-nav navbar-right">
 				<ul class="nav navbar-nav">
-					<li id="navBar1" onclick="deactivator('navBar','1234'); activator('navBar1');">
+					<li id="navBar1" onclick="deactivator('navBar','123456'); activator('navBar1');">
 						<a href='navigator.php?Home=true'>Home</a>
 					</li>
-					<li id="navBar2" onclick="deactivator('navBar','1234'); activator('navBar2');">
+					<li id="navBar2" onclick="deactivator('navBar','123456'); activator('navBar2');">
 						<a href='navigator.php?Maths=true'>Maths</a>
 					</li>
-					<li id="navBar3" onclick="deactivator('navBar','1234'); activator('navBar3');">
+					<li id="navBar3" onclick="deactivator('navBar','123456'); activator('navBar3');">
 						<a href='navigator.php?Physics=true'>Physics</a>
 					</li>
-					<li id="navBar4" onclick="deactivator('navBar','1234'); activator('navBar4');">
+					<li id="navBar4" onclick="deactivator('navBar','123456'); activator('navBar4');">
 						<a href='navigator.php?Architecture=true'>Architecture</a>
 					</li>
-					<li class="dropdown">
-						<a href="#" 
-							class="dropdown-toggle" 
-							data-toggle="dropdown" 
-							role="button" 
-							aria-haspopup="true" 
-							aria-expanded="false"> Dropdown <span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Algorithm 1</a></li>
-							<li><a href="#">Algorithm 2</a></li>
-							<li><a href="#">Algorithm 3</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Algorithm 4</a></li>
-							<li><a href="#">Algorithm 5</a></li>
-						</ul>
+					<li id="navBar5" onclick="deactivator('navBar','123456'); activator('navBar5');">
+						<a href='navigator.php?Algorithms=true'>Algorithms</a>
 					</li>
+					<li id="navBar6" onclick="deactivator('navBar','123456'); activator('navBar6');">
+						<a href='navigator.php?References=true'>References</a>
+					</li>
+					
+					
 				</ul>
 			</div>
 		</div>
