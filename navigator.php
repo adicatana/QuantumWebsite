@@ -27,7 +27,7 @@
 		include ($pages[$name]);
 		
 		$dom = new DOMDocument();
-		$dom->loadHTMLfile("navigator.php?" . $name . "=true");
+		$dom->loadHTMLfile("navigator.php");
 		$element = $dom->getElementById('myid');
 		$element -> $setAttribute('class', 'active');
 	}
@@ -51,7 +51,7 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse navbar-nav navbar-right">
 				<ul class="nav navbar-nav">
-					<li id="Home" onclick="deactivator('navBar','123456'); activator('navBar1');">
+					<li id="Home">
 						<a href='navigator.php?Home=true'>Home</a>
 					</li>
 					<li id="navBar2" onclick="deactivator('navBar','123456'); activator('navBar2');">
