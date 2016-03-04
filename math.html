@@ -10,17 +10,99 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="latex.js"></script>
 	<script src="formulas.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<link rel="stylesheet" href="/public/path/to/katex.min.css">
+	<script src="math.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body ng-app="" onload="go()">
-		<div class="jumbotron" onmouseover="parser.parse(formulas.formula1, 't1')" id="t1">
-			Lorem ipsum dolor sit amet, aperiam tamquam sea eu, erat assum an vis, eu tation graeco abhorreant vis. Ex mei fabulas placerat, mei ut tota luptatum. Ne vel recusabo principes. Ut etiam numquam senserit quo, per labore scriptorem ne. Sea ad eros utroque.
+<body>
+	<canvas id="background"></canvas>
+	<script src="drops.js"></script>
+	
+	<div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%;" class="main">
+	
+	<!-- Content nav -->
+		<div id="holder"> <div class="row placeholders">
+			<div href="#title1" class="scroller">
+				<div class="col-xs-6 col-sm-3 placeholder">
+					<img src="http://scottkantner.com/wp-content/uploads/2011/09/bits-and-bytes_key1.jpg" 
+						width="200" height="200" 
+						class="img-circle" 
+						alt="Generic placeholder thumbnail">
+					<h4>Title1</h4>
+				</div>
+			</div>
+			<div  href="#title2" class="scroller">
+				<div class="col-xs-6 col-sm-3 placeholder">
+					<img src="http://www.schoolphysics.co.uk/age16-19/Electronics/Logic%20gates/text/Logic_gates/images/2.png" 
+						width="200" 
+						height="200" 
+						class="img-circle"  
+						alt="Generic placeholder thumbnail">
+					<h4>Title2</h4>
+				</div>
+			</div>
+			<div href="#title3" class="scroller">
+				<div class="col-xs-6 col-sm-3 placeholder">
+					<img src="http://2.bp.blogspot.com/-E5-mySF-R4c/TjWJ-IPnyDI/AAAAAAAAMJo/eW8lyIhzjHw/s1600/reversibleALU.png" 
+						width="200" height="200" 
+						class="img-circle" 
+						alt="Generic placeholder thumbnail">
+					<h4>Title3</h4>
+				</div>
+			</div>
+			<div href="#title4" class="scroller">
+				<div class="col-xs-6 col-sm-3 placeholder">
+					<img src="http://www.nature.com/ncomms/journal/v3/n8/images/ncomms2003-f2.jpg" 
+						width="200" 
+						height="200" 
+						class="img-circle"  
+						alt="Generic placeholder thumbnail">
+					<h4>Title4</h4>
+				</div>
+			</div>
+		</div> </div> 
+	
+	<!-- Content -->
+		<h2 name="title1" id="title1">Title1</h2>
+		<div class="well well-sm">
+			Some definition
 		</div>
-		<div class="jumbotron" onmouseover="parser.parse(formulas.formula2, 't2')" id="t2">
-			Lorem ipsum dolor sit amet, aperiam tamquam sea eu, erat assum an vis, eu tation graeco abhorreant vis. Ex mei fabulas placerat, mei ut tota luptatum. Ne vel recusabo principes. Ut etiam numquam senserit quo, per labore scriptorem ne. Sea ad eros utroque.
+		<div align="center" href="#holder" class="scroller">
+			<span class="glyphicon glyphicon-chevron-up" > </span>
+			<p> Go to contents </p>
 		</div>
+		
+		<h2 name="title2" id="title2">Title2</h2>
+		<p>
+			Some para
+		</p>
+		<div align="center" href="#holder" class="scroller">
+			<span class="glyphicon glyphicon-chevron-up" > </span>
+			<p> Go to contents </p>
+		</div>
+		
+		<h2 name="title3" id="title3">Title3</h2>
+		<p>
+			Other para
+		</p>
+		<div align="center" href="#holder" class="scroller">
+			<span class="glyphicon glyphicon-chevron-up" > </span>
+			<p> Go to contents </p>
+		</div>
+		
+		<h2 name="title4" id="title4">Title4</h2>
+		<div class="well well-sm">
+			Other definition
+		</div>
+		<div align="center" href="#holder" class="scroller">
+			<span class="glyphicon glyphicon-chevron-up" > </span>
+			<p> Go to contents </p>
+		</div>
+		
+		<br><br><br><br><br>
+		
+	<script src="scroll.js"></script>
+	</div> 
 </body>
 
 </html>

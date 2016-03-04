@@ -11,14 +11,14 @@
 	<script src="sphere.js"></script>
 	<script src="latex.js"></script>
 	<script src="formulas.js"></script>
+	<script src="architecture.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-	<canvas id="background">
-	</canvas>
+	<canvas id="background"></canvas>
 	<script src="drops.js"></script>
-	<div class=".col-md-3">
+	
 	<div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%" class="main">
 		<div id="holder"> <div class="row placeholders">
 			<div href="#bits" class="scroller">
@@ -263,18 +263,8 @@
 		spheres.rotYSphere.build("bloch3");
 		spheres.rotYSphere.render();
 	</script>
-	<script>
-		$('.scroller').click(function(){
-			$('html, body').animate({
-				scrollTop: $( $(this).attr('href') ).offset().top
-			}, 'slow');
-		});
-		$('.scroller').click(function(){
-			$('html, body').animate({
-				scrollTop: $( $(this).attr('href') ).offset().top
-			}, 'slow');
-		});
-	</script>
+	
+	<script src="scroll.js"></script>
 </body>
 
 </html>
