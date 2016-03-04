@@ -16,92 +16,110 @@ var consts = {
 	angY2 : 110
 };
 
-var sphere = (function() {
+function sphereBuilder(render) {
 	var canvas = document.createElement("canvas");
 	canvas.width = consts.width;
 	canvas.height = consts.height;
 	var ctx = canvas.getContext("2d");
 	var objectPull = new objectPullBuilder();
 	
-	var draw = function() {
+	this.draw = function() {
 		for (var key in objectPull.getObjects()) {
 			var object = objectPull.getObjects()[key];
 			object.draw(ctx);
 		}
 	};
 	
-	var clear = function() {
+	this.clear = function() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 	};
 	
-	return {
-		getObjectPull : function() {
-			return objectPull;
-		},
-		getCanvas : function() {
-			return canvas;
-		},
-		build : function(where) {
-			objectPull.addObject("line", 
-				new objectUtils.buildLine(consts.x, consts.y, 3)
-			);
-			objectPull.addObject("zAxis", 
-				new objectUtils.buildLine(consts.x, consts.y - consts.r, 1)
-			);
-			objectPull.addObject("yAxis", 
-				new objectUtils.buildLine(consts.x + consts.r, consts.y, 1)
-			);
-			objectPull.addObject("xAxis", 
-				new objectUtils.buildLine(consts.px, consts.py, 1)
-			);
-			objectPull.addObject("circle", 
-				new objectUtils.buildCircle(consts.x, consts.y, consts.r)
-			);
-			objectPull.addObject("elipse", 
-				new objectUtils.buildEllipse()
-			);
-			objectPull.addObject("seg1",
-				new objectUtils.buildSeg(consts.x, consts.y, consts.x, consts.y, 1)
-			);
-			objectPull.addObject("seg2",
-				new objectUtils.buildSeg(consts.x, consts.y, consts.x, consts.y, 1)
-			);
-			objectPull.addObject("down",
-				new objectUtils.buildSeg(0, 0, 0, 0, 1)
-			);
-			objectPull.addObject("plane",
-				new objectUtils.buildSeg(0, 0, 0, 0, 1)
-			);
-			objectPull.addObject("ang1",
-				new objectUtils.buildSeg(0, 0, 0, 0, 1)
-			);
-			objectPull.addObject("ang2",
-				new objectUtils.buildSeg(0, 0, 0, 0, 1)
-			);
-			objectPull.addObject("text1",
-				new objectUtils.buildText("0", 245, 30)
-			);
-			objectPull.addObject("text2",
-				new objectUtils.buildText("1", 240, 255)
-			);
-			objectPull.addObject("text3",
-				new objectUtils.buildText("ϕ", 0, 0)
-			);
-			objectPull.addObject("text4",
-				new objectUtils.buildText("θ", 0, 0)
-			);
-			$("#" + where).after(canvas);
-			draw();
-		},
-		render : function() {
-			document.onmousemove = mouseMove.onMouseMove;
-			setInterval(function() { 
-				clear();
-				draw();
-			}, 10);
-		}
+	this.getObjectPull = function() {
+		return objectPull;
 	};
-})();
+	this.getCanvas = function() {
+		return canvas;
+	};
+	
+	this.build  = function(where) {
+		objectPull.addObject("line", 
+			new objectUtils.buildLine(consts.x, consts.y, 3)
+		);
+		objectPull.addObject("zAxis", 
+			new objectUtils.buildLine(consts.x, consts.y - consts.r, 1)
+		);
+		objectPull.addObject("yAxis", 
+			new objectUtils.buildLine(consts.x + consts.r, consts.y, 1)
+		);
+		objectPull.addObject("xAxis", 
+			new objectUtils.buildLine(consts.px, consts.py, 1)
+		);
+		objectPull.addObject("circle", 
+			new objectUtils.buildCircle(consts.x, consts.y, consts.r)
+		);
+		objectPull.addObject("elipse", 
+			new objectUtils.buildEllipse()
+		);
+		objectPull.addObject("seg1",
+			new objectUtils.buildSeg(consts.x, consts.y, consts.x, consts.y, 1)
+		);
+		objectPull.addObject("seg2",
+			new objectUtils.buildSeg(consts.x, consts.y, consts.x, consts.y, 1)
+		);
+		objectPull.addObject("down",
+			new objectUtils.buildSeg(0, 0, 0, 0, 1)
+		);
+		objectPull.addObject("plane",
+			new objectUtils.buildSeg(0, 0, 0, 0, 1)
+		);
+		objectPull.addObject("ang1",
+			new objectUtils.buildSeg(0, 0, 0, 0, 1)
+		);
+		objectPull.addObject("ang2",
+			new objectUtils.buildSeg(0, 0, 0, 0, 1)
+		);
+		objectPull.addObject("text1",
+			new objectUtils.buildText("0", 245, 30)
+		);
+		objectPull.addObject("text2",
+			new objectUtils.buildText("1", 240, 255)
+		);
+		objectPull.addObject("text3",
+			new objectUtils.buildText("ϕ", 0, 0)
+		);
+		objectPull.addObject("text4",
+			new objectUtils.buildText("θ", 0, 0)
+		);
+		$("#" + where).after(canvas);
+		this.draw();
+	};
+	this.render = render;
+}
+
+var sphere = new sphereBuilder(
+	function() {
+		document.onmousemove = mouseMove(sphere).onMouseMove;
+		var draw = this.draw;
+		var clear = this.clear;
+		setInterval(function() { 
+			clear();
+			draw();
+		}, 10);
+	}
+);
+
+var staticSphere = new sphereBuilder(
+	function() {
+		var canvas = this.getCanvas();
+		canvas.onclick = mouseMove(staticSphere).onMouseMove;
+		var draw = this.draw;
+		var clear = this.clear;
+		setInterval(function() { 
+			clear();
+			draw();
+		}, 10);
+	}
+);
 
 function objectPullBuilder() {
 	var objects = {};
@@ -113,14 +131,14 @@ function objectPullBuilder() {
 	};
 }
 
-var mouseMove = (function() {
+var mouseMove = function(obj) {
 	var cursorX = 0;
 	var cursorY = 0;
 	
 	return {
 		onMouseMove : function(event) {
-			var canv = sphere.getCanvas();
-			var objectPull = sphere.getObjectPull();
+			var canv = obj.getCanvas();
+			var objectPull = obj.getObjectPull();
 			
 			cursorX = event.pageX - canv.offsetLeft;
 			cursorY = event.pageY - canv.offsetTop;
@@ -178,7 +196,7 @@ var mouseMove = (function() {
 			objectPull.getObjects().text4.setY(consts.y + perY2 * consts.r + 20);
 		}
 	};
-})();
+};
 
 var objectUtils = (function() {
 	return {
