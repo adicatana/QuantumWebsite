@@ -25,6 +25,11 @@
 
 	function changeTitle($name, $pages) {
 		include ($pages[$name]);
+		
+		$dom = new DOMDocument();
+		$dom->loadHTMLfile("navigator.php?" . $name . "=true");
+		$element = $dom->getElementById('myid');
+		$element -> $setAttribute('class', 'active');
 	}
 ?>
 
@@ -46,7 +51,7 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse navbar-nav navbar-right">
 				<ul class="nav navbar-nav">
-					<li id="navBar1" onclick="deactivator('navBar','123456'); activator('navBar1');">
+					<li id="Home" onclick="deactivator('navBar','123456'); activator('navBar1');">
 						<a href='navigator.php?Home=true'>Home</a>
 					</li>
 					<li id="navBar2" onclick="deactivator('navBar','123456'); activator('navBar2');">
@@ -55,9 +60,8 @@
 					<li id="navBar3" onclick="deactivator('navBar','123456'); activator('navBar3');">
 						<a href='navigator.php?Physics=true'>Physics</a>
 					</li>
-					<li id="navBar4">
-						<a href='navigator.php?Architecture=true' 
-						   onclick="deactivator('navBar','123456'); activator('navBar4');">Architecture</a>
+					<li id="navBar4" onclick="deactivator('navBar','123456'); activator('navBar4');">
+						<a href='navigator.php?Architecture=true'>Architecture</a>
 					</li>
 					<li id="navBar5" onclick="deactivator('navBar','123456'); activator('navBar5');">
 						<a href='navigator.php?Algorithms=true'>Algorithms</a>
