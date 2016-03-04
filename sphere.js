@@ -7,13 +7,20 @@ var consts = {
 	r2 : 50,
 	px : 184,
 	py : 163,
+	py2 : 105,
+	refX : 280,
+	refY : 30,
 	cursorX : 0,
 	cursorY : 100,
 	vpy : 150,
 	angX : 222,
 	angY : 144,
 	angX2 : 240,
-	angY2 : 110
+	angY2 : 110,
+	txt1X : 245,
+	txt1Y : 30,
+	txt2X : 240, 
+	txt2Y : 255
 };
 
 function sphereBuilder(render) {
@@ -67,28 +74,28 @@ function sphereBuilder(render) {
 			new objectUtils.buildSeg(consts.x, consts.y, consts.x, consts.y, 1)
 		);
 		objectPull.addObject("down",
-			new objectUtils.buildSeg(0, 0, 0, 0, 1)
+			new objectUtils.buildSeg(consts.x, consts.y, consts.x, consts.y, 1)
 		);
 		objectPull.addObject("plane",
-			new objectUtils.buildSeg(0, 0, 0, 0, 1)
+			new objectUtils.buildSeg(consts.x, consts.y, consts.x, consts.y, 1)
 		);
 		objectPull.addObject("ang1",
-			new objectUtils.buildSeg(0, 0, 0, 0, 1)
+			new objectUtils.buildSeg(consts.x, consts.y, consts.x, consts.y, 1)
 		);
 		objectPull.addObject("ang2",
-			new objectUtils.buildSeg(0, 0, 0, 0, 1)
+			new objectUtils.buildSeg(consts.x, consts.y, consts.x, consts.y, 1)
 		);
 		objectPull.addObject("text1",
-			new objectUtils.buildText("0", 245, 30)
+			new objectUtils.buildText("0", consts.txt1X, consts.txt1Y)
 		);
 		objectPull.addObject("text2",
-			new objectUtils.buildText("1", 240, 255)
+			new objectUtils.buildText("1", consts.txt2X, consts.txt2Y)
 		);
 		objectPull.addObject("text3",
-			new objectUtils.buildText("ϕ", 0, 0)
+			new objectUtils.buildText("ϕ", -100, -100)
 		);
 		objectPull.addObject("text4",
-			new objectUtils.buildText("θ", 0, 0)
+			new objectUtils.buildText("θ", -100, -100)
 		);
 		$("#" + where).after(canvas);
 		this.draw();
@@ -96,30 +103,42 @@ function sphereBuilder(render) {
 	this.render = render;
 }
 
-var sphere = new sphereBuilder(
-	function() {
-		document.onmousemove = mouseMove(sphere).onMouseMove;
+var spheres = (function() {
+	var sph1 = new sphereBuilder(function() {
+		document.onmousemove = eventPull(sph1).onMouseMove;
 		var draw = this.draw;
 		var clear = this.clear;
 		setInterval(function() { 
 			clear();
 			draw();
 		}, 10);
-	}
-);
-
-var staticSphere = new sphereBuilder(
-	function() {
+	});
+	var sph2 = new sphereBuilder(function() {
 		var canvas = this.getCanvas();
-		canvas.onclick = mouseMove(staticSphere).onMouseMove;
+		canvas.onclick = eventPull(sph2).refXMouseClick;
 		var draw = this.draw;
 		var clear = this.clear;
 		setInterval(function() { 
 			clear();
 			draw();
 		}, 10);
-	}
-);
+	});
+	var sph3 = new sphereBuilder(function() {
+		var canvas = this.getCanvas();
+		canvas.onclick = eventPull(sph3).rotYMouseClick;
+		var draw = this.draw;
+		var clear = this.clear;
+		setInterval(function() { 
+			clear();
+			draw();
+		}, 10);
+	});
+	return {
+		dynamicSphere : sph1,
+		refXSphere : sph2,
+		rotYSphere : sph3
+	};
+})();
 
 function objectPullBuilder() {
 	var objects = {};
@@ -131,9 +150,63 @@ function objectPullBuilder() {
 	};
 }
 
-var mouseMove = function(obj) {
+var eventPull = function(obj) {
 	var cursorX = 0;
 	var cursorY = 0;
+	
+	var render = function(canv, objectPull) {
+		var pX = cursorX;
+		var pY = cursorY;
+		
+		var len = Geo.length(pX, pY, consts.x, consts.y);
+		var perX = (pX - consts.x) / consts.r * 0.2;
+		var perY = (pY - consts.y) / consts.r * 0.2;
+		 
+		var projX = pX;
+		var projY = consts.vpy;
+		var perX2 = (projX - consts.x) / consts.r * 0.2;
+		var perY2 = (projY - consts.y) / consts.r * 0.2;
+		
+		if (len > consts.r) {
+			pX = consts.x;
+			pY = consts.y;
+			projX = consts.x;
+			projY = consts.y;
+			perX = 0;
+			perX2 = 0;
+			perY = 0;
+			perY2 = 0;
+		} 
+			
+		objectPull.getObjects().line.setX(pX);
+		objectPull.getObjects().line.setY(pY);
+			
+		objectPull.getObjects().plane.setX(projX);
+		objectPull.getObjects().plane.setY(projY);
+		objectPull.getObjects().plane.setX2(consts.x);
+		objectPull.getObjects().plane.setY2(consts.y);
+		
+		objectPull.getObjects().down.setX(projX);
+		objectPull.getObjects().down.setY(projY);
+		objectPull.getObjects().down.setX2(pX);
+		objectPull.getObjects().down.setY2(pY);
+		
+		objectPull.getObjects().ang1.setX(consts.x + perX * consts.r);
+		objectPull.getObjects().ang1.setY(consts.y + perY * consts.r);
+		objectPull.getObjects().ang1.setX2(consts.angX2);
+		objectPull.getObjects().ang1.setY2(consts.angY2);
+		
+		objectPull.getObjects().ang2.setX(consts.x + perX2 * consts.r);
+		objectPull.getObjects().ang2.setY(consts.y + perY2 * consts.r);
+		objectPull.getObjects().ang2.setX2(consts.angX);
+		objectPull.getObjects().ang2.setY2(consts.angY);
+		
+		objectPull.getObjects().text3.setX(consts.x + perX2 * consts.r);
+		objectPull.getObjects().text3.setY(consts.y + perY2 * consts.r - 20);
+		
+		objectPull.getObjects().text4.setX(consts.x + perX2 * consts.r - 20);
+		objectPull.getObjects().text4.setY(consts.y + perY2 * consts.r + 20);
+	};
 	
 	return {
 		onMouseMove : function(event) {
@@ -143,57 +216,43 @@ var mouseMove = function(obj) {
 			cursorX = event.pageX - canv.offsetLeft;
 			cursorY = event.pageY - canv.offsetTop;
 			
-			var pX = cursorX;
-			var pY = cursorY;
+			render(canv, objectPull);
+		},
+		refXMouseClick : function() {
+			var canv = obj.getCanvas();
+			var objectPull = obj.getObjectPull();
 			
-			var len = Geo.length(pX, pY, consts.x, consts.y);
-			var perX = (pX - consts.x) / consts.r * 0.2;
-			var perY = (pY - consts.y) / consts.r * 0.2;
-			 
-			var projX = pX;
-			var projY = consts.vpy;
-			var perX2 = (projX - consts.x) / consts.r * 0.2;
-			var perY2 = (projY - consts.y) / consts.r * 0.2;
+			cursorX = cursorX == 0 ? consts.refX : Geo.ref(cursorX, consts.x);
+			cursorY = cursorY == 0 ? consts.refY : cursorY;
 			
-			if (len > consts.r) {
-				pX = consts.x;
-				pY = consts.y;
-				projX = consts.x;
-				projY = consts.y;
-				perX = 0;
-				perX2 = 0;
-				perY = 0;
-				perY2 = 0;
-			} 
-				
-			objectPull.getObjects().line.setX(pX);
-			objectPull.getObjects().line.setY(pY);
-				
-			objectPull.getObjects().plane.setX(projX);
-			objectPull.getObjects().plane.setY(projY);
-			objectPull.getObjects().plane.setX2(consts.x);
-			objectPull.getObjects().plane.setY2(consts.y);
+			render(canv, objectPull);
+		},
+		rotYMouseClick : function() {
+			var canv = obj.getCanvas();
+			var objectPull = obj.getObjectPull();
 			
-			objectPull.getObjects().down.setX(projX);
-			objectPull.getObjects().down.setY(projY);
-			objectPull.getObjects().down.setX2(pX);
-			objectPull.getObjects().down.setY2(pY);
-			
-			objectPull.getObjects().ang1.setX(consts.x + perX * consts.r);
-			objectPull.getObjects().ang1.setY(consts.y + perY * consts.r);
-			objectPull.getObjects().ang1.setX2(consts.angX2);
-			objectPull.getObjects().ang1.setY2(consts.angY2);
-			
-			objectPull.getObjects().ang2.setX(consts.x + perX2 * consts.r);
-			objectPull.getObjects().ang2.setY(consts.y + perY2 * consts.r);
-			objectPull.getObjects().ang2.setX2(consts.angX);
-			objectPull.getObjects().ang2.setY2(consts.angY);
-			
-			objectPull.getObjects().text3.setX(consts.x + perX2 * consts.r);
-			objectPull.getObjects().text3.setY(consts.y + perY2 * consts.r - 20);
-			
-			objectPull.getObjects().text4.setX(consts.x + perX2 * consts.r - 20);
-			objectPull.getObjects().text4.setY(consts.y + perY2 * consts.r + 20);
+			objectPull.getObjects().text1.setX(
+				consts.txt2X + consts.txt1X - objectPull.getObjects().text1.getX()
+			);
+			objectPull.getObjects().text1.setY(
+				consts.txt2Y + consts.txt1Y - objectPull.getObjects().text1.getY()
+			);
+			objectPull.getObjects().text2.setX(
+				consts.txt2X + consts.txt1X - objectPull.getObjects().text2.getX()
+			);
+			objectPull.getObjects().text2.setY(
+				consts.txt2Y + consts.txt1Y - objectPull.getObjects().text2.getY()
+			);
+			if (objectPull.getObjects().zAxis.getY() == consts.y - consts.r) {
+				objectPull.getObjects().zAxis.setY(consts.y + consts.r);
+			} else {
+				objectPull.getObjects().zAxis.setY(consts.y - consts.r);
+			}
+			if (objectPull.getObjects().xAxis.getY() == consts.py) {
+				objectPull.getObjects().xAxis.setY(consts.py2);
+			} else {
+				objectPull.getObjects().xAxis.setY(consts.py);
+			}
 		}
 	};
 };
@@ -285,6 +344,12 @@ var objectUtils = (function() {
 			var _x = x;
 			var _y = y;
 			
+			this.getX = function() {
+				return _x;
+			};
+			this.getY = function() {
+				return _y;
+			};
 			this.setX = function(x) {
 				_x = x;
 			};
@@ -306,6 +371,9 @@ var Geo = (function() {
 	return {
 		length : function(x, y, x2, y2) {
 			return Math.sqrt( (x-x2) * (x-x2) + (y-y2) * (y-y2) );
+		},
+		ref : function(x, x2) {
+			return x2 - (x - x2);
 		}
 	};
 })();

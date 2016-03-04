@@ -161,12 +161,8 @@
 		<!-- To add steps -->
 		
 		<p id="bloch1"> Finally, we can represent the state as a dependency of two angles. The representation is called the Bloch sphere.</p>
-		<p id="bloch2"> Test </p>
-		
-		<!-- <script>
-			sphere.build();
-			sphere.render();
-		</script> --> 
+		<p id="bloch2"> Ref on X. </p>
+		<p id="bloch3"> Rot on Y. </p>
 	</div>
     </div>
 
@@ -198,11 +194,14 @@
 		
 		parser.staticParse(archFormulas.equality1, 'qg1');
 		
-		sphere.build("bloch1");
-		sphere.render();
+		spheres.dynamicSphere.build("bloch1");
+		spheres.dynamicSphere.render();
 		
-		staticSphere.build("bloch2");
-		staticSphere.render();
+		spheres.refXSphere.build("bloch2");
+		spheres.refXSphere.render();
+		
+		spheres.rotYSphere.build("bloch3");
+		spheres.rotYSphere.render();
 	</script>
 </body>
 
