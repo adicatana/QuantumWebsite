@@ -1,4 +1,4 @@
-
+#!/usr/bin/php
 <!-- General site navigation bar -->
 <html lang="en">
 <head>
@@ -55,8 +55,9 @@
 					<li id="navBar3" onclick="deactivator('navBar','123456'); activator('navBar3');">
 						<a href='navigator.php?Physics=true'>Physics</a>
 					</li>
-					<li id="navBar4" onclick="deactivator('navBar','123456'); activator('navBar4');">
-						<a href='navigator.php?Architecture=true'>Architecture</a>
+					<li id="navBar4">
+						<a href='navigator.php?Architecture=true' 
+						   onclick="deactivator('navBar','123456'); activator('navBar4');">Architecture</a>
 					</li>
 					<li id="navBar5" onclick="deactivator('navBar','123456'); activator('navBar5');">
 						<a href='navigator.php?Algorithms=true'>Algorithms</a>
@@ -64,8 +65,6 @@
 					<li id="navBar6" onclick="deactivator('navBar','123456'); activator('navBar6');">
 						<a href='navigator.php?References=true'>References</a>
 					</li>
-					
-					
 				</ul>
 			</div>
 		</div>
