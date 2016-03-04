@@ -18,7 +18,48 @@
     <canvas id="background"></canvas>
     <div class=".col-md-3">
 	<div style="margin-left:15%; margin-right:15%;" class="main">
-		<h2> Bits and Qubits </h2> <!-- Quantum book -->
+		<div class="row placeholders">
+			<div href="#bits" class="scroller">
+				<div class="col-xs-6 col-sm-3 placeholder">
+					<img src="http://scottkantner.com/wp-content/uploads/2011/09/bits-and-bytes_key1.jpg" 
+						width="200" height="200" 
+						class="img-circle" 
+						alt="Generic placeholder thumbnail">
+					<h4>Bits and Qubits</h4>
+				</div>
+			</div>
+			<div  href="#cgates" class="scroller">
+				<div class="col-xs-6 col-sm-3 placeholder">
+					<img src="http://www.schoolphysics.co.uk/age16-19/Electronics/Logic%20gates/text/Logic_gates/images/2.png" 
+						width="200" 
+						height="200" 
+						class="img-circle"  
+						alt="Generic placeholder thumbnail">
+					<h4>Classic Gates</h4>
+				</div>
+			</div>
+			<div href="#rgates" class="scroller">
+				<div class="col-xs-6 col-sm-3 placeholder">
+					<img src="http://2.bp.blogspot.com/-E5-mySF-R4c/TjWJ-IPnyDI/AAAAAAAAMJo/eW8lyIhzjHw/s1600/reversibleALU.png" 
+						width="200" height="200" 
+						class="img-circle" 
+						alt="Generic placeholder thumbnail">
+					<h4>Reversible Gates</h4>
+				</div>
+			</div>
+			<div href="#qgates" class="scroller">
+				<div class="col-xs-6 col-sm-3 placeholder">
+					<img src="http://www.nature.com/ncomms/journal/v3/n8/images/ncomms2003-f2.jpg" 
+						width="200" 
+						height="200" 
+						class="img-circle"  
+						alt="Generic placeholder thumbnail">
+					<h4>Quantum Gates</h4>
+				</div>
+			</div>
+		</div>
+		
+		<h2 name="bits" id="bits"> Bits and Qubits </h2> <!-- Quantum book -->
 		
 		<p> The concept of quantum computing is a generalisation
 		of classical computing, therefore the architecture of a quantum computer
@@ -67,8 +108,8 @@
 			Simlarly, a qubyte is a member of the complex vector space of dimension 256.
 		</p>
 		
-		<h2> <!-- Quantum book & Gates book -->
-			Classic gates
+		<h2 name="cgates" id="cgates"> <!-- Quantum book & Gates book -->
+			Classic Gates
 		</h2>
 		
 		<p id="cg1">Starting with a simple gate example, a NOT gate would need to reverse the state of a qubit. 
@@ -101,7 +142,7 @@
 		<p id="cg10"> Furthermore, we can serialize the below outputs with another gate, say OR.
 		</p>
 		
-		<h2> Reversible Gates </h2> <!-- Quantum book & Gates wiki -->
+		<h2 name="hgates" id="hgates"> Reversible Gates </h2> <!-- Quantum book & Gates wiki -->
 		
 		<p> It can be easily seen that a part of the gates we discussed are reversible. A gate is <b>reversible</b> if the output applied to its 
 		results is the input. The concept might be intuitive as one can tell that when AND operation is applied as above, we can not exacly determine 
@@ -142,7 +183,7 @@
 		<br>
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Fredkin_gate.svg/225px-Fredkin_gate.svg.png">
 		
-		<h2> Quantum gates </h2>
+		<h2 name="qgates" id="qgates"> Quantum gates </h2>
 		
 		<div class="well well-sm">
 			A <b>quantum gate</b> is a gate that operates on qubits.
@@ -202,6 +243,12 @@
 		
 		spheres.rotYSphere.build("bloch3");
 		spheres.rotYSphere.render();
+		
+		$('.scroller').click(function(){
+			$('html, body').animate({
+				scrollTop: $( $(this).attr('href') ).offset().top
+			}, 'slow');
+		});
 	</script>
 </body>
 

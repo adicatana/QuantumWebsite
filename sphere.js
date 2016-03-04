@@ -1,26 +1,9 @@
 var consts = {
-	width : 480,
-	height : 270,
-	x : 240,
-	y : 135,
-	r : 125,
-	r2 : 50,
-	px : 184,
-	py : 163,
-	py2 : 105,
-	refX : 280,
-	refY : 30,
-	cursorX : 0,
-	cursorY : 100,
-	vpy : 150,
-	angX : 222,
-	angY : 144,
-	angX2 : 240,
-	angY2 : 110,
-	txt1X : 245,
-	txt1Y : 30,
-	txt2X : 240, 
-	txt2Y : 255
+	width : 480, height : 270, x : 240, y : 135, r : 125,
+	r2 : 50, px : 184, py : 163, py2 : 105, refX : 280,
+	refY : 30, cursorX : 0, cursorY : 100, vpy : 150, angX : 222,
+	angY : 144, angX2 : 240, angY2 : 110, txt1X : 245, txt1Y : 30,
+	txt2X : 240, txt2Y : 255
 };
 
 function sphereBuilder(render) {
@@ -222,8 +205,8 @@ var eventPull = function(obj) {
 			var canv = obj.getCanvas();
 			var objectPull = obj.getObjectPull();
 			
-			cursorX = cursorX == 0 ? consts.refX : Geo.ref(cursorX, consts.x);
-			cursorY = cursorY == 0 ? consts.refY : cursorY;
+			cursorX = cursorX === 0 ? consts.refX : Geo.ref(cursorX, consts.x);
+			cursorY = cursorY === 0 ? consts.refY : cursorY;
 			
 			render(canv, objectPull);
 		},
