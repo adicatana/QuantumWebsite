@@ -21,6 +21,7 @@ var sphere = (function() {
 	canvas.width = consts.width;
 	canvas.height = consts.height;
 	var ctx = canvas.getContext("2d");
+	var objectPull = new objectPullBuilder();
 	
 	var draw = function() {
 		for (var key in objectPull.getObjects()) {
@@ -34,6 +35,9 @@ var sphere = (function() {
 	};
 	
 	return {
+		getObjectPull : function() {
+			return objectPull;
+		},
 		getCanvas : function() {
 			return canvas;
 		},
@@ -99,17 +103,15 @@ var sphere = (function() {
 	};
 })();
 
-var objectPull = (function() {
+function objectPullBuilder() {
 	var objects = {};
-	return {
-		getObjects : function() {
-			return objects;
-		},
-		addObject : function(name, object) {
-			objects[name] = object;
-		}
+	this.getObjects = function() {
+		return objects;
 	};
-})();
+	this.addObject = function(name, object) {
+		objects[name] = object;
+	};
+}
 
 var mouseMove = (function() {
 	var cursorX = 0;
@@ -118,6 +120,7 @@ var mouseMove = (function() {
 	return {
 		onMouseMove : function(event) {
 			var canv = sphere.getCanvas();
+			var objectPull = sphere.getObjectPull();
 			
 			cursorX = event.pageX - canv.offsetLeft;
 			cursorY = event.pageY - canv.offsetTop;
