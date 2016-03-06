@@ -229,39 +229,41 @@
 	</div>
 	<script>
 		//document.getElementById("def0").onmouseover = function () { parser.parse(archFormulas.bitdefs, 'def0' ) }; //dynamic import example
-		parser.staticParse(archFormulas.bitdefs, 'def0');
-		parser.staticParse(archFormulas.bitdef, 'def1');
-		parser.staticParse(archFormulas.equality1, 'eq1');
-		parser.staticParse(archFormulas.equality2, 'eq2');
-		parser.staticParse(archFormulas.equality3, 'eq3');
-		
-		parser.staticParse(archFormulas.classic1, 'cg1');
-		parser.staticParse(archFormulas.notGateDef, 'cg2');
-		parser.staticParse(archFormulas.andGateDef, 'cg3');
-		parser.staticParse(archFormulas.andGateEx, 'cg4');
-		parser.staticParse(archFormulas.orGateDef, 'cg5');
-		parser.staticParse(archFormulas.nandGateDef, 'cg6');
-		parser.staticParse(archFormulas.norGateDef, 'cg7');
-		parser.staticParse(archFormulas.notNot, 'cg8');
-		parser.staticParse(archFormulas.classic2, 'cg9');
-		parser.staticParse(archFormulas.classic3, 'cg10');
-		
-		parser.staticParse(archFormulas.cnotCnot, 'rg1');
-		parser.staticParse(archFormulas.toffli, 'rg2');
-		parser.staticParse(archFormulas.toffliUni, 'rg3');
-		parser.staticParse(archFormulas.toffliDef, 'rg4');
-		parser.staticParse(archFormulas.fredkin, 'rg5');
-		
-		parser.staticParse(archFormulas.equality1, 'qg1');
-		
-		spheres.dynamicSphere.build("bloch1");
-		spheres.dynamicSphere.render();
-		
-		spheres.refXSphere.build("bloch2");
-		spheres.refXSphere.render();
-		
-		spheres.rotYSphere.build("bloch3");
-		spheres.rotYSphere.render();
+		window.onload = function() {
+		  parser.staticParse(archFormulas.bitdefs, 'def0');
+		  parser.staticParse(archFormulas.bitdef, 'def1');
+		  parser.staticParse(archFormulas.equality1, 'eq1');
+		  parser.staticParse(archFormulas.equality2, 'eq2');
+		  parser.staticParse(archFormulas.equality3, 'eq3');
+		  
+		  parser.staticParse(archFormulas.classic1, 'cg1');
+		  parser.staticParse(archFormulas.notGateDef, 'cg2');
+		  parser.staticParse(archFormulas.andGateDef, 'cg3');
+		  parser.staticParse(archFormulas.andGateEx, 'cg4');
+		  parser.staticParse(archFormulas.orGateDef, 'cg5');
+		  parser.staticParse(archFormulas.nandGateDef, 'cg6');
+		  parser.staticParse(archFormulas.norGateDef, 'cg7');
+		  parser.staticParse(archFormulas.notNot, 'cg8');
+		  parser.staticParse(archFormulas.classic2, 'cg9');
+		  parser.staticParse(archFormulas.classic3, 'cg10');
+		  
+		  parser.staticParse(archFormulas.cnotCnot, 'rg1');
+		  parser.staticParse(archFormulas.toffli, 'rg2');
+		  parser.staticParse(archFormulas.toffliUni, 'rg3');
+		  parser.staticParse(archFormulas.toffliDef, 'rg4');
+		  parser.staticParse(archFormulas.fredkin, 'rg5');
+		  
+		  parser.staticParse(archFormulas.equality1, 'qg1');
+		  
+		  spheres.dynamicSphere.build("bloch1");
+		  spheres.dynamicSphere.render();
+		  
+		  spheres.refXSphere.build("bloch2");
+		  spheres.refXSphere.render();
+		  
+		  spheres.rotYSphere.build("bloch3");
+		  spheres.rotYSphere.render();
+		}
 	</script>
 	
 	<script src="scroll.js"></script>

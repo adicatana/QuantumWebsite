@@ -31,3 +31,9 @@
   width: 14px;
   height: 16px;
 }
+
+canvas {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
