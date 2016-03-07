@@ -25,6 +25,7 @@ var formulaUtils = (function() {
 				ans += arguments[i];
 				if (i < arguments.length - 1) {
 					ans += tab;
+					ans += ' ';
 				}
 			}
 			return ans;
