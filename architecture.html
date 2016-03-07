@@ -212,19 +212,41 @@
 		for a single state to be manipulated. We do not know at each step if a qubit is 0 or 1, but after measuring we can tell exactly. 
 		Therefore, we need a simple way to think of a single state as we move on.</p>
 		
-		<p id="qg1"> Complex numbers are particularly nice to reason with as they can be represented as two dimensional vectors. If we fix their 
-		module they can be represented as fixed vectors on a circle. The fact that our states are bounded by a similar constraint makes
+		<p id="qg1"> Complex numbers are particularly nice to reason with as they can be represented as 
+		two dimensional vectors. If we fix their 
+		module they can be represented as fixed vectors on a circle. The fact that our states are bounded 
+		by a similar constraint makes
 		us thinking of a similar representation.</p>
 		
-		<p id="bloch1"> We can represent the state as a dependency of two angles. The representation is called the Bloch sphere. The standard parametrization of the bloch sphere is decomposes x, y and z by the angel formed between the vector and the plane x-y - usually denoted with theta - and the
-		angle between the projection and x. As a parallel to mapping, theta is called azimuthal(being proportional to the the length of the "parallels") angle and phi is called polar angle(fixing the place of the "merdians").  </p>
+		<p id="bloch1"> We can represent the state as a dependency of two angles. The representation is 
+		called the Bloch sphere. The standard parametrization of the bloch sphere is decomposes x, y and 
+		z by the angel formed between the vector and the plane x-y - usually denoted with theta - and the
+		angle between the projection and x. As a parallel to mapping, theta is called azimuthal(being 
+		proportional to the the length of the "parallels") angle and phi is called polar angle(fixing the 
+		place of the "merdians").  </p>
 
-		<p id="bloch2">The uses of the Bloch sphere are manily manipulation of a single qubit using a 2-by-2 matrix. Consider a reflection around the axis Z. The mathematical model is not that intutive, thus we can use the Bloch representation.</p>
+		<p id="bloch2">The uses of the Bloch sphere are manily manipulation of a single qubit using a 2-
+		by-2 matrix. Consider a reflection around the axis Z. The mathematical model is not that 
+		intutive, thus we can use the Bloch representation.</p>
 
-		<p id="bloch3">The mechanism is quite versatile as we can build matrices to make roations around the axes. This matrices are called the Pauli matrices and each are designed to make a full rotation around each of the axes. We can simply illustrate a 180 degree rotation of the bloch sphere around axes Y.</p>
+		<p id="bloch3">The mechanism is quite versatile as we can build matrices to make roations around 
+		the axes. This matrices are called the Pauli matrices and each are designed to make a full 
+		rotation around each of the axes. We can simply illustrate a 180 degree rotation of the bloch 
+		sphere around axes Y.</p>
 
-		<p id="qg2"> The above bloch sphere shows the effect of the Y Pauli matrix. To fully understand its effect let us take a look over the Pauli matrices.</p>
+		<p id="qg2"> The above bloch sphere shows the effect of the Y Pauli matrix. To fully understand 
+		its effect let us take a look over the Pauli matrices. One can observe that a rotation around X
+		would simply reverse the 0 qubit, therefore the X matrix is exactly the NOT matrix. Intitively, 
+		rotating around the Y axes should give us a similar result, but there is more than one azimuthal 
+		angle at the poles. </p>
 		
+		<p id="qg3">The Pauli gates can be parameterized, obtaining any rotation on each of the axes. Those instruments are very powerful as one can alter a qubit easily. Let us exemplify the process of parametrization on the X axis.</p>
+		
+		<p id="qg4">Making use of the tensor product will allow this changes to be controlled by different qubits.
+		There are more similar examples with more controllers such as Deutsch gate.</p>
+
+		<p>Even though we have powerful instruments used for manipulation of a qubit, the major drawback is the lack of coverage over a cluster of bits and the entaglement. Even more, each operation on a qantum gate must be reversible and the No-Cloning Theorem must hold.(it is impossible to clone an arbitrary quantum state without destroying the original) </p>
+
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
@@ -258,6 +280,8 @@
 		  
 		  parser.staticParse(archFormulas.equality1, 'qg1');
 		  parser.staticParse(archFormulas.pauli, 'qg2');
+		  parser.staticParse(archFormulas.xp, 'qg3');
+		  parser.staticParse(archFormulas.cu, 'qg4');
 		  
 		  spheres.dynamicSphere.build("bloch1");
 		  spheres.dynamicSphere.render();

@@ -96,6 +96,11 @@ var archFormulas = (function() {
 			"X =" + cgates.not,
 			"Y =" + cgates.yPauli,
 			"Z =" + cgates.zPauli 
-		)
+		),
+		cu : "C_U = " + matrix(4,4,[1,0, 0 , 0
+								   ,0,1, 0 , 0
+								   ,0,0,'a','b'
+								   ,0,0,'c','d']),
+		xp : "R_X (\\phi) = cos \\ {\\frac{\\phi}{2}} \\ I - i \\ sin{\\frac{\\phi}{2}} \\ X"
 	};
 })();
