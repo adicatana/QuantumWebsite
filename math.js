@@ -5,3 +5,7 @@ var formulas = (function() {
 		formula3 : "\\(x, y) (z, t) = (xz - yt, xy + yz)"
 	};
 })();
+
+var graphic = (function() {
+	
+})
