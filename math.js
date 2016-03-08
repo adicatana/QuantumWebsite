@@ -1,6 +1,6 @@
 var formulas = (function() {
 	return {
-		formula1 : "\\frac{1+sin(x)}{y}",
+		formula1 : "\\log_2 N",
 		formula2 : "\\left( \\begin{array}{ccc}\
 			a & b & c \\\\\
 			d & e & f \\\\\
