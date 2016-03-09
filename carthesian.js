@@ -16,4 +16,6 @@ var graphic = (function() {
 	ctx.fillText(">", 193, 205);
 	ctx.fillText("^", 6, 10);
 
+	
+
 })();
