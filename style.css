@@ -17,7 +17,7 @@
 }
 
 .main {
-  background-color: white;
+  background-color: #FAFAFA;
   margin-top: 0;
 }
 
@@ -40,4 +40,39 @@ canvas {
 
 .scroller {
   cursor: pointer;
+}
+
+.expandable {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.expandable:hover {
+  height: 250px;
+  width: 250px;
+}
+
+.smallexpandable {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.smallexpandable:hover {
+  height: 150px;
+  width: 150px;
+}
+
+.fixeddiv
+{
+   height: 200px; 
 }
