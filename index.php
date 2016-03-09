@@ -44,25 +44,25 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse navbar-nav navbar-right">
 				<ul class="nav navbar-nav">
-					<li id="Home">
+					<li class="navbarElem">
 						<a href='index.php?Home=true'>Home</a>
 					</li>
-					<li id="navBar2" onmouseover="deactivator('navBar','123456'); activator('navBar2');">
+					<li class="navbarElem">
 						<a href='index.php?Maths=true'>Maths</a>
 					</li>
-					<li id="navBar3" onmouseover="deactivator('navBar','123456'); activator('navBar3');">
+					<li class="navbarElem">
 						<a href='index.php?Physics=true'>Physics</a>
 					</li>
-					<li id="navBar4" onmouseover="deactivator('navBar','123456'); activator('navBar4');">
+					<li class="navbarElem">
 						<a href='index.php?Architecture=true'>Architecture</a>
 					</li>
-					<li id="navBar5" onmouseover="deactivator('navBar','123456'); activator('navBar5');">
+					<li class="navbarElem">
 						<a href='index.php?Algorithms=true'>Algorithms</a>
 					</li>
-					<li id="navBar6" onmouseover="deactivator('navBar','123456'); activator('navBar6');">
+					<li class="navbarElem">
 						<a href='index.php?References=true'>References</a>
 					</li>
-				</ul>
+				</ul> 
 			</div>
 		</div>
 	</nav>
