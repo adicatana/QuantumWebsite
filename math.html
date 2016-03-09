@@ -71,7 +71,7 @@
 			<br>As in every scientific field, Mathematics is essential. Even though the mathematics of the classical and quantum systems is very different, similar phenomena show up in both places. The main difference is that in a classical system the hardware requiered is generally proportional to N whereas in the quantum system, the hardware is only proportional to <img src="http://latex.codecogs.com/gif.latex?log_2 N" border="0"/>.</br>
 			<!-- https://books.google.co.uk/books?hl=ro&lr=&id=evPKBQAAQBAJ&oi=fnd&pg=PR5&dq=mathematics+in+quantum+computing&ots=wi6T8nnj1q&sig=Bvqy12-Q8MUYUDOUns-CyFKm3mE#v=onepage&q=mathematics&f=false
 			MATHEMATICS OF QUANTUM COMPUTING -->
-			The aim of this chapter is to provide the basics needed in further study and to show (once again) the beauty of Mathematics.
+			The aim of this chapter is to provide the basics needed in further study and to show (once again) the beauty of <b>Mathematics</b>.
 			
 		</div>
 		<div align="center" href="#holder" class="scroller">
@@ -82,7 +82,7 @@
 		<h2 name="title2" id="title2">Complex Numbers</h2>
 		<p>
 			Let us consider the set of pairs <i>(x, y)</i>, where <i>x, y</i> are real numbers. We define adding and multiplying operations <center><div id="c1"></div> <div id="c2"></div>.</center>
-			<br>This set is known as the set of <i>Complex Numbers</i>.
+			<br>This set is known as the set of <b><i>Complex Numbers</i></b>.
 			<br>
 			<br>Two elements <i>(x, y)</i> and <i>(a, b)</i> of the Complex Numbers set are equal if and only if <i>x = a</i> and <i>y = b</i>.
 			<br><b>Remark 1. </b> If <i>a = (x, 0)</i> and <i>b = (y, 0)</i> then <i>ab = (xy, 0)</i>.
@@ -94,7 +94,37 @@
 			For algebraic manipulation it is not convenient to represent a complex number as an ordered pair. For this reason another form of writing is preferred. 
 			<br><b>Proposition.</b> Any complex number <i>z = (x, y)</i> can be uniquely represented in the form <i>z = x + yi</i>, where <i>x, y</i> are real numbers. The relation <img src="http://latex.codecogs.com/gif.latex?i^2 = -1" border="0"/> holds. The formula <img src="http://latex.codecogs.com/gif.latex?i^2 = -1" border="0"/> follows directly from the definition of multiplication: <img src="http://latex.codecogs.com/gif.latex?i^2 = i \cdot i = (0, 1) \cdot (0, 1) = (-1, 0) = -1" border="0"/>.
 			<br> The expression <i>x + yi</i> is called the algebraic representation (form) of the complex number <i>z = (x, y)</i>, so we can write <img src="http://latex.codecogs.com/gif.latex?C = \{x + yi | x \in R, y \in R, i^2 = -1\}" border="0"/>. From now on we will denote the complex number <i>z = (x, y)</i> by <i>x + yi</i>. The real number <i>x = Re(z)</i> is called the real part of the complex number <i>z</i> and similarly, <i>y = Im(z)</i> is called the imaginary part of <i>z</i>.
+			<br>
+			<br> <i><b>Conjugate of a complex number</b> </i>
+			<br>For a complex number <i>z = x + yi</i> the number <i<<span style="text-decoration:overline">z</span></i<<span> = x - yi</i> is called the complex conjugate of <i>z</i>.
+			<br><b>Proposition 1.</b> The relation <i>z = <i<<span style="text-decoration:overline">z</span></i<<span> </i> holds if and only if <i>z</i> is a real number.
+			<br><b>Proposition 2.</b> For any complex number <i>z</i> the number <i>z * <span style="text-decoration:overline">z</span> </i> is a real nonnegative real number.
+			<br><b>Proposition 3.</b> <i<<span style="text-decoration:overline">x + y</span></i<<span> <i>=</i> <i<<span style="text-decoration:overline">x</span></i<<span> + <i<<span style="text-decoration:overline">y</span></i<<span> (the conjugate of a sum is the sum of the conjugates).
+			<br><b>Proposition 4.</b> <i<<span style="text-decoration:overline">x * y</span></i<<span> <i>=</i> <i<<span style="text-decoration:overline">x</span></i<<span> * <i<<span style="text-decoration:overline">y</span></i<<span> (the conjugate of a product is the product of the conjugates).
+			<br><b>Proposition 5.</b> For any nonzero complex number <i>z</i> the relation <img src="http://latex.codecogs.com/gif.latex?\overline{(z^{-1})}=(\bar{z})^{-1}" border="0"/> holds.
+			<br><b>Proposition 6.</b> <img src="http://latex.codecogs.com/gif.latex?\overline{\bigg(\frac{x}{y}\bigg)}=\frac{\overline{x}}{\overline{y}}, y \neq 0" border="0"/> (the conjugate of a quotient is the quotient of the conjugates).
+			<br><b>Proposition 7.</b> The formulas <img src="http://latex.codecogs.com/gif.latex?Re(z) = \frac{z + \overline{z}}{2}" border="0"/> and <img src="http://latex.codecogs.com/gif.latex?Re(z) = \frac{z - \overline{z}}{2i}" border="0"/> are valid for all complex numbers <i>z</i>.
+			<br>
+			<br> <i><b>Modulus of a complex number</b> </i>
+			<br> The number <img src="http://latex.codecogs.com/gif.latex?|z| = \sqrt{x^2 + y^2}" border="0"/> is called the modulus of the absolute value of the complex number <i>z = x + yi </i>.
+			<br> <b>Proposition.</b> The following properties are satisfied:
+			<br> 1. <img src="http://latex.codecogs.com/gif.latex?-|z| \leq Re(z) \leq |z|" border="0"/> and <img src="http://latex.codecogs.com/gif.latex?-|z| \leq Im(z) \leq |z|" border="0"/>.
+			<br> 2. <img src="http://latex.codecogs.com/gif.latex?|z| \geq 0" border="0"/>, for all complex numbers <i>z</i>. Moreover, we have <img src="http://latex.codecogs.com/gif.latex?|z| = 0" border="0"/> iff <i>z = 0</i>.
+			<br> 3. <img src="http://latex.codecogs.com/gif.latex?|z| = |-z| = |\overline{z}|" border="0"/>.
+			<br> 4. <img src="http://latex.codecogs.com/gif.latex?z \cdot \overline{z} = |z|^2" border="0"/>.
+			<br> 5. <img src="http://latex.codecogs.com/gif.latex?|z_1 z_2| = |z_1||z_2|" border="0"/>.
+			<br> 6. <img src="http://latex.codecogs.com/gif.latex?|z_1| - |z_2| \leq |z_1 + z_2| \leq |z_1| + |z_2|" border="0"/>.
+			<br> 7. <img src="http://latex.codecogs.com/gif.latex?|z^{-1}| = |z|^{-1}, z \neq 0" border="0"/>.
+			<br> 8. <img src="http://latex.codecogs.com/gif.latex?\bigg|\frac{z_1}{z_2}\bigg| = \frac{|z_1|}{|z_2|}, z_2 \neq 0" border="0"/>.
+			<br>
+			<br> <i><b>Geometric Interpretation of the Algebraic Operations</b> </i>
+			<br> It is natural to let a complex number <i>z = x + yi</i> correspond to a point <i>M(x, y)</i> in the plane <i>R x R</i>. The point <i>M</i> is called the geometric image of the complex number <i>z</i>. The complex number <i>z = x + yi</i> is called the complex coordinate of the point <i>M(x, y)</i>. We will use the notation <i>M(z)</i> to indicate that the complex coordinate of <i>M</i> is the complex number <i>z</i>.
 		</p>
+		<canvas id="myCanvas" width="240" height="240"
+		>
+		Your browser does not support the canvas element.
+		</canvas>
+		<script src="carthesian.js"></script>
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
