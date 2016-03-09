@@ -46,7 +46,7 @@ var drops = (function() {
 		}
 	}
 
-	var initial_time = 40;
+	var initial_time = 60;
 	for (var i = 0; i < initial_time; ++i) {
 		draw();
 	}
