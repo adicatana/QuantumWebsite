@@ -1,20 +1,115 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Quantum Computing</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+	<script src="bootstrap/bootstrap.min.js"></script>
+	<script src="jquery/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css"> 
+	
+	<style type="text/css">
+		.expandable {
+		    height: 200px;
+		    width: 200px;
+		    border-radius: 50%;
+		    overflow: hidden;
+		    transition-duration: 0.5s;
+		    background-color: white;
+		    box-sizing: border-box;
+		}
+		.expandable:hover {
+		    height: 250px;
+		    width: 250px;
+		}
+	</style>
+
 </head>
 
-<body ng-app="">
-	<div class="container">
-		<h1>My First Bootstrap Page</h1>
-		<p>This is some text.</p>
+<body>
+ 	<canvas id="background"></canvas>
+	<script src="drops.js"></script> 
+
+	<div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%" class="main">
+		
+		<div class="row">
+            <div class="col-sm-8">
+                <h2>Motivation</h2>
+                <p></p>
+                <p><p>
+                    <a class="btn btn-default btn-lg" href="navigator.php?Maths=true">Get Started &raquo;</a>
+                </p>
+            </div>
+            
+            <h2>Contributors</h2>
+                
+            <div class="col-sm-2">
+	            <address>
+	               	<abbr title="Name">Alexandru Dan</abbr>
+	                <br>
+	                <a href="mailto:#">ad5915@imperial.ac.uk</a>
+                </address>
+                <address>
+                    <abbr title="Name">Adrian Catana</abbr>
+                    <br>
+                    <a href="mailto:#">ac7815@imperial.ac.uk</a>
+                </address>
+        	</div>
+        	<div class="col-sm-2">
+                <address>
+                    <abbr title="Name">Alexandru Dan</abbr>
+                    <br>
+                    <a href="mailto:#">ad5915@imperial.ac.uk</a>
+                </address>
+                <address>
+                    <abbr title="Name">Adrian Catana</abbr>
+                    <br>
+                    <a href="mailto:#">ac7815@imperial.ac.uk</a>
+                </address>
+        	</div>
+        
+   		</div>
+    
+        <hr>
+
+		<div id="holder"> <div class="row placeholders">
+			<div href="#bits" class="scroller">
+				<div class="col-xs-6 col-sm-4 placeholder" align="center">
+					<img src="https://media.giphy.com/media/V10mp6rzxMTlu/giphy.gif" 
+						width="200" height="200" 
+						class="expandable img-circle" 
+						alt="Generic placeholder thumbnail">
+					<h4>Text1</h4>
+				</div>
+			</div>
+			<div  href="#cgates" class="scroller">
+				<div class="col-xs-6 col-sm-4 placeholder" align="center">
+					<div class="canvas-holder">
+						<canvas id="textMove"
+							width="200" 
+							height="200" 
+							class="expandable img-circle"  
+							alt="Generic placeholder thumbnail">
+						</canvas>
+						<script src="textMove.js"></script>
+					</div>
+					<h4>Text2</h4>
+				</div>
+			</div>
+			<div href="#rgates" class="scroller">
+				<div class="col-xs-6 col-sm-4 placeholder" align="center">
+					<img src="https://media.giphy.com/media/eMid6FD7xtpgQ/giphy.gif" 
+						width="200" height="200" 
+						class="expandable img-circle" 
+						alt="Generic placeholder thumbnail">
+					<h4>Text3</h4>
+				</div>
+			</div>
+		</div> </div>
 	</div>
+
+	<script src="scroll.js"></script>
 </body>
 
 </html>
