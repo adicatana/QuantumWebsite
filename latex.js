@@ -16,7 +16,7 @@ var parser = (function(){
 	
 	return {
 		parse : function(formula, id) {
-			var linkage = "http://latex.codecogs.com/gif.latex?";
+			var linkage = "https://latex.codecogs.com/gif.latex?";
 			var attributeText = linkage + formula;
 			var panelId = "panel" + id;
 			
@@ -38,7 +38,7 @@ var parser = (function(){
 			}
 		},
 		staticParse : function(formula, id) {
-			var linkage = "http://latex.codecogs.com/gif.latex?";
+			var linkage = "https://latex.codecogs.com/gif.latex?";
 			var attributeText = linkage + formula;
 			var panelId = "panel" + id;
 			var image = document.createElement("img");
