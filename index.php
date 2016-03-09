@@ -23,11 +23,6 @@
 
 	function changeTitle($name, $pages) {
 		include ($pages[$name]);
-		
-		$dom = new DOMDocument();
-		$dom->loadHTMLfile("navigator.php");
-		$element = $dom->getElementById('myid');
-		$element -> $setAttribute('class', 'active');
 	}
 ?>
 
