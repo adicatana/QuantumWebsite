@@ -1,9 +1,7 @@
 var formulas = (function() {
 	return {
-		formula1 : "\\frac{1+sin(x)}{y}",
-		formula2 : "\\left( \\begin{array}{ccc}\
-			a & b & c \\\\\
-			d & e & f \\\\\
-			g & h & i \\end{array} \\right)"
+		formula1 : "\\log_2 N",
+		formula2 : "\\(x, y) + (z, t) = (x + z, y + t)",
+		formula3 : "\\(x, y) (z, t) = (xz - yt, xy + yz)"
 	};
 })();

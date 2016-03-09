@@ -1,4 +1,5 @@
  <!DOCTYPE html>
+<!-- Started branch -->
 <html lang="en">
 <head>
 	<title>Quantum Computing</title>
@@ -24,64 +25,82 @@
 		<div id="holder"> <div class="row placeholders">
 			<div href="#title1" class="scroller">
 				<div class="col-xs-6 col-sm-3 placeholder">
-					<img src="http://scottkantner.com/wp-content/uploads/2011/09/bits-and-bytes_key1.jpg" 
+					<img src="http://www.ru.nl/publish/pages/733019/mathematics-blackboard-article.jpg" 
 						width="200" height="200" 
 						class="img-circle" 
 						alt="Generic placeholder thumbnail">
-					<h4>Title1</h4>
+					<h4>Motivation</h4>
 				</div>
 			</div>
 			<div  href="#title2" class="scroller">
 				<div class="col-xs-6 col-sm-3 placeholder">
-					<img src="http://www.schoolphysics.co.uk/age16-19/Electronics/Logic%20gates/text/Logic_gates/images/2.png" 
+					<img src="https://image.spreadshirtmedia.com/image-server/v1/compositions/102928315/views/1,width=235,height=235,appearanceId=2,backgroundColor=f9f9f9,version=1440417743/Get-Real-Be-Rational.jpg" 
 						width="200" 
 						height="200" 
 						class="img-circle"  
 						alt="Generic placeholder thumbnail">
-					<h4>Title2</h4>
+					<h4>Complex Numbers</h4>
 				</div>
 			</div>
 			<div href="#title3" class="scroller">
 				<div class="col-xs-6 col-sm-3 placeholder">
-					<img src="http://2.bp.blogspot.com/-E5-mySF-R4c/TjWJ-IPnyDI/AAAAAAAAMJo/eW8lyIhzjHw/s1600/reversibleALU.png" 
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQqCK8yaaJhlDPeBrmMcyqVHXU3vvdpHWEgokrfNgchskJCKuGYg" 
 						width="200" height="200" 
 						class="img-circle" 
 						alt="Generic placeholder thumbnail">
-					<h4>Title3</h4>
+					<h4>Linear Algebra</h4>
 				</div>
 			</div>
 			<div href="#title4" class="scroller">
 				<div class="col-xs-6 col-sm-3 placeholder">
-					<img src="http://www.nature.com/ncomms/journal/v3/n8/images/ncomms2003-f2.jpg" 
+					<img src="http://www.moems.org/index_files/1%20inch%20olympiad%20n.jpg" 
 						width="200" 
 						height="200" 
 						class="img-circle"  
 						alt="Generic placeholder thumbnail">
-					<h4>Title4</h4>
+					<h4>Advanced Problems</h4>
 				</div>
 			</div>
 		</div> </div> 
 	
 	<!-- Content -->
-		<h2 name="title1" id="title1">Title1</h2>
+		<h2 name="title1" id="title1">Motivation</h2>
 		<div class="well well-sm">
-			Some definition
+			<i>"God used beautiful mathematics in creating the world." - Paul Dirac</i>
+
+			<br>As in every scientific field, Mathematics is essential. Even though the mathematics of the classical and quantum systems is very different, similar phenomena show up in both places. The main difference is that in a classical system the hardware requiered is generally proportional to N whereas in the quantum system, the hardware is only proportional to <img src="http://latex.codecogs.com/gif.latex?log_2 N" border="0"/>.</br>
+			<!-- https://books.google.co.uk/books?hl=ro&lr=&id=evPKBQAAQBAJ&oi=fnd&pg=PR5&dq=mathematics+in+quantum+computing&ots=wi6T8nnj1q&sig=Bvqy12-Q8MUYUDOUns-CyFKm3mE#v=onepage&q=mathematics&f=false
+			MATHEMATICS OF QUANTUM COMPUTING -->
+			The aim of this chapter is to provide the basics needed in further study and to show (once again) the beauty of Mathematics.
+			
 		</div>
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
 		</div>
 		
-		<h2 name="title2" id="title2">Title2</h2>
+		<h2 name="title2" id="title2">Complex Numbers</h2>
 		<p>
-			Some para
+			Let us consider the set of pairs <i>(x, y)</i>, where <i>x, y</i> are real numbers. We define adding and multiplying operations <center><div id="c1"></div> <div id="c2"></div>.</center>
+			<br>This set is known as the set of <i>Complex Numbers</i>.
+			<br>
+			<br>Two elements <i>(x, y)</i> and <i>(a, b)</i> of the Complex Numbers set are equal if and only if <i>x = a</i> and <i>y = b</i>.
+			<br><b>Remark 1. </b> If <i>a = (x, 0)</i> and <i>b = (y, 0)</i> then <i>ab = (xy, 0)</i>.
+			<br><b>Remark 2. </b> If <i>a = (0, x)</i> and <i>b = (0, y)</i> then <i>ab = (-xy, 0)</i>.
+			<br><b>Definition</b>. The set <img src="http://latex.codecogs.com/gif.latex?\mathbbb{R}^2" border="0"/>, together with the addition and multiplication operations, is called the set of complex numbers, denoted by <img src="http://latex.codecogs.com/gif.latex?C" border="0"/>. Any element <img src="http://latex.codecogs.com/gif.latex?z = (x, y) \in C" border="0"/> is called a complex number. The notation <img src="http://latex.codecogs.com/gif.latex?C^{*}" border="0"/> is used to indicate the set <img src="http://latex.codecogs.com/gif.latex?C - {(0, 0)}" border="0"/>.
+			<br>
+			<br> <i><b>Complex numbers in algebraic form </b> </i>
+			<br>
+			For algebraic manipulation it is not convenient to represent a complex number as an ordered pair. For this reason another form of writing is preferred. 
+			<br><b>Proposition.</b> Any complex number <i>z = (x, y)</i> can be uniquely represented in the form <i>z = x + yi</i>, where <i>x, y</i> are real numbers. The relation <img src="http://latex.codecogs.com/gif.latex?i^2 = -1" border="0"/> holds. The formula <img src="http://latex.codecogs.com/gif.latex?i^2 = -1" border="0"/> follows directly from the definition of multiplication: <img src="http://latex.codecogs.com/gif.latex?i^2 = i \cdot i = (0, 1) \cdot (0, 1) = (-1, 0) = -1" border="0"/>.
+			<br> The expression <i>x + yi</i> is called the algebraic representation (form) of the complex number <i>z = (x, y)</i>, so we can write <img src="http://latex.codecogs.com/gif.latex?C = \{x + yi | x \in R, y \in R, i^2 = -1\}" border="0"/>. From now on we will denote the complex number <i>z = (x, y)</i> by <i>x + yi</i>. The real number <i>x = Re(z)</i> is called the real part of the complex number <i>z</i> and similarly, <i>y = Im(z)</i> is called the imaginary part of <i>z</i>.
 		</p>
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
 		</div>
 		
-		<h2 name="title3" id="title3">Title3</h2>
+		<h2 name="title3" id="title3">Linear Algebra</h2>
 		<p>
 			Other para
 		</p>
@@ -90,7 +109,7 @@
 			<p> Go to contents </p>
 		</div>
 		
-		<h2 name="title4" id="title4">Title4</h2>
+		<h2 name="title4" id="title4">Advanced Problems</h2>
 		<div class="well well-sm">
 			Other definition
 		</div>
@@ -100,7 +119,11 @@
 		</div>
 		
 		<br><br><br><br><br>
-		
+		<script type="text/javascript">
+			parser.staticParse(formulas.formula1, 'def0');
+			parser.staticParse(formulas.formula2, 'c1');
+			parser.staticParse(formulas.formula3, 'c2');
+		</script>
 	<script src="scroll.js"></script>
 	</div> 
 </body>
