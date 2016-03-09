@@ -66,6 +66,9 @@
 		</div>
 	</nav>
 
+	<canvas id="background"></canvas>
+	<script src="drops.js"></script>
+
 	<?php
 		foreach ($pages as $from=>$to) {
 			if (isset($_GET[$from])) {
