@@ -27,7 +27,9 @@ var archFormulas = (function() {
 		                       0,0,0,0,1,0,0,0,
 		                       0,0,0,0,0,1,0,0,
 		                       0,0,0,0,0,0,0,1,
-		                       0,0,0,0,0,0,1,0])
+		                       0,0,0,0,0,0,1,0]),
+		yPauli : matrix(2,2,["0","-i","i","0"]),
+		zPauli : matrix(2,2,[1,0,0,-1])
 	};
 	
 	var tp = "\\otimes";
@@ -38,6 +40,8 @@ var archFormulas = (function() {
 	var bit = function(arg) {
 		return "|" + arg + lb;
 	};
+
+	src="http://latex.codecogs.com/gif.latex?X =\left[ \begin{array}{cccccccccccccccccccccc}0&1\\1&0\end{array} \right]\qquadY =\left[ \begin{array}{cccccccccccccccccccccc}1&0\\0&-1\end{array} \right]"
 	
 	var bit0def = bit("0") + "=" + bit0;
 	var bit1def = bit("1") + "=" + bit1;
@@ -87,6 +91,16 @@ var archFormulas = (function() {
 		fredkin : halign( 
 			bit("0, y, z") + sp + "to" + sp + bit("0, y, z"),
 			bit("1, y, z") + sp + "to" + sp + bit("1, z, y")
-		)
+		),
+		pauli : halign(
+			"X =" + cgates.not,
+			"Y =" + cgates.yPauli,
+			"Z =" + cgates.zPauli 
+		),
+		cu : "C_U = " + matrix(4,4,[1,0, 0 , 0
+								   ,0,1, 0 , 0
+								   ,0,0,'a','b'
+								   ,0,0,'c','d']),
+		xp : "R_X (\\phi) = cos \\ {\\frac{\\phi}{2}} \\ I - i \\ sin{\\frac{\\phi}{2}} \\ X"
 	};
 })();
