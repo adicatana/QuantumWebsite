@@ -76,3 +76,19 @@ canvas {
 {
    height: 200px; 
 }
+
+.odd {
+  background-color: #F5F5F5;
+}
+
+.even {
+  background-color: #EDEDED;
+}
+
+.wellodd {
+  background-color: #EDEDED;
+}
+
+.welleven {
+  background-color: #F5F5F5;
+}
