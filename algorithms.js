@@ -36,6 +36,9 @@ var algoFormulas = (function() {
 		pipeline : "(H \\otimes I) \\cdot U_{f} \\cdot (H \\otimes H) \\cdot" + bit("0,1"),
 		state1 : bit("\\phi_0") + " = " + bit("0, 1"),
 		state0 : bit("\\phi_1") + " = \\bigg[ \\frac{" + bit(0) +"+"+ bit(1) + "}{\\sqrt{2}} \\bigg] = \\frac{+" + bit("0,0") + " - " + bit("0,1") + " + " + bit("1,0") + "-" + bit("1,1") + "}{2} = " + matrix(4, 1,["+\\frac{1}{2}","-\\frac{1}{2}","+\\frac{1}{2}","-\\frac{1}{2}"]),
-		state2 : bit("\\phi_2") + " = (\\pm 1) \\bigg[ \\frac{" + bit(0) + "+" +  bit(1) + "}{\\sqrt{2}} \\bigg]", 
+		state2 : bit("\\phi_2") + " = (\\pm 1) \\bigg[ \\frac{" + bit(0) + "+" +  bit(1) + "}{\\sqrt{2}} \\bigg]\\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg]", 
+		state3 : bit("\\phi_2") + " = (\\pm 1) \\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg]\\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg]",
+		state4 : bit("\\phi_3") + " = (\\pm) " + bit(0) +"\\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg]",
+		state5 : bit("\\phi_3") + " = (\\pm) " + bit(1)+ "\\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg]",
 		};
 })();
