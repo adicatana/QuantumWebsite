@@ -41,8 +41,6 @@ var archFormulas = (function() {
 		return "|" + arg + lb;
 	};
 
-	src="http://latex.codecogs.com/gif.latex?X =\left[ \begin{array}{cccccccccccccccccccccc}0&1\\1&0\end{array} \right]\qquadY =\left[ \begin{array}{cccccccccccccccccccccc}1&0\\0&-1\end{array} \right]"
-	
 	var bit0def = bit("0") + "=" + bit0;
 	var bit1def = bit("1") + "=" + bit1;
 	var bitgdef = bit("\\psi") + "=" + bitg + cond1;
@@ -56,6 +54,8 @@ var archFormulas = (function() {
 	return {
 		bitdefs : halign(bit0def, bit1def),
 		bitdef : bitgdef,
+		cgates : cgates,
+		bit : bit,
 		equality1 : bit("\\psi") + "=" + "c_0" + bit0 + "+ c_1" + bit1
 					+ "=" + "c_0" + bit("0") + "+ c_1" + bit("1"),
 		equality2 : bit("1") + tp + bit("0") + tp + bit("1") 
