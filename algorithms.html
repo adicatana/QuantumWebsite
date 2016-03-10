@@ -24,10 +24,10 @@
 		<div id="holder" class="fixeddiv"> <div class="row placeholders">
 			<div href="#deutsch" class="scroller" align="center">
 				<div class="col-xs-6 col-sm-3 placeholder" align="center">
-					<img src="media/ar1.jpg" 
+					<img src="media/algo1.jpg" 
 						class="smallexpandable img-circle" 
 						alt="Generic placeholder thumbnail">
-					<h4>Bits and Qubits</h4>
+					<h4>Deutsch's Algorithm</h4>
 				</div>
 			</div>
 			<div  href="#title2" class="scroller" align="center">
@@ -63,56 +63,63 @@
 		<p> Quantum algorithms can be developed on top of a framework based on combining quantum gates. We can summarise the whole process in the following steps: </p>
 		<ul>
 			<li> The system starts with bits in a classical state. </li>
-			<li> From there the system is put into a superposition. </li>
+			<li> From there, the system is put into a superposition. </li>
 			<li> The state is tranformed using unitary operations.(i.e. quantum gates) </li>
 			<li> Measure the qubits, forcing them to collapse in a state.</li>
 		</ul>
 
-		<p> Notice each algorithm is not deterministic, having just a big probability of giving a good result. </p>
+		<p> Notice all algorithms are probabilistic ones, not deterministic. That means, we are not guaranteed that they will work for 100% of the cases, but we do have a high probability of success. </p> 
 
 		<br>
 		<h3> The problem </h3> <!-- http://www.cs.xu.edu/~kinne/quantum/deutche.html -->
 
-		<p id="dt1"> Suppose there is a function f that maps from {0, 1} to {0, 1}. We wish to know whether the function is one-to-one or not.(i.e. f(0) does not equal f(1)) Opposing to the classic context, 
+		<p id="dt1"> Suppose there is a function f that maps from {0, 1} to {0, 1}. We wish to know whether the function is injective or not.(i.e. f(0) does not equal f(1)) Opposing to the classic context, 
 		one can not examine the function on different results. The main idea is to consider the gate U
 		as a matrix function operator(to be visualised as a gate) applying the function f to the given
 		inputs.</p>
 
 		</p> The problem could be solved by evaluating f(0) ⊕ f(1). The xor function is the direct equivalent of asking whether f is an injection. Even though the function is evaluated twice in a classical context, the quantum context allows us to evaluate it only once. </p>
 
-		<br>
+		<Breaking>
 		<h3> Breaking down the problem </h3>
 
 		<p>At the moment we know we want to obtain a superstate that will be extracted after measurement to f(0) ⊕ f(1). We only need a superstate that will be transfered to this particular point. The input is 0 and 1 along with any combination. </p>
 
-		<p id="dt2"> Firstly, we have to keep in mind that we can process two states simultaniously. We need a matrix(gate) that gives us a state that has an equal probability to be measured as a 0 or 1. Fortunately the Hadamard gate gives us the good behaviour.</p>
+		<p id="dt2"> Firstly, we have to keep in mind that we can process two states simultaniously. We need a matrix(gate) that gives us a state that has an equal probability to be measured as a 0 or 1. We can observ that the Hadamard gate gives us a good beahaviour:</p> 
 
-		<p id="dt3"> Looking over the effect of the Hammond gate over the 0 and 1 states, we can observe that both bits will be driven to balaced superstates. You can observe that the products differ only by a sign. </p>
+		<p> </p>
+
+		<p id="dt3"> Looking over the effect of the Hammond gate over the 0 and 1 states, we can observe that both bits will be driven to balaced superstates. Also, the products differ only by a sign. </p>
 		<p id="dt4"></p>
 
-		<p> At this moment, we have all the information: the input, the desired output, some means of transformations to balanced superstates and, finally the application of function f. </p>
+		<p> </p>
+
+		<p> At this moment, we have all the information: the input, the desired output, some means of transformations to balanced superstates, and finally, the application of function f. </p>
 
 		<br>
 		<h3> Putting the bits togeather </h3>
 
 		<p> We will examine the circuit proposed by David Deutsch by looking at each step on the "pipeline". </p>
 
-		<!-- Circuit here !!! -->
+		<center>
+			<img src="media/algop1.png" width=50%></img>
+		</center>
 
-		<p id="dt5"> The pipelineing mechanism can be expressed strictly in terms of matrices. We have 2 inputs that will be composed using the tensor product. Afterward each pair of binary gates will be multiplied(tensor product) so that we keep applying each matrix operator to the combined state.(4-by-1 matrix) Finally, the upper result will be measured. </p>
+		<p id="dt5"> The pipelineing mechanism can be expressed strictly in terms of matrices. We have 2 inputs that will be composed using the tensor product. Afterwards, each pair of binary gates will be multiplied(tensor product) so that we keep applying each matrix operator to the combined state.(4-by-1 matrix) Finally, the upper result will be measured. </p>
 
 		<p id="dt_state1"> Let us look at the involved states step by step. Firstly, our state will be the product of the given input qubits.</p>
 
-		<p id="dt_state2"></p>
-		<p id="dt_state3"></p>
+		<p id="dt_state2"> In the first step, we need to apply the Hadamard transformation to each of the matrices. Observe that it distributes the probabilities evenly. </p>
+		
+		<p id="dt_state_gen"> Observe the effect of function f over the state we have obtained. Let us study the effect of function f on the element <img src="https://latex.codecogs.com/gif.latex? \bigg[ \frac{|0\rangle - |1\rangle}{\sqrt{2}} \bigg]"></img>. We only need to apply the tensor product of the current value with the function application. More concicely,
+		the function will look just as <img src="https://latex.codecogs.com/gif.latex? \bigg[ \frac{|0 \otimes f(0) \rangle - |1 \otimes f(1)\rangle}{\sqrt{2}} \bigg]"></img>.</p>
+
+		<p id="dt_state3"> Applying the property to both elements will give two comopositions similar to the former one. Finally, we need just analiyse the outcome of the function in each case.</p>
 		<p id="dt_state4"></p>
-		<p id="dt_state5"></p>
+		<p id="dt_state5"> Remember that each gate is reversible, so Hadamard matrix should put its resulting state to the original input. Therefore, reappling the Hadamard matrix back will drive us into one of the initial states (0 or 1). We are particularly interested in the 0 as it will multiply to a null term after measurement. </p>
 		<p id="dt_state6"></p>
 
-		<h3> Verifying the algorithm</h3>
-		<!-- circuit -->
-		<!-- fiecare faza din circuit -->
-		<!-- exemplu -->
+		<p> Finally, measureing the top bit will give either 0, or another result. In the case the result is 0, we know that f is a constant function. </p>
 
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
