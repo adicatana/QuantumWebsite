@@ -1,3 +1,57 @@
+var coords = (function(){
+	var canvas = document.getElementById("coords");
+	var ctx = canvas.getContext("2d");
+ 
+	var cursorX = 0;
+	var cursorY = 0;
+ 
+	function draw() {
+		var z = new objectUtils.buildSeg(100, 100, 30, 140, 1); 
+		var y = new objectUtils.buildSeg(100, 100, 100, 20, 1); 
+		var x = new objectUtils.buildSeg(100, 100, 180, 100, 1); 
+ 
+		x.draw(ctx);
+		y.draw(ctx);
+		z.draw(ctx);
+	}
+ 
+	function clear() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+	}
+ 
+	function getCursor() {
+		cursorX = event.pageX - canvas.offsetLeft;
+		cursorY = event.pageY - canvas.offsetTop;
+	}
+
+	function spawn() {
+		ctx.setLineDash([5]);
+		var ln = new objectUtils.buildSeg(100, 100, cursorX, cursorY, 2); 
+		ln.draw(ctx);
+ 
+		ctx.setLineDash([0]);
+		ctx.setLineDash([0]);
+ 
+		ctx.font = "15px Arial";
+		ctx.fillText("M(x, y, z)", cursorX, cursorY);
+	}
+ 
+	draw();
+ 
+	return {
+		mm : function(event){
+			clear();
+			draw();
+			getCursor();
+			if ( cursorX >= 0 && cursorY >= 0 && 
+				 cursorX <= canvas.width && 
+				 cursorY <= canvas.height ) {
+				spawn();
+			}
+		}
+	};
+})();
+
 var graphic = function(id, offset, size) {
 	this.canvas  = document.getElementById(id);
 	this.ctx     = this.canvas.getContext("2d");
@@ -116,6 +170,8 @@ var draw = (function() {
 	};
 
 	document.onmousemove = function(event){
+		coords.mm(event);
+
 		g1.clear();
 		g2.clear();
 		g3.clear();

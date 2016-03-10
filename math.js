@@ -1,5 +1,6 @@
 var formulas = (function() {
 	var matrix = formulaUtils.matrix;
+
 	return {
 		formula1 : "\\log_2 N",
 		formula2 : "\\(x, y) + (z, t) = (x + z, y + t)",
