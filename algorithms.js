@@ -25,7 +25,7 @@ var algoFormulas = (function() {
 	return {
 		fdef : halign(
 			"f : \\{0, 1\\} \\rightarrow \\{0, 1\\}",
-			"f(0) = f(0), f(1) = f(1) \\implies f " + sp + "injective"
+			"f(0) \\neq f(1) \\implies f " + sp + "injective"
 		),
 		hadamard : "H = \\frac{1}{\\sqrt{2}} \\cdot (X" + sp + "+" + sp +"Z)" 
 		 	+ " = \\frac{1}{\\sqrt{2}} \\cdot ("+ gates.X + "+" + gates.Z + ") =" + gates.H,
