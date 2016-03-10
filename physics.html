@@ -82,7 +82,12 @@
 			this experiment relied fundamentaly on the frequence of the radiation, 
 			but not on its intensity. </p>
 			
-			<p>animatie</p>
+			<canvas id="animation" height="470px" width="800px"></canvas>
+			<div class="animation-controls">
+			  <input type="range" id="colour-slider" value="5" max="40" min="5"/>
+			  <img src="media/control-strip.png" id="light-spectrum" width="176px"/>
+			</div>
+			
 			<p>In 1924, Luis de Broglie introduced the idea that particles may also be described as waves, whose wavelength is given by the relation:
 			λ = h / p, where p is the momentum.</p>
 			<p><b>1925 - Werner Heisenberg: Matrix Mechanics</b></p>
@@ -125,6 +130,67 @@
 			Quantum Mechanics provides a framework for the development of physical theories.
 			It states a set of postulates that a physical theory must satisfy.
 		  </p>
+		  <p>
+			We shall consider only finite-level quantum systems, since each physical system 
+			must be transformed into a discrete one in order to be able to represent it in 
+			computers.
+		  </p>
+		  <p>
+			We denote a particle being at at some point x<sub>i</sub> with the ket notation :
+		  </p>
+			<p id = "ket1"></p>
+			<br>
+			<p id = "ket2"></p>
+			<br>
+			<p>...</p>
+			<p id = "ket3"></p>
+			<br>
+		  <p>
+			<br>
+			Now we can represent an arbitrary state <span id = "psi"></span> as a linear combination of some basic states,
+		  </p>
+		  <p id="prob"></p>
+		  <br>
+		  <p>
+			<br>
+			since a particle in the quantum universe can exist in each state with a suitable probability.
+		  </p>
+		  <p>
+			We say the state is a <b>superposition</b> of this basic states.
+		  </p>
+		  <p>
+			The norm square of the complex amplitude divided by the norm squared of the 
+			state gives us the probability of observing the particle at position x<sub>i</sub>
+		  </p>
+		  <p id="observ"></p>
+		  <p>
+			<br>
+			Another fundamental property of the subatomic particles is called <b>spin</b>, a concept which describes 
+			a physical interpretation of a particle spinning along its axis.
+		  </p>
+		  <p>
+			Why is this property useful ?
+			It plays a major role in the implementation of qbits. There are only two spin states, so every arbitrary state will be a superposition of the two possible basic spins.
+		  </p>
+		  <p>
+			Now we can investigate the meaning of the inner product for our state space. It enables us to compute something called transition amplitudes, a tool in determining 
+			the final state for the system after the measurement.
+		  </p>
+		  <p>
+			Suppose there are two normalised states :
+		  </p>
+		  <p id="state1"></p>
+		  <span>, &nbsp &nbsp</span>
+		  <span id="state2"></span>
+		  <p>
+			The final state is going to be the row vector consisting of the conjugate coordiantes of <span id="second"></span>.
+		  </p>
+		  <p id="bra"></p>
+		  <p>
+			To find the transition amplitude, we just need to do the multiplication (compute the inner product) :
+		  </p>
+		  <p id="prime"></p>
+		  
 		</div>
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
@@ -153,6 +219,20 @@
 		
 	<script src="scroll.js"></script>
 	</div> 
+	
+	<script>
+		parser.staticParse(phyFormulas.formula1, 'ket1');
+		parser.staticParse(phyFormulas.formula2, 'ket2');
+		parser.staticParse(phyFormulas.formula3, 'ket3');
+		parser.staticParse(phyFormulas.formula0, 'psi');
+		parser.staticParse(phyFormulas.formula4, 'prob');
+		parser.staticParse(phyFormulas.formula7, 'observ');
+		parser.staticParse(phyFormulas.formula5, 'state1');
+		parser.staticParse(phyFormulas.formula6, 'state2');
+		parser.staticParse(phyFormulas.formula8, 'prime');
+		parser.staticParse(phyFormulas.formula9, 'bra');
+		parser.staticParse(phyFormulas.formula10, 'second');
+	</script>
 </body>
 
 </html>
