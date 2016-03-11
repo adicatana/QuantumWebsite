@@ -32,7 +32,8 @@ var phyFormulas = (function() {
 		formula11: "\\Omega",
 		formula12: "\\frac{" + bit("\\psi (t+\\delta t)") + "-" + bit("\\psi (t)") + "}{\\delta t} ="
 		   + "-i \\frac{2 \\cdot \\pi}{\\hbar} \\mathcal{H}" + bit("\\psi (t)"),
-		formula13: "Var_{x}(A)Var_{x}(B) \\ge \\frac{1}{4} | \\langle x|[A,B]x \\rangle |^{2}"
+		formula13: "Var_{x}(A)Var_{x}(B) \\ge \\frac{1}{4} | \\langle x|[A,B]x \\rangle |^{2}",
+		formula14: "\\otimes"
 	  
 	};
  })();
