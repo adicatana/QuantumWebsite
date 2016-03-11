@@ -40,7 +40,7 @@ window.addEventListener("load", function() {
     var init = function() {
         var canvas = document.getElementById('animation');
         var electrons = new Array();
-        var WIDTH = 800, HEIGHT = 470;
+        var WIDTH = 600, HEIGHT = 250;
         var con = canvas.getContext('2d');
         con.canvas.width=WIDTH;
         con.canvas.height=HEIGHT;
@@ -74,10 +74,16 @@ window.addEventListener("load", function() {
 
     
     function spawnElectron(electrons) {
-        var temp = new Electron();
-        electrons.push(temp);
-        temp.setFlying();
+        electrons.push(createElectron(300, 150));
+	electrons.push(createElectron(250, 150));
+	electrons.push(createElectron(200, 150));
         setTimeout(function() {spawnElectron(electrons);}, 7000/colourFlying);
+    }
+    
+    function createElectron(x, y) {
+	var temp = new Electron();
+        temp.setFlying(x, y);
+	return temp;
     }
 
 
@@ -103,19 +109,19 @@ window.addEventListener("load", function() {
         buf_context.lineWidth = 5;
         buf_context.beginPath();
         buf_context.moveTo(0, 0);
-        buf_context.lineTo(200, 363);
+        buf_context.lineTo(200, 150);
         buf_context.stroke();
 	buf_context.strokeStyle = rgb_s;
         buf_context.lineWidth = 5;
         buf_context.beginPath();
         buf_context.moveTo(50, 0);
-        buf_context.lineTo(250, 363);
+        buf_context.lineTo(250, 150);
         buf_context.stroke();
 	buf_context.strokeStyle = rgb_s;
         buf_context.lineWidth = 5;
         buf_context.beginPath();
         buf_context.moveTo(100, 0);
-        buf_context.lineTo(300, 363);
+        buf_context.lineTo(300, 150);
         buf_context.stroke();
         con.drawImage(buf_canvas, 0, 0);
         window.requestAnimationFrame(function() {draw(canvas, electrons);});
@@ -124,8 +130,8 @@ window.addEventListener("load", function() {
     //Get ready to drop some serious JS OOP shit broh
 
     var X_ORIGIN = 0;
-    var Y_LBOUND = 370;
-    var Y_UBOUND = 470;
+    var Y_LBOUND = 155;
+    var Y_UBOUND = 250;
     var EL_SPEED = 2;
     var X_STOP = 881;
     var FLY_X = 200;
@@ -158,11 +164,11 @@ window.addEventListener("load", function() {
 	    }
         }
         
-        this.setFlying = function() {
+        this.setFlying = function(x, y) {
 	    this.flying = true;
-	    this.dump=false;
-	    this.x = FLY_X;
-	    this.y = FLY_Y;
+	    this.dump = false;
+	    this.x = x;
+	    this.y = y;
         }
         
         this.reset(); //calls on instantiation the function we just made
