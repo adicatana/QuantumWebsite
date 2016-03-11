@@ -41,6 +41,23 @@ var algoFormulas = (function() {
 		state4 : bit("d") + " = (\\pm) " + bit(0) +"\\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg]  \\ where \\ f \\  constant",
 		state5 : bit("d") + " = (\\pm) " + bit(1)+ "\\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg] \\ where \\ f \\  balanced",
 		
+		gg1 : "f : \\{0, 1\\}^{n} \\rightarrow \\{0, 1\\}",
+		gg2 : "U_{f}(H^{\\otimes n}\\otimes I)" + bit("0,0"),
+		gg3 : bit("\\phi_{0}") + "=" + bit("0,0"),
+		gg4 : bit("\\phi_{1}") + "=" + "\\bigg[ \\frac{ \\sum_{x \\in \\{ 0, \\ 1 \\}^{n} } " + bit("x") + "}{\\sqrt{2^{n}}} \\bigg]" + bit("0,0"),
+		gg5 : bit("\\phi_{2}") + "=" + " \\frac{ \\sum_{x \\in \\{ 0, \\ 1 \\}^{n} } " + bit("x, f(x)") + "}{\\sqrt{2^{n}}} ",
+		gg6 : "",
+		gg7 : "",
+		gg8 : "",
+		gg9 : "",
+		gg10 : "",
+
+		ini1 : "\\sqrt{m}",
+		ini2 : "x_{0}",
+		ini3 : bit("0,x") + "\\  to \\ " + bit("x, f(x) \\oplus y"),
+		ini4 : "",
+		ini5 : "",
+
 		system : "A \\cdot \\vec{x} = \\vec{b}",	
 		system2 : "\\vec{x} = A^{-1} \\cdot \\vec{b}",
 		hhl3 : "\\vec{x} = A^{-1} \\cdot \\vec{b}"

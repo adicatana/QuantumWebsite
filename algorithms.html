@@ -126,19 +126,56 @@
 			<p> Go to contents </p>
 		</div>
 		
-		<h2 name="title2" id="title2">Title2</h2>
-		<p>
-			Some para
-		</p>
-		<div align="center" href="#holder" class="scroller">
-			<span class="glyphicon glyphicon-chevron-up" > </span>
-			<p> Go to contents </p>
-		</div>
+		<h2 name="title2" id="title2">Grover's Search Algorithm</h2> <!--Quantum book exact citation-->
+
+		<p> Grover’s Search is an algorithm based on searching an element in a list, faster than just going through all the elements and stop at some point. Using a naive brute force strategy of just taking element by element and break at some point when we find an answer will result to an average of (m / 2) operations per searching. Grover’s Search Algorithm aims for <span id="ini1"></span>  such operations. </p>
 		
-		<h2 name="title3" id="title3">Title3</h2>
-		<p>
-			Other para
-		</p>
+		<p> Imagine that you are given a function <span id="gg1"></span> and you are assured that there exists exacly one binary string x0 such that f(x) = 1 if x = <span id="ini2"></span> and f(x) = 0 otherwise. f will be given to us as the unitary matrix Uf that takes <span id="ini3"></span>. </p> 
+		<p id="gg2"> In terms of matrices this becomes: </p>
+		
+		<p id="gg3"> The states are: (inc ao imagine) </p>
+		<p id="gg4"></p>
+		<p id="gg5"></p>
+
+		<p> Grover’s search algorithm uses two tricks. The first, called <b>phase inversion </b>, changes the phase of the desired state. It works as follows. Take Uf and place the bottom qubit in the superposition state: </p>
+		
+		<p> |0> - |1> / sqrt(2).</p>
+		
+		<p> In terms of matrices, this becomes: Uf(I xor H)|x, 1> </p>
+		
+		<p> Since both Uf and H are unitary operations, it is obvious that phase inversion is also a unitary operatin. </p>
+		
+		<p> The states are: (2 imagini sa bagi) </p>
+		
+		<p> What we need now is a way of boosting the phase separation of the desired binary string from the other binary strings. The second trick is called <b>invertion about the mean</b>. Basically, we are inverting each element around the average (the mean of all elements). </p>
+		
+		<p> Example: Consider a sequence of integers 53, 38, 17, 23 and 79. The average is a = 42. Inverting a number around the average is equivalent with adding the difference between the average and the number to the given mean.  That is each element v becomes v = a + (a - v). (53 becomes 42 + (42 - 53) = 31) </p>
+		
+		<p> Let us write this in terms of matrices. Consider the vector V = [53, 38,17,23,79] and the matrix: (* imegine)</p>
+		
+		<p> It is easy to see that A is a matrix that finds the average of a sequence: A * V = [42,42,42,42,42]. (this is for the given vector and n = 5) </p>
+		
+		<p> Starting from this basic matrix, we can construct now the <b>“invertion about the mean matrix”</b>: (inca o imagine)</p>
+		
+		<p> If the previous matrix transformed each element into the average, the formed directly apply the second trick of Grover’s search algorithm. </p>
+		
+	    <p> Doing the invertion about the mean matrix only once is not enough in order to have a proper answew (as it is said above, the purpose of it is just boosting the phase separation). </p>
+	    
+	    <p> Grover’s algorithm consists of repeatedly applying the boosting process a sufficient amount of times. Before discussing the exact complexity and number of steps, let’s analyze the final scheme of Grover’s algorithm: </p>
+	    
+	    <ul>
+			<li> <b>Step 1:</b>  Start with a state |0> </li>
+			<li> <b>Step 2:</b> Apply Fig 6 </li>
+			<li> <b>Step 3:</b> Repeat T times (we will see who T is): </li>
+			<ul>
+			    <li><b>Step 3a:</b>  Apply the phase inversion operation (first trick) </li>
+			    <li><b>Step 3b:</b> Apply the invertion about the mean operation (second trick) </li>
+			</ul>
+			<li> <b>Step 4:</b> Measure the qubits. </li>
+		</ul>
+		
+		<p> The final question is who is T? (or how many times do we need to apply step 3) . The answer is sqrt(m). If you do it more than that, the process will “overcook”. The proof for this fact use geometry representation which is beyond our current goal. </p>
+
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
@@ -179,6 +216,23 @@
 		parser.staticParse(algoFormulas.state3, 'dt_state4');
 		parser.staticParse(algoFormulas.state4, 'dt_state5');
 		parser.staticParse(algoFormulas.state5, 'dt_state6');
+
+		parser.staticParse(algoFormulas.gg1, 'gg1');
+		parser.staticParse(algoFormulas.gg2, 'gg2');
+		parser.staticParse(algoFormulas.gg3, 'gg3');
+		parser.staticParse(algoFormulas.gg4, 'gg4');
+		parser.staticParse(algoFormulas.gg5, 'gg5');
+		parser.staticParse(algoFormulas.gg6, 'gg6');
+		parser.staticParse(algoFormulas.gg7, 'gg7');
+		parser.staticParse(algoFormulas.gg8, 'gg8');
+		parser.staticParse(algoFormulas.gg9, 'gg9');
+		parser.staticParse(algoFormulas.gg10, 'gg10');
+
+		parser.staticParse(algoFormulas.ini1, 'ini1');
+		parser.staticParse(algoFormulas.ini2, 'ini2');
+		parser.staticParse(algoFormulas.ini3, 'ini3');
+		parser.staticParse(algoFormulas.ini4, 'ini4');
+		parser.staticParse(algoFormulas.ini5, 'ini5');
 
 		parser.staticParse(algoFormulas.system, 'hhl1');
 		parser.staticParse(algoFormulas.system2, 'hhl2');
