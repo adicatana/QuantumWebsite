@@ -40,5 +40,9 @@ var algoFormulas = (function() {
 		state3 : bit("c") + " = (\\pm 1) \\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg]\\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg] \\ where \\ f \\  balanced",
 		state4 : bit("d") + " = (\\pm) " + bit(0) +"\\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg]  \\ where \\ f \\  constant",
 		state5 : bit("d") + " = (\\pm) " + bit(1)+ "\\bigg[ \\frac{" + bit(0) + "-" +  bit(1) + "}{\\sqrt{2}} \\bigg] \\ where \\ f \\  balanced",
-		};
+		
+		system : "A \\cdot \\vec{x} = \\vec{b}",	
+		system2 : "\\vec{x} = A^{-1} \\cdot \\vec{b}",
+		hhl3 : "\\vec{x} = A^{-1} \\cdot \\vec{b}"
+	};				
 })();

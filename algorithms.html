@@ -144,17 +144,28 @@
 			<p> Go to contents </p>
 		</div>
 		
-		<h2 name="title4" id="title4">Title4</h2>
-		<div class="well well-sm">
-			Other definition
-		</div>
+		<h2 name="title4" id="title4">Harrow-Hasidim-Lloyd algorithm</h2>
+
+		<p> We have now a general idea about the physical implementation, scaleability and a real-world
+		theoretical example. The next step is to try to dive into the intuition behind a more complex algorithm. </p>
+
+		<p id="hhl1"> The problem is solving a system of linear equations. In order for us to be able to model it in the quantum context, we will put it in the following form: </p>
+
+		<p id="hhl2"> The matrix A and the vector b are known and we want to find the vector x. In the classical context this problem is well-known and its complexity is polynomial. Our main goal is to find the inverse of the matrix A. </p>
+
+		<p> The most well known alogrithm is Gaussian elimination. The algorithms reduces the augumented matrix each line of the matrix in row echelon form. Each transition between two matrices represents adding up 2 equations. Finally, we get each element of the solution vector from bottom to top. </p>
+
+		<p> The complexity analysis is straight forward, we iterate throught N lines, reducing O(N) in O(N) places. It is worth mentioning that in a sparse matrix(meaning the number of non-zero element in each row is much smaller than the number of element in that row), there are algorithms that run in O(N^2 log N). </p>
+
+		<p id="hhl3">The intuitive advantage of solving the exact same problem in the quantum setting is relying on the fact that we can process multiple states at a moment. Supposing we can succesfully represent a state of size O(N) as a set of qubits, the number of necessary qubits is O(log N).</p>
+
+		<p> Supposing we work with an exponenetial number of states, we can not naturally parse the computed result as this will slow the total speed of our algorithm from polynomial to exponential. Fortunately, we can get sufficient information about the properties of the resulting state from the eigenvalue of the observable. As an example if one has one terrabit of data in the ouput vector, we can encode the result in around 40 qubits. On the one hand, listing the resulting data will take the original size.(i.e. listing one terra of data). On the other hand, measuring the properties of the observable will give us the possibility to look at particular properties(i.e. eigenvalues) that we are interested in. </p>
+
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
 		</div>
-		
-		<br><br><br><br><br>
-		
+
 	<script src="scroll.js"></script>
 	<script>
 		parser.staticParse(algoFormulas.fdef, 'dt1');
@@ -168,6 +179,10 @@
 		parser.staticParse(algoFormulas.state3, 'dt_state4');
 		parser.staticParse(algoFormulas.state4, 'dt_state5');
 		parser.staticParse(algoFormulas.state5, 'dt_state6');
+
+		parser.staticParse(algoFormulas.system, 'hhl1');
+		parser.staticParse(algoFormulas.system2, 'hhl2');
+		parser.staticParse(algoFormulas.hhl3, 'hhl3');
 	</script>
 	</div> 
 </body>
