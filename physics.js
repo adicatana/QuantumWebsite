@@ -29,7 +29,12 @@ var phyFormulas = (function() {
  		formula8 : dbit("\\psi") + " = " + "[\\overline{c_0^{\\prime}}, \\overline{c_1^{\\prime}}, ..., \\overline{c_{n-1}^{\\prime}}]" + matrix(4, 1, ["c_0", "c_1", "...", "c_{n-1}"]) + " = \\overline{c_0^{\\prime}} \\times {c_0} + ... \\overline{c_1^{\\prime}} \\times {c_1} + ... + \\overline{c_{n-1}^{\\prime}} \\times {c_{n-1}}",
 		formula9 : rbit("\\psi^{\\prime}") + "=" + bit("\\psi^{\\prime}") + "^{\\dag}" + " = " + "[\\overline{c_0^{\\prime}}, \\overline{c_1^{\\prime}}, ..., \\overline{c_{n-1}^{\\prime}}]",
 		formula10: bit("\\psi^{\\prime}"),
- 	};
+		formula11: "\\Omega",
+		formula12: "\\frac{" + bit("\\psi (t+\\delta t)") + "-" + bit("\\psi (t)") + "}{\\delta t} ="
+		   + "-i \\frac{2 \\cdot \\pi}{\\hbar} \\mathcal{H}" + bit("\\psi (t)"),
+		formula13: "Var_{x}(A)Var_{x}(B) \\ge \\frac{1}{4} | \\langle x|[A,B]x \\rangle |^{2}"
+	  
+	};
  })();
  
 

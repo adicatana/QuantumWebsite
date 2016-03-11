@@ -118,7 +118,7 @@
 			  </tbody>
 			</table>
 			<br>
-			<p><b>1932 John von Neumann: Quantum Mechanics</b></p>
+			<p><b>1932 John von Neumann: Quantum Mechanics<sup class="ref">[1]</sup></b></p>
 		</div>
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
@@ -191,6 +191,44 @@
 			To find the transition amplitude, we just need to do the multiplication (compute the inner product) :
 		  </p>
 		  <p id="prime"></p>
+		  <p><b>
+			Observables
+		  </b></p>
+		  <p>
+			For our quantum system, we need to also introduce the notion of observable.
+		  </p>
+		  <p>
+			For each observable there exists a hermitian, liniar operator A.
+		  </p>
+		  <p>
+			Intuitively, in quantum physics we modify the state of the system by measuring a
+			particular value. Therefore, we can model this behaviour making use of this operator
+			which maps states to other states.
+			Furthermore, possible measurement results are (only) the eigen-values λi
+			of the operator A. It can be proven that the eigenvectors form a basis for our state space.
+		  </p>
+		  <p>
+
+			Now, the next problem which arises is the correlation between two observables.
+			We want to obtain a very precise measure of both if they are not related, 
+			but as the <b>Heisenberg's principle</b> states, this is not the case.
+		  </p>
+		  <p>
+			Take two observables A and B and an arbitrary state x. Then, the product of the 
+			variances of these operators 
+		  </p>
+		  <p id="up"></p>
+		  <p><b>
+			Measurement
+		  </b></p>
+		  <p>
+			Now we know how to represent states and observables. Suppose we have a state <span id="psi2"></span> and
+			an observable <span id="om"></span>. 
+		  </p>
+		  <p>
+			If our result after the measurement is the eigenvector λ,
+			the final state of the system will always be the eigenvector coresponding to that particular eigenvalue.
+		  </p>
 		  
 		</div>
 		<div align="center" href="#holder" class="scroller">
@@ -198,18 +236,67 @@
 			<p> Go to contents </p>
 		</div>
 		
-		<h2 name="title3" id="title3">Title3</h2>
-		<p>
-			Other para
-		</p>
+		<h2 name="title3" id="title3">Dynamics</h2>
+		<div class="well well-sm">
+		  <p>
+			So far we have discussed static quantum systems. Even though changes occur as an outcome
+			of the measurement, the system itself was not time-dependent. Now we need to add the dimension of
+			quantum dynamics.
+		  </p>
+		  <p>
+			The evolution for the quantum system, in the Schrödinger representation, is given by the time
+			evolution of the state vector.
+		  </p>
+		  <p>
+			The evolution operator, U, must be liniar and unitary.
+		  </p>
+		  <p>
+			This gives us the intuition of how the process of quantum computation look.
+		  </p>
+		  <p>
+			The computer is in the initial state <span id="psi3"></span>, and we apply a sequence of unitary operators
+			starting from this state. At the end of the computation, the output is measured and the system
+			falls into the final state.
+		  </p>
+		  <p>
+			In order to relate this sequence of steps to real quantum mechanics, we make use of Schrödinger equation :
+		  </p>
+		  
+		  <p id="sch"></p>
+		  <p>
+			Energy is one of the observables for the system, so it can be represented as a hermitian matrix, which
+			is called the hamiltonian of the system. The equation relates the variation of the state vector with respect
+			to time with this observable.
+		  </p>
+		</div>
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
 		</div>
 		
-		<h2 name="title4" id="title4">Title4</h2>
+		<h2 name="title4" id="title4">Assembling quantum states</h2>
 		<div class="well well-sm">
-			Other definition
+		  <p>
+			Two independent quantum systems A and A', with vector spaces V and V', can be merged together such
+			that the state space will be the tensor product V tensor product V'.
+		  </p>
+		  <p>
+			The basic states of this merged system will be the tensor product of the basic states of A and A'.
+			However, we are not able to represent a general state vector as a tensor product of two states,
+			one from A and the other one from A'.
+		  </p>
+		  <p>
+			States which can be separated into a tensor product of states from its subsystems are called <b>separable</b>,
+			whilst the unbreakable states are said to be <b>entangled</b>.
+		  </p>
+		  <p>
+			This detail has a huge importance for our design. Like energy, momentum or other properties,
+			the total spin of a quantum system is constant. Therefore, the spin states of particles in an
+			isolated system will be entangled.
+		  </p>
+		  <p>
+			This property will have a huge importance for most of the algoithms, as we will see in the next section.
+		  </p>
 		</div>
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
@@ -226,6 +313,7 @@
 		parser.staticParse(phyFormulas.formula2, 'ket2');
 		parser.staticParse(phyFormulas.formula3, 'ket3');
 		parser.staticParse(phyFormulas.formula0, 'psi');
+		parser.staticParse(phyFormulas.formula0, 'psi2');
 		parser.staticParse(phyFormulas.formula4, 'prob');
 		parser.staticParse(phyFormulas.formula7, 'observ');
 		parser.staticParse(phyFormulas.formula5, 'state1');
@@ -233,6 +321,10 @@
 		parser.staticParse(phyFormulas.formula8, 'prime');
 		parser.staticParse(phyFormulas.formula9, 'bra');
 		parser.staticParse(phyFormulas.formula10, 'second');
+		parser.staticParse(phyFormulas.formula11, 'om');
+		parser.staticParse(phyFormulas.formula12, 'sch');
+		parser.staticParse(phyFormulas.formula13, 'up');
+		parser.staticParse(phyFormulas.formula0, 'psi3');
 	</script>
 </body>
 
