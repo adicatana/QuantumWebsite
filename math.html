@@ -247,7 +247,26 @@
 			<i>Since a state of a quantum system corresponds to a vector in a complex vector space we need to know more about additional structures of complex vector spaces.</i>
 			<br>
 			<br>
-			<b><i>Inner product.</i></b> Let us consider two vectors <img src="https://latex.codecogs.com/gif.latex?V_1 = [x_1, x_2, ..., x_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?V_2 = [y_1, y_2, ..., y_n]^t" border="0"/> and the next operation that we can perform with them: <img src="https://latex.codecogs.com/gif.latex?\langle [x_1, x_2, ..., x_n]^t, [y_1, y_2, ..., y_n]^t \rangle = [x_1, x_2, ..., x_n] \cdot [y_1, y_2, ..., y_n]^t = \sum_{i=1}^{n} x_i y_i" border="0"/>. This is an example of an inner product of two vectors. This operation must satisfy the properties below:
+			<b><i>Inner product.</i></b> Let us consider two vectors <img src="https://latex.codecogs.com/gif.latex?V_1 = [x_1, x_2, ..., x_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?V_2 = [y_1, y_2, ..., y_n]^t" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?x_i, y_i \in \mathbb{C}" border="0"/>  and the next operation that we can perform with them: <img src="https://latex.codecogs.com/gif.latex?\langle [x_1, x_2, ..., x_n]^t, [y_1, y_2, ..., y_n]^t \rangle = [x_1, x_2, ..., x_n]^{\dag} \cdot [y_1, y_2, ..., y_n] = \sum_{i=1}^{n} \overline{x_i} y_i" border="0"/>. This is an example of an inner product of two vectors. This operation must satisfy the properties below:
+			<br>
+			<i><b>Definition.</b></i> An inner product on a complex vector space <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is a function <img src="https://latex.codecogs.com/gif.latex?f : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{C}" border="0"/> that satisfies the following conditions:
+			<br>
+			<br>
+			<ol>
+			<i>i)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V, V \rangle \geq 0" border="0"/>, equality iff <img src="https://latex.codecogs.com/gif.latex?V = 0," border="0"/>
+			<br>
+			<i>ii)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V_1 + V_2, V_3 \rangle = \langle V_1, V_3 \rangle + \langle V_2, V_3 \rangle," border="0"/>
+			<br>
+			<i>iii)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V_1, V_2 + V_3 \rangle = \langle V_1, V_2 \rangle + \langle V_1, V_3 \rangle," border="0"/>			
+			<br>
+			<i>iv)</i> <img src="https://latex.codecogs.com/gif.latex?\langle c \cdot V_1, V_2 \rangle = c \times \langle V_1, V_2 \rangle," border="0"/>			
+			<br>
+			<i>v)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V_1, c \cdot V_2 \rangle = \overline{c} \times \langle V_1, V_2 \rangle," border="0"/>
+			<br>
+			<i>vi)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V_1, V_2 \rangle = \overline{\langle V_1, V_2 \rangle}," border="0"/>
+			</ol>
+			<img src="https://latex.codecogs.com/gif.latex?\forall V, V_1, V_2, V_3 \in \mathbb{V}, \forall c \in \mathbb{C}" border="0"/>.
+			<br>
 			<br>
 			<b><i>Tensor product.</i></b>
 			<br>
