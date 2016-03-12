@@ -70,8 +70,6 @@
 			<center><b><i>"God used beautiful mathematics in creating the world." - Paul Dirac</i></b></center>
 
 			As in every scientific field, Mathematics is essential. Even though the mathematics of the classical and quantum systems is very different, we can see similar behaviours in both places. The main difference is that in a classical system the hardware requiered is generally proportional to <img src="https://latex.codecogs.com/gif.latex?N " border="0"/> whereas in the quantum system, the hardware is only proportional to <img src="https://latex.codecogs.com/gif.latex?log_2 N" border="0"/>.</br>
-			<!-- httpss://books.google.co.uk/books?hl=ro&lr=&id=evPKBQAAQBAJ&oi=fnd&pg=PR5&dq=mathematics+in+quantum+computing&ots=wi6T8nnj1q&sig=Bvqy12-Q8MUYUDOUns-CyFKm3mE#v=onepage&q=mathematics&f=false
-			MATHEMATICS OF QUANTUM COMPUTING -->
 			The aim of this chapter is to provide the basics needed in further study and to show (once again) the beauty of <i><b>Mathematics</b></i>.
 			
 		</div>
@@ -109,15 +107,16 @@
 			<br> <i><b>Modulus of a complex number</b> </i>
 			<br> The number <img src="https://latex.codecogs.com/gif.latex?|z| = \sqrt{x^2 + y^2}" border="0"/> is called the modulus of the absolute value of the complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi " border="0"/>.
 			<br> <b>Proposition.</b> The following properties are satisfied:
-			<br> 1. <img src="https://latex.codecogs.com/gif.latex?-|z| \leq Re(z) \leq |z|" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?-|z| \leq Im(z) \leq |z|" border="0"/>.
-			<br> 2. <img src="https://latex.codecogs.com/gif.latex?|z| \geq 0" border="0"/>, for all complex numbers <img src="https://latex.codecogs.com/gif.latex?z" border="0"/>. Moreover, we have <img src="https://latex.codecogs.com/gif.latex?|z| = 0" border="0"/> iff <img src="https://latex.codecogs.com/gif.latex?z = 0" border="0"/>.
-			<br> 3. <img src="https://latex.codecogs.com/gif.latex?|z| = |-z| = |\overline{z}|" border="0"/>.
-			<br> 4. <img src="https://latex.codecogs.com/gif.latex?z \cdot \overline{z} = |z|^2" border="0"/>.
-			<br> 5. <img src="https://latex.codecogs.com/gif.latex?|z_1 z_2| = |z_1||z_2|" border="0"/>.
-			<br> 6. <img src="https://latex.codecogs.com/gif.latex?|z_1| - |z_2| \leq |z_1 + z_2| \leq |z_1| + |z_2|" border="0"/>.
-			<br> 7. <img src="https://latex.codecogs.com/gif.latex?|z^{-1}| = |z|^{-1}, z \neq 0" border="0"/>.
-			<br> 8. <img src="https://latex.codecogs.com/gif.latex?\bigg|\frac{z_1}{z_2}\bigg| = \frac{|z_1|}{|z_2|}, z_2 \neq 0" border="0"/>.
-			<br>
+			<ol>
+			<i> i)</i> <img src="https://latex.codecogs.com/gif.latex?-|z| \leq Re(z) \leq |z|" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?-|z| \leq Im(z) \leq |z|" border="0"/>.
+			<br><i> ii)</i> <img src="https://latex.codecogs.com/gif.latex?|z| \geq 0" border="0"/>, for all complex numbers <img src="https://latex.codecogs.com/gif.latex?z" border="0"/>. Moreover, we have <img src="https://latex.codecogs.com/gif.latex?|z| = 0" border="0"/> iff <img src="https://latex.codecogs.com/gif.latex?z = 0" border="0"/>.
+			<br><i>iii)</i> <img src="https://latex.codecogs.com/gif.latex?|z| = |-z| = |\overline{z}|" border="0"/>.
+			<br><i>iv)</i> <img src="https://latex.codecogs.com/gif.latex?z \cdot \overline{z} = |z|^2" border="0"/>.
+			<br><i>v)</i> <img src="https://latex.codecogs.com/gif.latex?|z_1 z_2| = |z_1||z_2|" border="0"/>.
+			<br><i>vi)</i> <img src="https://latex.codecogs.com/gif.latex?|z_1| - |z_2| \leq |z_1 + z_2| \leq |z_1| + |z_2|" border="0"/>.
+			<br><i>vii)</i> <img src="https://latex.codecogs.com/gif.latex?|z^{-1}| = |z|^{-1}, z \neq 0" border="0"/>.
+			<br><i>viii)</i> <img src="https://latex.codecogs.com/gif.latex?\bigg|\frac{z_1}{z_2}\bigg| = \frac{|z_1|}{|z_2|}, z_2 \neq 0" border="0"/>.
+			</ol>
 			<br> <i><b>Geometric Interpretation of the Algebraic Operations</b> </i>
 			<br> It is natural to let a complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> correspond to a point <img src="https://latex.codecogs.com/gif.latex? M(x, y)" border="0"/> in the plane <img src="https://latex.codecogs.com/gif.latex?\mathbb{R} \times \mathbb{R}" border="0"/> The point <img src="https://latex.codecogs.com/gif.latex?M" border="0"/> is called the geometric image of the complex number <img src="https://latex.codecogs.com/gif.latex?z" border="0"/>. The complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> is called the complex coordinate of the point <img src="https://latex.codecogs.com/gif.latex?M(x, y)" border="0"/>. We will use the notation <img src="https://latex.codecogs.com/gif.latex?M(z)" border="0"/> to indicate that the complex coordinate of <img src="https://latex.codecogs.com/gif.latex?M" border="0"/> is the complex number <img src="https://latex.codecogs.com/gif.latex?z" border="0"/>.
 			<br>
@@ -162,19 +161,21 @@
 			<br>
 			<b><i>Observation.</i></b> The following properties hold:
 			<br>
-			1. <img src="https://latex.codecogs.com/gif.latex?(M_{mn}(K), +)" border="0"/> is an abelian group.
+			<ol>
+			<i>i)</i> <img src="https://latex.codecogs.com/gif.latex?(M_{mn}(K), +)" border="0"/> is an abelian group.
 			<br>
-			2. The product of matrices is associative (when we can compute it) and is not commutative.
+			<i>ii)</i> The product of matrices is associative (when we can compute it) and is not commutative.
 			<br>
-			3. <img src="https://latex.codecogs.com/gif.latex?(M_{n}(K), +, \cdot)" border="0"/> is a unity ring. The unity of the ring is
+			<i>iii)</i> <img src="https://latex.codecogs.com/gif.latex?(M_{n}(K), +, \cdot)" border="0"/> is a unity ring. The unity of the ring is
 			<center><div id="matrix2"></div></center>
 			<br>
-			4. <img src="https://latex.codecogs.com/gif.latex?(AB)^t = B^tA^t" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?A^t = [a_{ji}]" border="0"/> is called the transpose of matrix <img src="https://latex.codecogs.com/gif.latex?A = [a_{ij}]" border="0"/>.
+			<i>iv)</i> <img src="https://latex.codecogs.com/gif.latex?(AB)^t = B^tA^t" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?A^t = [a_{ji}]" border="0"/> is called the transpose of matrix <img src="https://latex.codecogs.com/gif.latex?A = [a_{ij}]" border="0"/>.
 			<br>
-			5. <img src="https://latex.codecogs.com/gif.latex?\overline{A} = [\overline{a_{ij}}]" border="0"/> is the conjugate of matrix <img src="https://latex.codecogs.com/gif.latex?A = [a_{ij}]" border="0"/>. The conjugate is idempotent, <i>i.e.</i> <img src="https://latex.codecogs.com/gif.latex?\overline{\overline{A}} = A" border="0"/>.
+			<i>v)</i> <img src="https://latex.codecogs.com/gif.latex?\overline{A} = [\overline{a_{ij}}]" border="0"/> is the conjugate of matrix <img src="https://latex.codecogs.com/gif.latex?A = [a_{ij}]" border="0"/>. The conjugate is idempotent, <i>i.e.</i> <img src="https://latex.codecogs.com/gif.latex?\overline{\overline{A}} = A" border="0"/>.
 			<br> 
-			6. The adjoint matrix of <img src="https://latex.codecogs.com/gif.latex?A" border="0"/>, denoted <img src="https://latex.codecogs.com/gif.latex?A^{\dag}" border="0"/> is defined as <img src="https://latex.codecogs.com/gif.latex?A^{\dag} = (\overline{A})^T = \overline{(A^T)}" border="0"/>.
+			<i>vi)</i> The adjoint matrix of <img src="https://latex.codecogs.com/gif.latex?A" border="0"/>, denoted <img src="https://latex.codecogs.com/gif.latex?A^{\dag}" border="0"/> is defined as <img src="https://latex.codecogs.com/gif.latex?A^{\dag} = (\overline{A})^T = \overline{(A^T)}" border="0"/>.
 			<br>
+			</ol>
 			<b><i>Definition.</i></b> If <img src="https://latex.codecogs.com/gif.latex?A = [a_{ij}] \in M_{n} (K)" border="0"/> then the determinant of <i>A</i> is
 			<center><div><img src="https://latex.codecogs.com/gif.latex?det(A) = \sum_{\sigma \in S_n} \epsilon (\sigma) a_{1\sigma(1)} ... a_{n \sigma(n)}" border="0"/></div></center>
 
@@ -244,12 +245,13 @@
 		
 		<h2 name="title4" id="title4">Hilbert spaces</h2>
 		<div class="well well-sm">
-			<i>Since a state of a quantum system corresponds to a vector in a complex vector space we need to know more about additional structures of complex vector spaces.</i>
+			<i>Since a state of a quantum system corresponds to a vector in a complex vector space we need to know more about additional structures of complex vector spaces. The norm of a vector is a measure of its size. </i>
 			<br>
 			<br>
 			<b><i>Inner product.</i></b> Let us consider two vectors <img src="https://latex.codecogs.com/gif.latex?V_1 = [x_1, x_2, ..., x_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?V_2 = [y_1, y_2, ..., y_n]^t" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?x_i, y_i \in \mathbb{C}" border="0"/>  and the next operation that we can perform with them: <img src="https://latex.codecogs.com/gif.latex?\langle [x_1, x_2, ..., x_n]^t, [y_1, y_2, ..., y_n]^t \rangle = [x_1, x_2, ..., x_n]^{\dag} \cdot [y_1, y_2, ..., y_n] = \sum_{i=1}^{n} \overline{x_i} y_i" border="0"/>. This is an example of an inner product of two vectors. This operation must satisfy the properties below:
 			<br>
-			<i><b>Definition.</b></i> An inner product on a complex vector space <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is a function <img src="https://latex.codecogs.com/gif.latex?f : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{C}" border="0"/> that satisfies the following conditions:
+			<br>
+			<i><b>Definition.</b></i> An inner product on a complex vector space <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is a function <img src="https://latex.codecogs.com/gif.latex?f : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{C}" border="0"/> such that <img src="https://latex.codecogs.com/gif.latex?\forall V, V_1, V_2, V_3 \in \mathbb{V}, \forall c \in \mathbb{C}" border="0"/> the following conditions hold:
 			<br>
 			<br>
 			<ol>
@@ -265,12 +267,38 @@
 			<br>
 			<i>vi)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V_1, V_2 \rangle = \overline{\langle V_1, V_2 \rangle}," border="0"/>
 			</ol>
-			<img src="https://latex.codecogs.com/gif.latex?\forall V, V_1, V_2, V_3 \in \mathbb{V}, \forall c \in \mathbb{C}" border="0"/>.
+			<br>
+			Hence, the inner product of a vector <img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?x_i \in \mathbb{C}" border="0"/> with itself, 
+			<br>
+			<center><img src="https://latex.codecogs.com/gif.latex?V \cdot V = V^{\dag} \cdot V = [\overline{x_1}, \overline{x_2}, ..., \overline{x_n}] \cdot [x_1, x_2, ..., x_n]^t = \sum_{i=1}^{n} \overline{x_i} \cdot x_i = \sum_{i=1}^{n} |x_i|^2" border="0"/>.
+			</center>
+			<br>
+			Since <img src="https://latex.codecogs.com/gif.latex?\forall x_i \in \mathbb{C}" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?|x_i|^2 \geq 0" border="0"/>, equality iff <img src="https://latex.codecogs.com/gif.latex?x_i = 0" border="0"/>, we get <img src="https://latex.codecogs.com/gif.latex?V \cdot V = \sum_{i=1}^{n} |x_i|^2 \geq 0" border="0"/>, with equality iff <img src="https://latex.codecogs.com/gif.latex?\forall x_i, x_i = 0" border="0"/> (condition <i>i)</i> above).
+			<br>
+			We now use the inner product to define the <i>Euclidian norm</i> or <i>length</i> of a vector <img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/>, denoted by <img src="https://latex.codecogs.com/gif.latex?||V|| = \sqrt{\langle V, V \rangle}" border="0"/>. The <i>Euclidian distance</i> between <img src="https://latex.codecogs.com/gif.latex?V" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?U" border="0"/> is defined by <img src="https://latex.codecogs.com/gif.latex?d(V, U) = ||U - V||" border="0"/>. Thus, we can express the <i>Euclidian norm</i> and <i>distance</i> in terms of components:
+			<br>
+			<center><img src="https://latex.codecogs.com/gif.latex?||V|| = \sqrt{\langle V, V \rangle} = \sqrt{\sum_{i=1}^{n} |x_i|^2}" border="0"/></center>
+			<br>
+			<center><img src="https://latex.codecogs.com/gif.latex?d(V, U) = ||U-V|| = \sqrt{\langle U-V, U-V \rangle} = \sqrt{\sum_{i=1}^{n} |y_i - x_i|^2}" border="0"/>, where </center>
+			<br>
+			<center><img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?U = [y_1, y_2, ..., y_n]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?x_i, y_i \in \mathbb{C}" border="0"/>.</center>
+			<br>
+			Our intuition is that <img src="https://latex.codecogs.com/gif.latex?d(V, U)" border="0"/> is the distance from the end of <img src="https://latex.codecogs.com/gif.latex?V" border="0"/> to the end of <img src="https://latex.codecogs.com/gif.latex?U" border="0"/>. Let's see the following propertis:
+			<br>
+			<ol>
+			<i>i)</i> <img src="https://latex.codecogs.com/gif.latex?d(V, U) = 0" border="0"/> iff <img src="https://latex.codecogs.com/gif.latex?U = V" border="0"/>.
+			<br>
+			<i>ii)</i> <img src="https://latex.codecogs.com/gif.latex?d(U, W) + d(W, V) \geq d(U, V)" border="0"/>, which is the <i><b>triangle inequality</b></i>. From this we can get <i><b>Minkowski's inequality</b></i> by looking at the components. That is, if <img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?U = - [y_1, y_2, ..., y_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?W = [0, 0, ..., 0]^t" border="0"/>, 
 			<br>
 			<br>
-			<b><i>Tensor product.</i></b>
+			<center><img src="https://latex.codecogs.com/gif.latex?\sqrt{\sum_{i=1}^{n} |x_i|^2} + \sqrt{\sum_{i=1}^{n} |y_i|^2} \geq \sqrt{\sum_{i=1}^{n} |x_i + y_i|^2}" border="0"/>.</center>
+			<br>
+			<i>iii)</i> <img src="https://latex.codecogs.com/gif.latex?d(V, U) = d(U, V)" border="0"/> (the distance is <i><b>symmetric</b></i>).
+			</ol>
 			<br>
 			<b><i>Hilbert spaces.</i></b>
+			<br>
+			<b><i>Tensor product.</i></b>
 		</div>
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
