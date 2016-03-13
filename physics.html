@@ -18,16 +18,16 @@
 	<canvas id="background"></canvas>
 	<script src="drops.js"></script>
 	
-	<div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%;" class="main">
+	<div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%" class="main even">
 	
 	<!-- Content nav -->
-		<div id="holder"> <div class="row placeholders">
+		<div id="holder" class="fixeddiv"> <div class="row placeholders">
 			<div href="#title1" class="scroller" align="center">
 				<div class="col-xs-6 col-sm-3 placeholder" align="center">
 					<img src="media/ph1.jpg" 
 						class="smallexpandable img-circle" 
 						alt="Generic placeholder thumbnail">
-					<h4>Quantum history</h4>
+					<h4>Quantum History</h4>
 				</div>
 			</div>
 			<div  href="#title2" class="scroller" align="center">
@@ -40,46 +40,49 @@
 			</div>
 			<div href="#title3" class="scroller" align="center">
 				<div class="col-xs-6 col-sm-3 placeholder" align="center">
-					<img src="media/ph1.jpg" 
+					<img src="media/ph3.jpg" 
 						class="smallexpandable img-circle" 
 						alt="Generic placeholder thumbnail">
-					<h4>Title3</h4>
+					<h4>Dynamics</h4>
 				</div>
 			</div>
 			<div href="#title4" class="scroller" align="center">
 				<div class="col-xs-6 col-sm-3 placeholder" align="center">
-					<img src="media/ph1.jpg" 
+					<img src="media/ph4.jpg" 
 						class="smallexpandable img-circle"  
 						alt="Generic placeholder thumbnail">
-					<h4>Title4</h4>
+					<h4>Assembling Quantum States</h4>
 				</div>
 			</div>
 		</div> </div> 
 	
-	<!-- Content -->
-		<h2 name="title1" id="title1">Quantum History</h2>
-		<div class="well well-sm">
-			<p>There are a lot of observable effects which cannot be understanded using the framework provided by classical physics. At the beginning of the 20th century, a lot of experiments on atoms, molecules and radiation were still not explained.</p>
+	</div>
+	
+	<div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%" class="main odd">
+		
+		<h2 name="title1" id="title1"><br>Quantum History</h2>
+		<!-- <div class="well well-sm"> -->
+			<p>There are a lot of observable effects which cannot be understood using the framework provided by classical physics. At the beginning of the 20th century, a lot of experiments on atoms, molecules and radiation were still not explained.</p>
 
 			
 			<p>The history of Quantum Physics starts on 14 December 1900, when Quantum Mechanics was &lsquo;born&rsquo; or, better, proposed by Max Plank.</p>
 			<br>
 			<p><b>1900 - Max Plank: Black Body Radiation</b></p>
-			<p>A black body is a hypoyhetical object 
+			<p>A black body is a hypothetical object 
 			which is able to emit and absorb radiation of all possible wavelengths. 
 			Although there were theories describing the correlation between the 
 			radiation intensity and frequency,  it was not able to demonstrate the 
-			theoretical consideration that all the black bodies should have the same behaviour. 
+			theoretical consideration that all the black bodies should have the same behavior. 
 			This spectrum became understandable when Planck published the radiation law <b>E = hν</b>.
-			The constant h is called Planck's constant and its value is approximatively h = 6,262.068 x 10<sup>-34</sup>Js</p>
+			The constant h is called Planck's constant and its value is approximately h = 6,262.068 x 10<sup>-34</sup>Js</p>
 
 			<p><b>1905 - Albert Einstein: Photoelectric Effect</b></p>
 
 			<p>Years later, Albert Einstein managed to explain the Photoelectric Effect 
-			on the basis of Planck's quantum hyphothesis. 
+			on the basis of Planck's quantum hypothesis. 
 			The Photoelectric Effect means the emission of electrons from matter as a 
-			result of absorbtion of electromagnetic radiation. It was unclear why 
-			this experiment relied fundamentaly on the frequence of the radiation, 
+			result of absorption of electromagnetic radiation. It was unclear why 
+			this experiment relied fundamentally on the frequence of the radiation, 
 			but not on its intensity. </p>
 			<center style="margin-top: 20px">
 			<canvas id="animation" height="470px" width="800px"></canvas>
@@ -92,7 +95,7 @@
 			<p>In 1924, Luis de Broglie introduced the idea that particles may also be described as waves, whose wavelength is given by the relation:<br>
 			λ = h / p, where p is the momentum.</p>
 			<p><b>1925 - Werner Heisenberg: Matrix Mechanics</b></p>
-			<p>In 1925, Werner Heisenberg, Max Born, and Pascual Jordan interpreted 
+			<p>In 1925, Werner Heisenberg, Max Born, and Pascal Jordan interpreted 
 			quantum mechanics using a matrix representation.
 			The premise was that all physical observables can be represented by matrices. 
 			The set of eigenvalues of the matrix were eventually understood to be 
@@ -119,14 +122,15 @@
 			</table>
 			<br>
 			<p><b>1932 John von Neumann: Quantum Mechanics<sup class="ref">[1]</sup></b></p>
-		</div>
+		<!-- </div> -->
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
 		</div>
-		
-		<h2 name="title2" id="title2">Quantum Mechanics</h2>
-		<div class="well well-sm">
+	</div>
+	<div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%" class="main even">
+		<h2 name="title2" id="title2"><br>Quantum Mechanics</h2>
+		<!-- <div class="well well-sm"> -->
 		  <p>
 			Quantum Mechanics provides a framework for the development of physical theories.
 			It states a set of postulates that a physical theory must satisfy.
@@ -171,7 +175,7 @@
 		  </p>
 		  <p>
 			Why is this property useful ?
-			It plays a major role in the implementation of qbits. There are only two spin states, so every arbitrary state will be a superposition of the two possible basic spins.
+			It plays a major role in the implementation of qubits. There are only two spin states, so every arbitrary state will be a superposition of the two possible basic spins.
 		  </p>
 		  <p>
 			Now we can investigate the meaning of the inner product for our state space. It enables us to compute the transition amplitude, a tool in determining 
@@ -184,7 +188,7 @@
 		  <span>, &nbsp &nbsp</span>
 		  <span id="state2"></span>
 		  <p>
-			The final state is going to be the row vector consisting of the conjugate coordiantes of <span id="second"></span>.
+			The final state is going to be the row vector consisting of the conjugate coordinates of <span id="second"></span>.
 		  </p>
 		  <p id="bra"></p>
 		  <p>
@@ -198,7 +202,7 @@
 			For our quantum system, we need to also introduce the notion of observable.
 		  </p>
 		  <p>
-			For each observable there exists a hermitian, liniar operator A.
+			For each observable there exists a hermitian, linear operator A.
 		  </p>
 		  <p>
 			Intuitively, in quantum physics we modify the state of the system by measuring a
@@ -227,17 +231,18 @@
 		  </p>
 		  <p>
 			If our result after the measurement is the eigenvector λ,
-			the final state of the system will always be the eigenvector coresponding to that particular eigenvalue.
+			the final state of the system will always be the eigenvector corresponding to that particular eigenvalue.
 		  </p>
-		  
-		</div>
+		<!-- </div> -->
+		
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
 		</div>
-		
-		<h2 name="title3" id="title3">Dynamics</h2>
-		<div class="well well-sm">
+	</div>
+	<div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%" class="main odd">
+		<h2 name="title3" id="title3"><br>Dynamics</h2>
+		<!-- <div class="well well-sm"> -->
 		  <p>
 			So far we have discussed static quantum systems. Even though changes occur as an outcome
 			of the measurement, the system itself was not time-dependent. Now we need to add the dimension of
@@ -248,7 +253,7 @@
 			evolution of the state vector.
 		  </p>
 		  <p>
-			The evolution operator, U, must be liniar and unitary.
+			The evolution operator, U, must be linear and unitary.
 		  </p>
 		  <p>
 			This gives us the intuition of how the process of quantum computation look.
@@ -268,14 +273,15 @@
 			is called the hamiltonian of the system. The equation relates the variation of the state vector with respect
 			to time with this observable.
 		  </p>
-		</div>
+		<!-- </div> -->
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
 		</div>
-		
-		<h2 name="title4" id="title4">Assembling quantum states</h2>
-		<div class="well well-sm">
+	</div>
+	<div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%" class="main even">	
+		<h2 name="title4" id="title4"><br>Assembling Quantum States</h2>
+		<!-- <div class="well well-sm"> -->
 		  <p>
 			Two independent quantum systems A and A', with vector spaces V and V', can be merged together such
 			that the state space will be the tensor product V <span id="tens"></span> V'.
@@ -295,9 +301,9 @@
 			isolated system will be entangled.
 		  </p>
 		  <p>
-			This property will have a huge importance for most of the algoithms, as we will see in the next section.
+			This property will have a huge importance for most of the algorithms, as we will see in the next section.
 		  </p>
-		</div>
+		<!-- </div> -->
 		<div align="center" href="#holder" class="scroller">
 			<span class="glyphicon glyphicon-chevron-up" > </span>
 			<p> Go to contents </p>
