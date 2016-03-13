@@ -18,62 +18,67 @@
   <body>
     <canvas id="background"></canvas>
     <script src="drops.js"></script>
-    <div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%;" class="main">
+    <div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%;" class="main even">
       <!-- Content nav -->
-      <div id="holder">
+      <div id="holder" class="fixeddiv">
         <div class="row placeholders">
-          <div href="#title1" class="scroller">
+          <div href="#title1" class="scroller" align="center">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="media/math1.jpg" 
                 width="200" height="200" 
-                class="img-circle" 
+                class="smallexpandable img-circle" 
                 alt="Generic placeholder thumbnail">
               <h4>Motivation</h4>
             </div>
           </div>
-          <div  href="#title2" class="scroller">
+          <div  href="#title2" class="scroller" align="center">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="media/math2.jpg" 
                 width="200" 
                 height="200" 
-                class="img-circle"  
+                class="smallexpandable img-circle"  
                 alt="Generic placeholder thumbnail">
               <h4>Complex Numbers</h4>
             </div>
           </div>
-          <div href="#title3" class="scroller">
+          <div href="#title3" class="scroller" align="center">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="media/math3.png" 
                 width="200" height="200" 
-                class="img-circle" 
+                class="smallexpandable img-circle" 
                 alt="Generic placeholder thumbnail">
               <h4>Linear Algebra</h4>
             </div>
           </div>
-          <div href="#title4" class="scroller">
+          <div href="#title4" class="scroller" align="center">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="media/math4.png" 
                 width="200" 
                 height="200" 
-                class="img-circle"  
+                class="smallexpandable img-circle"  
                 alt="Generic placeholder thumbnail">
               <h4>Hilbert spaces</h4>
             </div>
           </div>
         </div>
       </div>
+
+    </div>
+    <div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%;" class="main odd">
       <!-- Content -->
-      <h2 name="title1" id="title1">Motivation</h2>
-      <div class="well well-sm">
+      <h2 name="title1" id="title1"><br>Motivation</h2>
+      <!-- <div class="well well-sm"> -->
         <center><i>"God used beautiful <b>mathematics</b> in creating the world." - <b>Paul Dirac</i></b></center>
         As in every scientific field, <b>Mathematics</b> is essential. Even though the mathematics of the classical and quantum systems is very different, we can see similar behaviours in both places. The main difference is that in a classical system the hardware required is generally proportional to <img src="https://latex.codecogs.com/gif.latex?N " border="0"/> whereas in the quantum system, the hardware is only proportional to <img src="https://latex.codecogs.com/gif.latex?log_2 N" border="0"/>.</br>
         The aim of this chapter is to provide the basics needed in further study and to show (once again) the beauty of <i><b>Mathematics</b></i>.
-      </div>
+      <!-- </div> -->
       <div align="center" href="#holder" class="scroller">
-        <span class="glyphicon glyphicon-chevron-up" > </span>
+        <img src="media/up.png" width=25></img>
         <p> Go to contents </p>
       </div>
-      <h2 name="title2" id="title2">Complex Numbers</h2>
+    </div>
+    <div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%;" class="main even">
+      <h2 name="title2" id="title2"><br>Complex Numbers</h2>
       <p>
         Let us consider the set of pairs <img src="https://latex.codecogs.com/gif.latex?(x, y)" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?x, y" border="0"/> are real numbers. We define adding and multiplying operations 
       <center>
@@ -134,10 +139,12 @@
         <canvas id="myCanvas3" width="240" height="240"> Your browser does not support the canvas element. </canvas>
       </div>
       <div align="center" href="#holder" class="scroller">
-        <span class="glyphicon glyphicon-chevron-up" > </span>
+        <img src="media/up.png" width=25></img>
         <p> Go to contents </p>
       </div>
-      <h2 name="title3" id="title3">Linear Algebra</h2>
+    </div>
+    <div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%;" class="main odd">
+      <h2 name="title3" id="title3"><br>Linear Algebra</h2>
       <p>
         Linear algebra is one of the mathematical fields with the most applications in computing. Hence, any programmer needs to master (at least) the basics. We give a brief introduction of matrices and then we focus on complex vector spaces.
         <br>
@@ -248,11 +255,13 @@
       <br>
       </p>
       <div align="center" href="#holder" class="scroller">
-        <span class="glyphicon glyphicon-chevron-up" > </span>
+        <img src="media/up.png" width=25></img>
         <p> Go to contents </p>
       </div>
-      <h2 name="title4" id="title4">Hilbert spaces</h2>
-      <div class="well well-sm">
+    </div>
+    <div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%;" class="main even">
+      <h2 name="title4" id="title4"><br>Hilbert spaces</h2>
+      <!-- <div class="well well-sm"> -->
         <i>Since a state of a quantum system corresponds to a vector in a complex vector space we need to know more about additional structures of complex vector spaces. The norm of a vector is a measure of its size. </i>
         <br>
         <br>
@@ -345,12 +354,14 @@
         Let <img src="https://latex.codecogs.com/gif.latex?V_1 = [x_1, x_2, ..., x_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?V_2 = [y_1, y_2, ..., y_m]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?x_i, y_i \in \mathbb{C}" border="0"/>. Then the tensor product <img src="https://latex.codecogs.com/gif.latex?V_1 \otimes V_2" border="0"/> is equal to
         <center><div id="tensor"></div>.</center>
 
-      </div>
+      <br>
+
       <div align="center" href="#holder" class="scroller">
-        <span class="glyphicon glyphicon-chevron-up" > </span>
+        <img src="media/up.png" width=25></img>
         <p> Go to contents </p>
       </div>
-      <br><br><br><br><br>
+    </div>
+      
       <script type="text/javascript">
         parser.staticParse(formulas.formula1, 'def0');
         parser.staticParse(formulas.formula2, 'c1');
@@ -363,6 +374,5 @@
       </script>
       <script src="scroll.js"></script>
       <script src="carthesian.js"></script>
-    </div>
   </body>
 </html>
