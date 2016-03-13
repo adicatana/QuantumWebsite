@@ -19,7 +19,7 @@ var coords = (function(){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 	}
  
-	function getCursor() {
+	function getCursor(event) {
 		cursorX = event.pageX - canvas.offsetLeft;
 		cursorY = event.pageY - canvas.offsetTop;
 	}
@@ -42,7 +42,7 @@ var coords = (function(){
 		mm : function(event){
 			clear();
 			draw();
-			getCursor();
+			getCursor(event);
 			if ( cursorX >= 0 && cursorY >= 0 && 
 				 cursorX <= canvas.width && 
 				 cursorY <= canvas.height ) {
