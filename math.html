@@ -5,10 +5,9 @@
     <title>Quantum Computing</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
     <script src="sphere.js"></script>
     <script src="latex.js"></script>
     <script src="formulas.js"></script>
@@ -133,11 +132,11 @@
       Let us consider a complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> and the geometric image <img src="https://latex.codecogs.com/gif.latex?M(x, y)" border="0"/> in the complex plane. The Euclidean distance <img src="https://latex.codecogs.com/gif.latex?OM" border="0"/> is given by the formula <img src="https://latex.codecogs.com/gif.latex?OM = \sqrt{(x_M - x_O)^2 + (y_M - y_O)^2}" border="0"/>. Hence, <img src="https://latex.codecogs.com/gif.latex?OM = \sqrt{x^2 + y^2}" border="0"/>, so the modulus of the complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> is the length of the segment <img src="https://latex.codecogs.com/gif.latex?OM" border="0"/>.
       </p>
       <center><i>Move the cursor over the graphs to see the geometric representation of a complex number, the representation of its conjugate and the symmetric to the origin.</i></center>
-      <div>
+      <center><div>
         <canvas id="myCanvas" width="240" height="240"> Your browser does not support the canvas element. </canvas>
         <canvas id="myCanvas2" width="240" height="240"> Your browser does not support the canvas element. </canvas>
         <canvas id="myCanvas3" width="240" height="240"> Your browser does not support the canvas element. </canvas>
-      </div>
+      </div></center>
       <div align="center" href="#holder" class="scroller">
         <img src="media/up.png" width=25></img>
         <p> Go to contents </p>
@@ -250,8 +249,6 @@
       <b><i>Definition.</i></b> A set <img src="https://latex.codecogs.com/gif.latex?B = \{V_0, V_1, ..., V_{n-1}\} \subseteq \mathbb{V}" border="0"/> of vectors is called a <b>basis</b> of a complex vector space <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> if <img src="https://latex.codecogs.com/gif.latex?B" border="0"/> is linearly independent and every element in <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> can be written as a linear combination of vectors from <img src="https://latex.codecogs.com/gif.latex?B" border="0"/>.
       <br>
       <b><i>Definition.</i></b> The dimension of a complex vector space is the number of elements in a basis of the vector space.
-      <br>
-      For later sections, we denote MERGE HADAMARD
       <br>
       </p>
       <div align="center" href="#holder" class="scroller">
@@ -371,6 +368,8 @@
         parser.staticParse(formulas.formula6, "matrix2");
         parser.staticParse(formulas.formula7, "matrix3");
         parser.staticParse(formulas.formula8, "tensor");
+
+        parser.staticParse(algoFormulas.hadamard, 'hadamard');
       </script>
       <script src="scroll.js"></script>
       <script src="carthesian.js"></script>
