@@ -224,6 +224,9 @@
 			<b><i>Definition.</i></b> Given two complex vector spaces <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/>, we say that <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is complex subspace of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/> if is a subset of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/> and the operations of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> are restrictions of operations of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/>. Mainly, <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is a subspace of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/> if <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is a subset of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?\forall A, B \in \mathbb{V}, a, b \in \mathbb{C}, a \cdot A + b \cdot B \in \mathbb{V}" border="0"/>.
 			<br>
 			<br>
+			<b><i>Definition.</i></b> An <img src="https://latex.codecogs.com/gif.latex?n" border="0"/>-by-<img src="https://latex.codecogs.com/gif.latex?n" border="0"/> matrix <img src="https://latex.codecogs.com/gif.latex?A" border="0"/> is called <b><i>hermitian</i></b> if <img src="https://latex.codecogs.com/gif.latex?A^{\dag} = A" border="0"/>, i.e. <img src="https://latex.codecogs.com/gif.latex?A[j,k] = \overline{A[k, j]}" border="0"/>
+			<br>
+			<br>
 			<b><i>Basis and Dimension</i></b>
 			<br>
 			<b><i>Definition.</i></b> Let <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> be a complex vector space. <img src="https://latex.codecogs.com/gif.latex?v \in \mathbb{V}" border="0"/> is a linear combination of vectors <img src="https://latex.codecogs.com/gif.latex?V_0, V_1, ..., V_{n-1} \in \mathbb{V}" border="0"/> if <img src="https://latex.codecogs.com/gif.latex?V" border="0"/> can be written as <img src="https://latex.codecogs.com/gif.latex?V = c_0 \cdot V_0 + c_1 \cdot V_1 + ... + c_{n-1} \cdot V_{n-1}" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?c_0, c_1, ..., c_{n-1} \in \mathbb{C}" border="0"/>.
@@ -235,6 +238,9 @@
 			<b><i>Definition.</i></b> The dimension of a complex vector space is the number of elements in a basis of the vector space.
 			<br>
 			For later sections, we denote MERGE HADAMARD
+
+			<br>
+
 
 
 		</p>
@@ -283,12 +289,12 @@
 			<br>
 			<center><img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?U = [y_1, y_2, ..., y_n]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?x_i, y_i \in \mathbb{C}" border="0"/>.</center>
 			<br>
-			Our intuition is that <img src="https://latex.codecogs.com/gif.latex?d(V, U)" border="0"/> is the distance from the end of <img src="https://latex.codecogs.com/gif.latex?V" border="0"/> to the end of <img src="https://latex.codecogs.com/gif.latex?U" border="0"/>. Let's see the following propertis:
+			Our intuition is that <img src="https://latex.codecogs.com/gif.latex?d(V, U)" border="0"/> is the distance from the end of <img src="https://latex.codecogs.com/gif.latex?V" border="0"/> to the end of <img src="https://latex.codecogs.com/gif.latex?U" border="0"/>. Let's see the following properties:
 			<br>
 			<ol>
 			<i>i)</i> <img src="https://latex.codecogs.com/gif.latex?d(V, U) = 0" border="0"/> iff <img src="https://latex.codecogs.com/gif.latex?U = V" border="0"/>.
 			<br>
-			<i>ii)</i> <img src="https://latex.codecogs.com/gif.latex?d(U, W) + d(W, V) \geq d(U, V)" border="0"/>, which is the <i><b>triangle inequality</b></i>. From this we can get <i><b>Minkowski's inequality</b></i> by looking at the components. That is, if <img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?U = - [y_1, y_2, ..., y_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?W = [0, 0, ..., 0]^t" border="0"/>, 
+			<i>ii)</i> <img src="https://latex.codecogs.com/gif.latex?d(U, W) + d(W, V) \geq d(U, V)" border="0"/>, which is the <i><b>triangle inequality</b></i>. From this we can get <i><b>Minkowski's inequality</b></i> by looking at the components. That is, if <img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?U = - [y_1, y_2, ..., y_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?W = [0, 0, ..., 0]^t" border="0"/> then
 			<br>
 			<br>
 			<center><img src="https://latex.codecogs.com/gif.latex?\sqrt{\sum_{i=1}^{n} |x_i|^2} + \sqrt{\sum_{i=1}^{n} |y_i|^2} \geq \sqrt{\sum_{i=1}^{n} |x_i + y_i|^2}" border="0"/>.</center>
@@ -296,7 +302,19 @@
 			<i>iii)</i> <img src="https://latex.codecogs.com/gif.latex?d(V, U) = d(U, V)" border="0"/> (the distance is <i><b>symmetric</b></i>).
 			</ol>
 			<br>
-			<b><i>Hilbert spaces.</i></b>
+			In order to define Hilbert Spaces, we need to introduce what we call a <i><b>Cauchy sequence</b></i>. Within an iner product space <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}, \langle , \rangle" border="0"/>, a sequence of vectors <img src="https://latex.codecogs.com/gif.latex?V_0, V_1, ..." border="0"/> is called a <i><b>Cauchy sequence</b></i> if for every <img src="https://latex.codecogs.com/gif.latex?\varepsilon > 0" border="0"/>, there exists an <img src="https://latex.codecogs.com/gif.latex?N_0 \in \mathbb{N}" border="0"/> such that <img src="https://latex.codecogs.com/gif.latex?\forall m, n \geq N_0, d(V_m, V_n) \leq \varepsilon" border="0"/>.
+			<br>
+			<b><i>Definition.</i></b> A complex inner product space is called <i><b>complete</b></i> if for any <i><b>Cauchy sequence</b></i> of vectors <img src="https://latex.codecogs.com/gif.latex?V_0, V_1, ..." border="0"/> there exists a vector <img src="https://latex.codecogs.com/gif.latex?\bar{V} \in \mathbb{V}" border="0"/> such that:
+			<br>
+			<center><img src="https://latex.codecogs.com/gif.latex?\lim_{n \rightarrow \infty} |V_n - \bar{V}| = 0" border="0"/>.</center> 
+			<br>
+			Thus, a vector space with an inner product is complete if any sequence accumulating somewhere <i><b>converges</b></i> to a point.
+			<br>
+			<br>
+			<b><i>Hilbert spaces.</i></b> A <i><b>Hilbert space</b></i> is a complex inner product space that is complete. The mathematical concept of a Hilbert space, named after David Hilbert, generalizes the notion of Euclidean space. 
+			<br>
+			In the mathematically rigorous formulation of quantum mechanics, the possible states (more precisely, the pure states) of a quantum mechanical system are represented by unit vectors (called state vectors) residing in a complex separable Hilbert space, known as the state space, well defined up to a complex number of norm <img src="https://latex.codecogs.com/gif.latex?1" border="0"/> (the phase factor). Thus, we will make use of Hilbert spaces in further sections.
+			<br>
 			<br>
 			<b><i>Tensor product.</i></b>
 		</div>
