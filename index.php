@@ -18,7 +18,8 @@
 		"Physics" => "physics.html",
 		"Architecture" => "architecture.html",
 		"Algorithms" => "algorithms.html",
-		"References" => "references.html"		
+		"References" => "references.html",		
+		"Videos" => "videos.html"		
 	);
 
 	function changeTitle($name, $pages) {
@@ -57,6 +58,9 @@
 					</li>
 					<li class="navbarElem">
 						<a href='index.php?Algorithms=true'>Algorithms</a>
+					</li>
+					<li class="navbarElem">
+						<a href='index.php?Videos=true'>Videos</a>
 					</li>
 					<li class="navbarElem">
 						<a href='index.php?References=true'>References</a>
