@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Quantum Computing</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+	<script src="bootstrap/bootstrap.min.js"></script>
+	<script src="jquery/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css"> 
+	<script src="navigator.js"></script>
+</head>
+
+<body>
+	<canvas id="background"></canvas>
+	<script src="drops.js"></script>
+
+	<div style="margin-left:10%; margin-right:10%; background-color: white;" class="main" align="center">
+
+		<div class="row">
+	  		<div class="col-sm-3">
+	    		<div class="sidebar-nav">
+	      			<div class="navbar navbar-default" role="navigation">
+	        			<div id="navbar" class="navbar-collapse collapse sidebar-navbar-collapse">
+		         	 		<ul class="nav navbar-nav">
+		         	 			<li><a><b>Architecture</b></a></li>
+		         	 		 	<li class="nav-divider"></li>
+		            			<li class="navbarElem" onclick="change('v1')"><a>Qubits</a></li>
+		            			<li class="navbarElem" onclick="change('v2')"><a>Classic gates</a></li>
+		            			<li class="navbarElem"><a>Reversible gates</a></li>
+		            			<li class="nav-divider"></li>
+
+		            			<li><a><b>Algorithms</b></a></li>
+		         	 		 	<li class="nav-divider" id="v4"></li>
+		            			<li class="navbarElem"><a>Grover's Algorithm</a></li>
+		          			</ul>
+	        			</div>
+	      			</div>
+	    		</div>
+	  		</div>
+			<div class="col-sm-8">
+				<iframe id="frame" width="840" height="630" src="https://www.youtube.com/embed/pZ2SCNtXFyc">
+				</iframe>
+	  		</div>
+		</div>
+
+	</div>
+
+	<script>
+		var locations = {
+        	"v1" : "https://www.youtube.com/embed/pZ2SCNtXFyc",
+       		"v2" : "https://www.youtube.com/embed/YV1eS9D6t8U",
+       		"v3" : "",
+       		"v4" : ""
+       	};
+		
+		function change(id) {
+			var iframe = $('#frame');
+			iframe.attr('src', locations[id]);
+		}
+	</script>
+</body>
+</html>
