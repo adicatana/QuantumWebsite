@@ -1,6 +1,7 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <!-- Started branch -->
 <html lang="en">
+<<<<<<< HEAD
 <head>
 	<title>Quantum Computing</title>
 	<meta charset="utf-8">
@@ -149,3 +150,370 @@
 </body>
 
 </html>
+=======
+  <head>
+    <title>Quantum Computing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="sphere.js"></script>
+    <script src="latex.js"></script>
+    <script src="formulas.js"></script>
+    <script src="math.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <canvas id="background"></canvas>
+    <script src="drops.js"></script>
+    <div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%;" class="main">
+      <!-- Content nav -->
+      <div id="holder">
+        <div class="row placeholders">
+          <div href="#title1" class="scroller">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="media/math1.jpg" 
+                width="200" height="200" 
+                class="img-circle" 
+                alt="Generic placeholder thumbnail">
+              <h4>Motivation</h4>
+            </div>
+          </div>
+          <div  href="#title2" class="scroller">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="media/math2.jpg" 
+                width="200" 
+                height="200" 
+                class="img-circle"  
+                alt="Generic placeholder thumbnail">
+              <h4>Complex Numbers</h4>
+            </div>
+          </div>
+          <div href="#title3" class="scroller">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="media/math3.png" 
+                width="200" height="200" 
+                class="img-circle" 
+                alt="Generic placeholder thumbnail">
+              <h4>Linear Algebra</h4>
+            </div>
+          </div>
+          <div href="#title4" class="scroller">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="media/math4.png" 
+                width="200" 
+                height="200" 
+                class="img-circle"  
+                alt="Generic placeholder thumbnail">
+              <h4>Hilbert spaces</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Content -->
+      <h2 name="title1" id="title1">Motivation</h2>
+      <div class="well well-sm">
+        <center><i>"God used beautiful <b>mathematics</b> in creating the world." - <b>Paul Dirac</i></b></center>
+        As in every scientific field, <b>Mathematics</b> is essential. Even though the mathematics of the classical and quantum systems is very different, we can see similar behaviours in both places. The main difference is that in a classical system the hardware required is generally proportional to <img src="https://latex.codecogs.com/gif.latex?N " border="0"/> whereas in the quantum system, the hardware is only proportional to <img src="https://latex.codecogs.com/gif.latex?log_2 N" border="0"/>.</br>
+        The aim of this chapter is to provide the basics needed in further study and to show (once again) the beauty of <i><b>Mathematics</b></i>.
+      </div>
+      <div align="center" href="#holder" class="scroller">
+        <span class="glyphicon glyphicon-chevron-up" > </span>
+        <p> Go to contents </p>
+      </div>
+      <h2 name="title2" id="title2">Complex Numbers</h2>
+      <p>
+        Let us consider the set of pairs <img src="https://latex.codecogs.com/gif.latex?(x, y)" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?x, y" border="0"/> are real numbers. We define adding and multiplying operations 
+      <center>
+        <div id="c1"></div>
+        <div id="c2"></div>
+        .
+      </center>
+      <br>This set is known as the set of <b><i>Complex Numbers</i></b>.
+      <br>
+      <br>Two elements <img src="https://latex.codecogs.com/gif.latex?(x, y)" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?(a, b)" border="0"/> of the Complex Numbers set are equal if and only if <img src="https://latex.codecogs.com/gif.latex?x = a" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?y = b" border="0"/>.
+      <br><b>Remark 1. </b> If <img src="https://latex.codecogs.com/gif.latex?a = (x, 0)" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?b = (y, 0)" border="0"/> then <img src="https://latex.codecogs.com/gif.latex?ab = (xy, 0)" border="0"/>.
+      <br><b>Remark 2. </b> If <img src="https://latex.codecogs.com/gif.latex?a = (0, x)" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?b = (0, y)" border="0"/> then <img src="https://latex.codecogs.com/gif.latex?ab = (-xy, 0)" border="0"/>.
+      <br><b>Definition</b>. The set <img src="https://latex.codecogs.com/gif.latex?\mathbb{R}^2" border="0"/>, together with the addition and multiplication operations, is called the set of complex numbers, denoted by <img src="https://latex.codecogs.com/gif.latex?\mathbb{C}" border="0"/>. Any element <img src="https://latex.codecogs.com/gif.latex?z = (x, y) \in \mathbb{C}" border="0"/> is called a complex number. The notation <img src="https://latex.codecogs.com/gif.latex?\mathbb{C}^{*}" border="0"/> is used to indicate the set <img src="https://latex.codecogs.com/gif.latex?\mathbb{C} - {(0, 0)}" border="0"/>.
+      <br>
+      <br> <i><b>Complex numbers in algebraic form </b> </i>
+      <br>
+      For algebraic manipulation it is not convenient to represent a complex number as an ordered pair. For this reason another form of writing is preferred. 
+      <br><b>Proposition.</b> Any complex number <img src="https://latex.codecogs.com/gif.latex?z = (x, y)" border="0"/> can be uniquely represented in the form <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?x, y" border="0"/> are real numbers. The relation <img src="https://latex.codecogs.com/gif.latex?i^2 = -1" border="0"/> holds. The formula <img src="https://latex.codecogs.com/gif.latex?i^2 = -1" border="0"/> follows directly from the definition of multiplication: <img src="https://latex.codecogs.com/gif.latex?i^2 = i \cdot i = (0, 1) \cdot (0, 1) = (-1, 0) = -1" border="0"/>.
+      <br> The expression <img src="https://latex.codecogs.com/gif.latex?x + yi" border="0"/> is called the algebraic representation (form) of the complex number <img src="https://latex.codecogs.com/gif.latex?z = (x, y)" border="0"/>, so we can write <img src="https://latex.codecogs.com/gif.latex?\mathbb{C} = \{x + yi | x \in \mathbb{R}, y \in \mathbb{R}, i^2 = -1\}" border="0"/>. From now on we will denote the complex number <img src="https://latex.codecogs.com/gif.latex?z = (x, y)" border="0"/> by <img src="https://latex.codecogs.com/gif.latex?x + yi" border="0"/>. The real number <img src="https://latex.codecogs.com/gif.latex?x = Re(z)" border="0"/> is called the real part of the complex number <img src="https://latex.codecogs.com/gif.latex?z" border="0"/> and similarly, <img src="https://latex.codecogs.com/gif.latex?y = Im(z)" border="0"/> is called the imaginary part of <img src="https://latex.codecogs.com/gif.latex?z" border="0"/>.
+      <br>
+      <br> <i><b>Conjugate of a complex number</b> </i>
+      <br>For a complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> the number <img src="https://latex.codecogs.com/gif.latex? \overline{z} = x - yi" border="0"/> is called the complex conjugate of <img src="https://latex.codecogs.com/gif.latex?z" border="0"/>.
+      <br><b>Proposition 1.</b> The relation <img src="https://latex.codecogs.com/gif.latex? \overline{z}" border="0"/> holds if and only if <img src="https://latex.codecogs.com/gif.latex?z" border="0"/> is a real number.
+      <br><b>Proposition 2.</b> For any complex number <img src="https://latex.codecogs.com/gif.latex?z" border="0"/> the number <img src="https://latex.codecogs.com/gif.latex?z \cdot \overline{z}" border="0"/> is a nonnegative real number.
+      <br><b>Proposition 3.</b> <img src="https://latex.codecogs.com/gif.latex? \overline{x + y} = \overline{x} + \overline{y}" border="0"/> (the conjugate of a sum is the sum of the conjugates).
+      <br><b>Proposition 4.</b> <img src="https://latex.codecogs.com/gif.latex? \overline{x \cdot y} = \overline{x} \cdot \overline{y}" border="0"/> (the conjugate of a product is the product of the conjugates).
+      <br><b>Proposition 5.</b> For any nonzero complex number <img src="https://latex.codecogs.com/gif.latex?z" border="0"/> the relation <img src="https://latex.codecogs.com/gif.latex?\overline{(z^{-1})}=(\bar{z})^{-1}" border="0"/> holds.
+      <br><b>Proposition 6.</b> <img src="https://latex.codecogs.com/gif.latex?\overline{\bigg(\frac{x}{y}\bigg)}=\frac{\overline{x}}{\overline{y}}, y \neq 0" border="0"/> (the conjugate of a quotient is the quotient of the conjugates).
+      <br><b>Proposition 7.</b> The formulas <img src="https://latex.codecogs.com/gif.latex?Re(z) = \frac{z + \overline{z}}{2}" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?Re(z) = \frac{z - \overline{z}}{2i}" border="0"/> are valid for all complex numbers <img src="https://latex.codecogs.com/gif.latex?z" border="0"/>.
+      <br>
+      <br> <i><b>Modulus of a complex number</b> </i>
+      <br> The number <img src="https://latex.codecogs.com/gif.latex?|z| = \sqrt{x^2 + y^2}" border="0"/> is called the modulus of the absolute value of the complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi " border="0"/>.
+      <br> <b>Proposition.</b> The following properties are satisfied:
+      <ol>
+        <i> i)</i> <img src="https://latex.codecogs.com/gif.latex?-|z| \leq Re(z) \leq |z|" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?-|z| \leq Im(z) \leq |z|" border="0"/>.
+        <br><i> ii)</i> <img src="https://latex.codecogs.com/gif.latex?|z| \geq 0" border="0"/>, for all complex numbers <img src="https://latex.codecogs.com/gif.latex?z" border="0"/>. Moreover, we have <img src="https://latex.codecogs.com/gif.latex?|z| = 0" border="0"/> iff <img src="https://latex.codecogs.com/gif.latex?z = 0" border="0"/>.
+        <br><i>iii)</i> <img src="https://latex.codecogs.com/gif.latex?|z| = |-z| = |\overline{z}|" border="0"/>.
+        <br><i>iv)</i> <img src="https://latex.codecogs.com/gif.latex?z \cdot \overline{z} = |z|^2" border="0"/>.
+        <br><i>v)</i> <img src="https://latex.codecogs.com/gif.latex?|z_1 z_2| = |z_1||z_2|" border="0"/>.
+        <br><i>vi)</i> <img src="https://latex.codecogs.com/gif.latex?|z_1| - |z_2| \leq |z_1 + z_2| \leq |z_1| + |z_2|" border="0"/>.
+        <br><i>vii)</i> <img src="https://latex.codecogs.com/gif.latex?|z^{-1}| = |z|^{-1}, z \neq 0" border="0"/>.
+        <br><i>viii)</i> <img src="https://latex.codecogs.com/gif.latex?\bigg|\frac{z_1}{z_2}\bigg| = \frac{|z_1|}{|z_2|}, z_2 \neq 0" border="0"/>.
+      </ol>
+      <br> <i><b>Geometric Interpretation of the Algebraic Operations</b> </i>
+      <br> It is natural to let a complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> correspond to a point <img src="https://latex.codecogs.com/gif.latex? M(x, y)" border="0"/> in the plane <img src="https://latex.codecogs.com/gif.latex?\mathbb{R} \times \mathbb{R}" border="0"/> The point <img src="https://latex.codecogs.com/gif.latex?M" border="0"/> is called the geometric image of the complex number <img src="https://latex.codecogs.com/gif.latex?z" border="0"/>. The complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> is called the complex coordinate of the point <img src="https://latex.codecogs.com/gif.latex?M(x, y)" border="0"/>. We will use the notation <img src="https://latex.codecogs.com/gif.latex?M(z)" border="0"/> to indicate that the complex coordinate of <img src="https://latex.codecogs.com/gif.latex?M" border="0"/> is the complex number <img src="https://latex.codecogs.com/gif.latex?z" border="0"/>.
+      <br>
+      The geometric image of the complex conjugate z of a complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> is the reflection point <img src="https://latex.codecogs.com/gif.latex?M (x, −y)" border="0"/> across the <img src="https://latex.codecogs.com/gif.latex?x" border="0"/>-axis of the point <img src="https://latex.codecogs.com/gif.latex?M(x, y)" border="0"/>.
+      The geometric image of the additive inverse <img src="https://latex.codecogs.com/gif.latex?−z" border="0"/> of a complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> is the reflection <img src="https://latex.codecogs.com/gif.latex?M (−x, −y)" border="0"/> across the origin of the point <img src="https://latex.codecogs.com/gif.latex?M(x, y)" border="0"/>.
+      <br>
+      <br> <i><b>Geometric Interpretation of the Modulus</b> </i>
+      <br>
+      Let us consider a complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> and the geometric image <img src="https://latex.codecogs.com/gif.latex?M(x, y)" border="0"/> in the complex plane. The Euclidean distance <img src="https://latex.codecogs.com/gif.latex?OM" border="0"/> is given by the formula <img src="https://latex.codecogs.com/gif.latex?OM = \sqrt{(x_M - x_O)^2 + (y_M - y_O)^2}" border="0"/>. Hence, <img src="https://latex.codecogs.com/gif.latex?OM = \sqrt{x^2 + y^2}" border="0"/>, so the modulus of the complex number <img src="https://latex.codecogs.com/gif.latex?z = x + yi" border="0"/> is the length of the segment <img src="https://latex.codecogs.com/gif.latex?OM" border="0"/>.
+      </p>
+      <center><i>Move the cursor over the graphs to see the geometric representation of a complex number, the representation of its conjugate and the symmetric to the origin.</i></center>
+      <div>
+        <canvas id="myCanvas" width="240" height="240"> Your browser does not support the canvas element. </canvas>
+        <canvas id="myCanvas2" width="240" height="240"> Your browser does not support the canvas element. </canvas>
+        <canvas id="myCanvas3" width="240" height="240"> Your browser does not support the canvas element. </canvas>
+      </div>
+      <div align="center" href="#holder" class="scroller">
+        <span class="glyphicon glyphicon-chevron-up" > </span>
+        <p> Go to contents </p>
+      </div>
+      <h2 name="title3" id="title3">Linear Algebra</h2>
+      <p>
+        Linear algebra is one of the mathematical fields with the most applications in computing. Hence, any programmer needs to master (at least) the basics. We give a brief introduction of matrices and then we focus on complex vector spaces.
+        <br>
+        <br>
+        <i><b> Part I. </b> Introduction to matrices</i>
+        <br>
+        <br>
+        <b><i>Definition.</i></b> Let K be a (commutative) field and <img src="https://latex.codecogs.com/gif.latex?m, n \in \mathbb{N}^*" border="0"/>. A function  <img src="https://latex.codecogs.com/gif.latex?A : \{1, ..., m\}" border="0"/> x <img src="https://latex.codecogs.com/gif.latex?\{1, ..., n\} \rightarrow K" border="0"/> is called a <i>matrix</i> with <img src="https://latex.codecogs.com/gif.latex?m" border="0"/> lines and <i>n</i> columns and coefficients in <img src="https://latex.codecogs.com/gif.latex?K" border="0"/>.
+        <br>
+        <b><i>Notation 1.</i></b> We will use the notation <img src="https://latex.codecogs.com/gif.latex?M_{m, n} (K)" border="0"/> the set of all matrices with <img src="https://latex.codecogs.com/gif.latex?m" border="0"/> lines, <img src="https://latex.codecogs.com/gif.latex?n" border="0"/> columns and with coefficients in <img src="https://latex.codecogs.com/gif.latex?K" border="0"/>. If <img src="https://latex.codecogs.com/gif.latex?m = n" border="0"/>, then we use the notation <img src="https://latex.codecogs.com/gif.latex?M_{n} (K)" border="0"/> and we call the elements of this set as <i>square matrices</i>.
+        <br>
+        <b><i>Notation 2.</i></b> If <img src="https://latex.codecogs.com/gif.latex?A \in M_{m, n} (K)" border="0"/> then we will use the notation <img src="https://latex.codecogs.com/gif.latex?A(i, j) = a_{ij}" border="0"/> and the matrix <img src="https://latex.codecogs.com/gif.latex?A" border="0"/> should be considered as:
+        <br>
+      <center>
+        <div id="matrix"></div>
+      </center>
+      <b><i>Definition 1.</i></b> If <img src="https://latex.codecogs.com/gif.latex?A = [a_{ij}] \in M_{mn} (K)" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?B = [b_{ij}] \in M_{mn} (K)" border="0"/> then the sum of <img src="https://latex.codecogs.com/gif.latex?A" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?B" border="0"/> is <img src="https://latex.codecogs.com/gif.latex?A + B = [a_{ij} + b_{ij}]" border="0"/> <img src="https://latex.codecogs.com/gif.latex?\in M_{mn} (K)" border="0"/>.
+      <br>
+      <b><i>Definition 2.</i></b> If <img src="https://latex.codecogs.com/gif.latex?A = [a_{ij}] \in M_{mn} (K)" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?B = [b_{ij}] \in M_{np} (K)" border="0"/> then the product of <img src="https://latex.codecogs.com/gif.latex?A" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?B" border="0"/> is <img src="https://latex.codecogs.com/gif.latex?AB = [c_{ij}] \in M_{mp} (K)" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?c_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj} " border="0"/>.
+      <br>
+      <b><i>Observation.</i></b> The following properties hold:
+      <br>
+      <ol>
+        <i>i)</i> <img src="https://latex.codecogs.com/gif.latex?(M_{mn}(K), +)" border="0"/> is an abelian group.
+        <br>
+        <i>ii)</i> The product of matrices is associative (when we can compute it) and is not commutative.
+        <br>
+        <i>iii)</i> <img src="https://latex.codecogs.com/gif.latex?(M_{n}(K), +, \cdot)" border="0"/> is a unity ring. The unity of the ring is
+        <center>
+          <div id="matrix2"></div>
+        </center>
+        <br>
+        <i>iv)</i> <img src="https://latex.codecogs.com/gif.latex?(AB)^t = B^tA^t" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?A^t = [a_{ji}]" border="0"/> is called the transpose of matrix <img src="https://latex.codecogs.com/gif.latex?A = [a_{ij}]" border="0"/>.
+        <br>
+        <i>v)</i> <img src="https://latex.codecogs.com/gif.latex?\overline{A} = [\overline{a_{ij}}]" border="0"/> is the conjugate of matrix <img src="https://latex.codecogs.com/gif.latex?A = [a_{ij}]" border="0"/>. The conjugate is idempotent, <i>i.e.</i> <img src="https://latex.codecogs.com/gif.latex?\overline{\overline{A}} = A" border="0"/>.
+        <br> 
+        <i>vi)</i> The adjoint matrix of <img src="https://latex.codecogs.com/gif.latex?A" border="0"/>, denoted <img src="https://latex.codecogs.com/gif.latex?A^{\dag}" border="0"/> is defined as <img src="https://latex.codecogs.com/gif.latex?A^{\dag} = (\overline{A})^T = \overline{(A^T)}" border="0"/>.
+        <br>
+      </ol>
+      <b><i>Definition.</i></b> If <img src="https://latex.codecogs.com/gif.latex?A = [a_{ij}] \in M_{n} (K)" border="0"/> then the determinant of <i>A</i> is
+      <center>
+        <div><img src="https://latex.codecogs.com/gif.latex?det(A) = \sum_{\sigma \in S_n} \epsilon (\sigma) a_{1\sigma(1)} ... a_{n \sigma(n)}" border="0"/></div>
+      </center>
+      <br>
+      <i><b> Part II. </b> Complex vector spaces</i>
+      <br>
+      <br>
+      <i>Quantum Computing</i> theory is based on complex vector spaces. These are important mathematical structures, based on complex numbers. We have already seen how powerful complex numbers can be above and armed with this knowledge we should be able to understand the following points. Since the theory of vector spaces is vast and beautiful, with many applications, it is impossible to provide everything here. Thus, we will only present the amount of information needed for next sections. We shall denote the set of vectors of length <img src="https://latex.codecogs.com/gif.latex?n" border="0"/> with complex entries as 
+      <div>
+        <center><img src="https://latex.codecogs.com/gif.latex?\mathbb{C}^n = \mathbb{C} \times \mathbb{C} \times ... \times \mathbb{C} " border="0"/>.</center>
+      </div>
+      <br>
+      A typical element of <img src="https://latex.codecogs.com/gif.latex?\mathbb{C}^3 " border="0"/> looks like this:
+      <center>
+        <div id="matrix3"></div>
+      </center>
+      <br>
+      <i><b>Definition.</b></i> A complex vector space is a nonempty set <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/>, whose elements we will call vectors, with three operations:
+      <br><i>1. Addition:</i> <img src="https://latex.codecogs.com/gif.latex?+ : \mathbb{V} " border="0"/> x <img src="https://latex.codecogs.com/gif.latex? \mathbb{V} \rightarrow \mathbb{V}" border="0"/>
+      <br><i>2. Negation:</i> <img src="https://latex.codecogs.com/gif.latex? - : \mathbb{V} \rightarrow \mathbb{V}" border="0"/>
+      <br><i>3. Scalar multiplication:</i> <img src="https://latex.codecogs.com/gif.latex?\cdot : \mathbb{C} " border="0"/> x <img src="https://latex.codecogs.com/gif.latex? \mathbb{V} \rightarrow \mathbb{V}" border="0"/>,
+      <br>
+      together with a special element, <img src="https://latex.codecogs.com/gif.latex?0" border="0"/>, called the <b><i>zero</i></b> of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/>.
+      <br>
+      For all vectors <img src="https://latex.codecogs.com/gif.latex?A, B, C \in \mathbb{V}, a, b, c \in \mathbb{C}" border="0"/>, the following properties must hold:
+      <br>
+      <ol>
+        <i>i)</i> <img src="https://latex.codecogs.com/gif.latex?A + 0 = 0 + A = A" border="0"/> (<i>zero</i> is the addition neutral element).
+        <br>
+        <i>ii)</i> <img src="https://latex.codecogs.com/gif.latex?A + B = B + A" border="0"/> (commutativity of addition).
+        <br>
+        <i>iii)</i> <img src="https://latex.codecogs.com/gif.latex?(A + B) + C = A + (B + C)" border="0"/> (associativity of addition).
+        <br>
+        <i>iv)</i> <img src="https://latex.codecogs.com/gif.latex?A + (-A) = (-A) + A = 0" border="0"/> (every element has an inverse).
+        <br>
+        <i>v)</i> <img src="https://latex.codecogs.com/gif.latex?1 \cdot A = A \cdot 1 = A" border="0"/> (<img src="https://latex.codecogs.com/gif.latex?1" border="0"/> is the unit of scalar multiplication).
+        <br>
+        <i>vi)</i> <img src="https://latex.codecogs.com/gif.latex?a \cdot (b \cdot A) = (a \cdot b) \cdot A" border="0"/> (scalar multiplication respects complex multiplication).
+        <br>
+        <i>vii)</i> <img src="https://latex.codecogs.com/gif.latex?a \cdot (A + B) = a \cdot A + a \cdot B" border="0"/> (scalar multiplication distributes over addtion).
+        <br>
+        <i>viii)</i> <img src="https://latex.codecogs.com/gif.latex?(a + b) \cdot A = a \cdot A + b \cdot A" border="0"/> (scalar multiplication distributes over complex addition).
+      </ol>
+      <div>
+        <center><i>Move the cursor over the graph to see a vector in three dimensional space</i></center>
+      </div>
+      <center>
+        <canvas id="coords" width=200 height=200></canvas>
+      </center>
+      <br>
+      <b><i>Definition.</i></b> Given two complex vector spaces <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/>, we say that <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is complex subspace of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/> if is a subset of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/> and the operations of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> are restrictions of operations of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/>. Mainly, <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is a subspace of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/> if <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is a subset of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?\forall A, B \in \mathbb{V}, a, b \in \mathbb{C}, a \cdot A + b \cdot B \in \mathbb{V}" border="0"/>.
+      <br>
+      <br>
+      <b><i>Definition.</i></b> An <img src="https://latex.codecogs.com/gif.latex?n" border="0"/>-by-<img src="https://latex.codecogs.com/gif.latex?n" border="0"/> matrix <img src="https://latex.codecogs.com/gif.latex?A" border="0"/> is called <b><i>hermitian</i></b> if <img src="https://latex.codecogs.com/gif.latex?A^{\dag} = A" border="0"/>, i.e. <img src="https://latex.codecogs.com/gif.latex?A[j,k] = \overline{A[k, j]}" border="0"/>
+      <br>
+      <br>
+      <b><i>Basis and Dimension</i></b>
+      <br>
+      <b><i>Definition.</i></b> Let <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> be a complex vector space. <img src="https://latex.codecogs.com/gif.latex?v \in \mathbb{V}" border="0"/> is a linear combination of vectors <img src="https://latex.codecogs.com/gif.latex?V_0, V_1, ..., V_{n-1} \in \mathbb{V}" border="0"/> if <img src="https://latex.codecogs.com/gif.latex?V" border="0"/> can be written as <img src="https://latex.codecogs.com/gif.latex?V = c_0 \cdot V_0 + c_1 \cdot V_1 + ... + c_{n-1} \cdot V_{n-1}" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?c_0, c_1, ..., c_{n-1} \in \mathbb{C}" border="0"/>.
+      <br>
+      <b><i>Definition.</i></b> A set <img src="https://latex.codecogs.com/gif.latex?[V_0, V_1, ..., V_{n-1}]" border="0"/> of vectors in <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is called <i>linearly independent</i> if <img src="https://latex.codecogs.com/gif.latex? 0 = c_0 \cdot V_0 + c_1 \cdot V_1 + ... + c_{n-1} \cdot V_{n-1}" border="0"/> implies that <img src="https://latex.codecogs.com/gif.latex?c_0 = c_1 = ... = c_{n-1} = 0" border="0"/>.
+      <br>
+      <b><i>Definition.</i></b> A set <img src="https://latex.codecogs.com/gif.latex?B = \{V_0, V_1, ..., V_{n-1}\} \subseteq \mathbb{V}" border="0"/> of vectors is called a <b>basis</b> of a complex vector space <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> if <img src="https://latex.codecogs.com/gif.latex?B" border="0"/> is linearly independent and every element in <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> can be written as a linear combination of vectors from <img src="https://latex.codecogs.com/gif.latex?B" border="0"/>.
+      <br>
+      <b><i>Definition.</i></b> The dimension of a complex vector space is the number of elements in a basis of the vector space.
+      <br>
+      For later sections, we denote MERGE HADAMARD
+      <br>
+      </p>
+      <div align="center" href="#holder" class="scroller">
+        <span class="glyphicon glyphicon-chevron-up" > </span>
+        <p> Go to contents </p>
+      </div>
+      <h2 name="title4" id="title4">Hilbert spaces</h2>
+      <div class="well well-sm">
+        <i>Since a state of a quantum system corresponds to a vector in a complex vector space we need to know more about additional structures of complex vector spaces. The norm of a vector is a measure of its size. </i>
+        <br>
+        <br>
+        <b><i>Inner product.</i></b> Let us consider two vectors <img src="https://latex.codecogs.com/gif.latex?V_1 = [x_1, x_2, ..., x_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?V_2 = [y_1, y_2, ..., y_n]^t" border="0"/>, where <img src="https://latex.codecogs.com/gif.latex?x_i, y_i \in \mathbb{C}" border="0"/>  and the next operation that we can perform with them: <img src="https://latex.codecogs.com/gif.latex?\langle [x_1, x_2, ..., x_n]^t, [y_1, y_2, ..., y_n]^t \rangle = [x_1, x_2, ..., x_n]^{\dag} \cdot [y_1, y_2, ..., y_n] = \sum_{i=1}^{n} \overline{x_i} y_i" border="0"/>. This is an example of an inner product of two vectors. This operation must satisfy the properties below:
+        <br>
+        <br>
+        <i><b>Definition.</b></i> An inner product on a complex vector space <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> is a function <img src="https://latex.codecogs.com/gif.latex?f : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{C}" border="0"/> such that <img src="https://latex.codecogs.com/gif.latex?\forall V, V_1, V_2, V_3 \in \mathbb{V}, \forall c \in \mathbb{C}" border="0"/> the following conditions hold:
+        <br>
+        <br>
+        <ol>
+          <i>i)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V, V \rangle \geq 0" border="0"/>, equality iff <img src="https://latex.codecogs.com/gif.latex?V = 0," border="0"/>
+          <br>
+          <i>ii)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V_1 + V_2, V_3 \rangle = \langle V_1, V_3 \rangle + \langle V_2, V_3 \rangle," border="0"/>
+          <br>
+          <i>iii)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V_1, V_2 + V_3 \rangle = \langle V_1, V_2 \rangle + \langle V_1, V_3 \rangle," border="0"/>			
+          <br>
+          <i>iv)</i> <img src="https://latex.codecogs.com/gif.latex?\langle c \cdot V_1, V_2 \rangle = c \times \langle V_1, V_2 \rangle," border="0"/>			
+          <br>
+          <i>v)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V_1, c \cdot V_2 \rangle = \overline{c} \times \langle V_1, V_2 \rangle," border="0"/>
+          <br>
+          <i>vi)</i> <img src="https://latex.codecogs.com/gif.latex?\langle V_1, V_2 \rangle = \overline{\langle V_1, V_2 \rangle}," border="0"/>
+        </ol>
+        <br>
+        Hence, the inner product of a vector <img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?x_i \in \mathbb{C}" border="0"/> with itself, 
+        <br>
+        <center><img src="https://latex.codecogs.com/gif.latex?V \cdot V = V^{\dag} \cdot V = [\overline{x_1}, \overline{x_2}, ..., \overline{x_n}] \cdot [x_1, x_2, ..., x_n]^t = \sum_{i=1}^{n} \overline{x_i} \cdot x_i = \sum_{i=1}^{n} |x_i|^2" border="0"/>.
+        </center>
+        <br>
+        Since <img src="https://latex.codecogs.com/gif.latex?\forall x_i \in \mathbb{C}" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?|x_i|^2 \geq 0" border="0"/>, equality iff <img src="https://latex.codecogs.com/gif.latex?x_i = 0" border="0"/>, we get <img src="https://latex.codecogs.com/gif.latex?V \cdot V = \sum_{i=1}^{n} |x_i|^2 \geq 0" border="0"/>, with equality iff <img src="https://latex.codecogs.com/gif.latex?\forall x_i, x_i = 0" border="0"/> (condition <i>i)</i> above).
+        <br>
+        We now use the inner product to define the <i>Euclidian norm</i> or <i>length</i> of a vector <img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/>, denoted by <img src="https://latex.codecogs.com/gif.latex?||V|| = \sqrt{\langle V, V \rangle}" border="0"/>. The <i>Euclidian distance</i> between <img src="https://latex.codecogs.com/gif.latex?V" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?U" border="0"/> is defined by <img src="https://latex.codecogs.com/gif.latex?d(V, U) = ||U - V||" border="0"/>. Thus, we can express the <i>Euclidian norm</i> and <i>distance</i> in terms of components:
+        <br>
+        <center><img src="https://latex.codecogs.com/gif.latex?||V|| = \sqrt{\langle V, V \rangle} = \sqrt{\sum_{i=1}^{n} |x_i|^2}" border="0"/></center>
+        <br>
+        <center><img src="https://latex.codecogs.com/gif.latex?d(V, U) = ||U-V|| = \sqrt{\langle U-V, U-V \rangle} = \sqrt{\sum_{i=1}^{n} |y_i - x_i|^2}" border="0"/>, where </center>
+        <br>
+        <center><img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?U = [y_1, y_2, ..., y_n]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?x_i, y_i \in \mathbb{C}" border="0"/>.</center>
+        <br>
+        Our intuition is that <img src="https://latex.codecogs.com/gif.latex?d(V, U)" border="0"/> is the distance from the end of <img src="https://latex.codecogs.com/gif.latex?V" border="0"/> to the end of <img src="https://latex.codecogs.com/gif.latex?U" border="0"/>. Let's see the following properties:
+        <br>
+        <ol>
+          <i>i)</i> <img src="https://latex.codecogs.com/gif.latex?d(V, U) = 0" border="0"/> iff <img src="https://latex.codecogs.com/gif.latex?U = V" border="0"/>.
+          <br>
+          <i>ii)</i> <img src="https://latex.codecogs.com/gif.latex?d(U, W) + d(W, V) \geq d(U, V)" border="0"/>, which is the <i><b>triangle inequality</b></i>. From this we can get <i><b>Minkowski's inequality</b></i> by looking at the components. That is, if <img src="https://latex.codecogs.com/gif.latex?V = [x_1, x_2, ..., x_n]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?U = - [y_1, y_2, ..., y_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?W = [0, 0, ..., 0]^t" border="0"/> then
+          <br>
+          <br>
+          <center><img src="https://latex.codecogs.com/gif.latex?\sqrt{\sum_{i=1}^{n} |x_i|^2} + \sqrt{\sum_{i=1}^{n} |y_i|^2} \geq \sqrt{\sum_{i=1}^{n} |x_i + y_i|^2}" border="0"/>.</center>
+          <br>
+          <i>iii)</i> <img src="https://latex.codecogs.com/gif.latex?d(V, U) = d(U, V)" border="0"/> (the distance is <i><b>symmetric</b></i>).
+        </ol>
+        <br>
+        In order to define Hilbert Spaces, we need to introduce what we call a <i><b>Cauchy sequence</b></i>. Within an inner product space <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}, \langle , \rangle" border="0"/>, a sequence of vectors <img src="https://latex.codecogs.com/gif.latex?V_0, V_1, ..." border="0"/> is called a <i><b>Cauchy sequence</b></i> if for every <img src="https://latex.codecogs.com/gif.latex?\varepsilon > 0" border="0"/>, there exists an <img src="https://latex.codecogs.com/gif.latex?N_0 \in \mathbb{N}" border="0"/> such that <img src="https://latex.codecogs.com/gif.latex?\forall m, n \geq N_0, d(V_m, V_n) \leq \varepsilon" border="0"/>.
+        <br>
+        <b><i>Definition.</i></b> A complex inner product space is called <i><b>complete</b></i> if for any <i><b>Cauchy sequence</b></i> of vectors <img src="https://latex.codecogs.com/gif.latex?V_0, V_1, ..." border="0"/> there exists a vector <img src="https://latex.codecogs.com/gif.latex?\bar{V} \in \mathbb{V}" border="0"/> such that:
+        <br>
+        <center><img src="https://latex.codecogs.com/gif.latex?\lim_{n \rightarrow \infty} |V_n - \bar{V}| = 0" border="0"/>.</center>
+        <br>
+        Thus, a vector space with an inner product is complete if any sequence accumulating somewhere <i><b>converges</b></i> to a point.
+        <br>
+        <br>
+        <b><i>Hilbert spaces.</i></b> A <i><b>Hilbert space</b></i> is a complex inner product space that is complete. The mathematical concept of a <i><b>Hilbert</b></i> space, named after <i><b>David Hilbert</b></i>, generalizes the notion of <i><b>Euclidean space</b></i>. 
+        <br>
+        In the mathematically rigorous formulation of quantum mechanics, the possible states (more precisely, the pure states) of a quantum mechanical system are represented by unit vectors (called state vectors) residing in a complex separable <i><b>Hilbert space</b></i>, known as the state space, well defined up to a complex number of norm <img src="https://latex.codecogs.com/gif.latex?1" border="0"/> (the phase factor). Thus, we will make use of <i><b>Hilbert spaces</b></i> in further sections.
+        <br>
+        <br>
+        <b><i>Tensor product.</i></b> Tensor product is an important method of combining vector spaces. If <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/> describe two different quantum systems, then their tensor product describes both systems as one. The tensor product is the fundamental building operation of quantum systems.
+        <br>
+        We denote the <i><b>tensor product</b></i> of two vector spaces <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/> by <img src="https://latex.codecogs.com/gif.latex?\mathbb{V} \otimes \mathbb{V}^{\prime}" border="0"/>. 
+        <br>
+        It is generated by the set of tensors of all vectors: <img src="https://latex.codecogs.com/gif.latex?\{V \otimes V^{\prime} | V \in \mathbb{V}, V^{\prime} \in \mathbb{V} \}" border="0"/>. A typical element of <img src="https://latex.codecogs.com/gif.latex?\mathbb{V} \otimes \mathbb{V}^{\prime}" border="0"/> is of the form 
+        <br>
+        <center><img src="https://latex.codecogs.com/gif.latex?\sum_{i = 0}^{n-1} c_i (V_i \otimes V_i^{\prime})" border="0"/>, </center>
+        where <img src="https://latex.codecogs.com/gif.latex?V_i \in \mathbb{V}, V_i^{\prime} \in \mathbb{V}^{\prime}, c_i \in \mathbb{C}" border="0"/>
+        <br>
+        The following important rules hold:
+        <ol>
+          <i>i)</i> The tensor must respect addition in both <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/>:
+          <center>
+            <img src="https://latex.codecogs.com/gif.latex?(V_1 + V_2) \otimes V_3^{\prime} = V_1 \otimes V_3^{\prime} + V_2 \otimes V_3^{\prime}" border="0"/>
+          </center>
+          <center>
+            <img src="https://latex.codecogs.com/gif.latex?V_1 \otimes (V_2^{\prime} + V_3^{\prime}) = V_1 \otimes V_2^{\prime} + V_1 \otimes V_3^{\prime}" border="0"/>
+          </center>
+          <i>ii)</i> The tensor must respect the scalar multiplication in both <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?\mathbb{V}^{\prime}" border="0"/>:
+          <center>
+            <img src="https://latex.codecogs.com/gif.latex?c \cdot (V_1 \otimes V_2^{\prime}) = (c \cdot V_1) \otimes V_2^{\prime} = V_1 \otimes (c \cdot V_2^{\prime})" border="0"/>
+          </center>
+          <br>
+        </ol>
+        Let <img src="https://latex.codecogs.com/gif.latex?V_1 = [x_1, x_2, ..., x_n]^t" border="0"/> and <img src="https://latex.codecogs.com/gif.latex?V_2 = [y_1, y_2, ..., y_m]^t" border="0"/>, <img src="https://latex.codecogs.com/gif.latex?x_i, y_i \in \mathbb{C}" border="0"/>. Then the tensor product <img src="https://latex.codecogs.com/gif.latex?V_1 \otimes V_2" border="0"/> is equal to
+        <center><div id="tensor"></div>.</center>
+
+      </div>
+      <div align="center" href="#holder" class="scroller">
+        <span class="glyphicon glyphicon-chevron-up" > </span>
+        <p> Go to contents </p>
+      </div>
+      <br><br><br><br><br>
+      <script type="text/javascript">
+        parser.staticParse(formulas.formula1, 'def0');
+        parser.staticParse(formulas.formula2, 'c1');
+        parser.staticParse(formulas.formula3, 'c2');
+        parser.staticParse(formulas.formula4, 'c3');
+        parser.staticParse(formulas.formula5, 'matrix');
+        parser.staticParse(formulas.formula6, "matrix2");
+        parser.staticParse(formulas.formula7, "matrix3");
+        parser.staticParse(formulas.formula8, "tensor");
+      </script>
+      <script src="scroll.js"></script>
+      <script src="carthesian.js"></script>
+    </div>
+  </body>
+</html>
+>>>>>>> 839e93ddc2bd7cafe8619622d9ea5a14554f712e
