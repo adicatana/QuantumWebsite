@@ -33,8 +33,15 @@ var phyFormulas = (function() {
 		formula12: "\\frac{" + bit("\\psi (t+\\delta t)") + "-" + bit("\\psi (t)") + "}{\\delta t} ="
 		   + "-i \\frac{2 \\cdot \\pi}{\\hbar} \\mathcal{H}" + bit("\\psi (t)"),
 		formula13: "Var_{x}(A)Var_{x}(B) \\ge \\frac{1}{4} | \\langle x|[A,B]x \\rangle |^{2}",
-		formula14: "\\otimes"
-	  
+		formula14: "\\otimes",
+        formula15: "E = h \\nu",
+        formula16: "h = 6,262.068 \\times 10^{-34}",
+	    formula17: "\\lambda = h / p",
+        formula18: "i \\hbar \\frac{\\partial}{\\partial t}\\Psi(\\mathbf{r},t) = \\hat H \\Psi(\\mathbf{r},t)",
+        formula19: "x_i",
+        formula19: "x_i",
+        formula20: "\\lambda_i",
+        formula21: "\\lambda"
 	};
  })();
  

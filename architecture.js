@@ -35,7 +35,7 @@ var archFormulas = (function() {
 	var tp = "\\otimes";
 	var xor = "\\oplus";
 	
-	var cond1 = sp + "where" + sp +" |c_0|^2 + |c_1|^2 = 1";
+	var cond1 = ", " + sp +" |c_0|^2 + |c_1|^2 = 1";
 	
 	var bit = function(arg) {
 		return "|" + arg + lb;

@@ -59,27 +59,26 @@
 		<ul>
 			<li> The system starts with bits in a classical state. </li>
 			<li> From there, the system is put into a superposition. </li>
-			<li> The state is transformed using unitary operations.(i.e. quantum gates) </li>
+			<li> The state is transformed using unitary operations (i.e. quantum gates). </li>
 			<li> Measure the qubits, forcing them to collapse in a state.</li>
 		</ul>
 
 		<p> Notice all algorithms are probabilistic ones, not deterministic. That means, we are not guaranteed that they will work for 100% of the cases, but we do have a high probability of success. </p> 
 
-		<br>
 		<h3> The problem </h3> <!-- http://www.cs.xu.edu/~kinne/quantum/deutche.html -->
 
-		<p id="dt1"> Suppose there is a function f that maps from {0, 1} to {0, 1}. We wish to know whether the function is injective or not.(i.e. f(0) does not equal f(1)) Opposing to the classic context, 
-		one can not examine the function on different results. The main idea is to consider the gate U
-		as a matrix function operator(to be visualised as a gate) applying the function f to the given
+		<p id="dt1"> Suppose there is a function <i>f</i> that maps from <span id="adiFormula16"></span> to <span id="adiFormula17"></span>. We wish to know whether the function is <i>injective</i> or not (i.e. <span id="adiFormula18"></span> is not equal <span id="adiFormula19"></span>). Opposing to the classic context, 
+		one can not examine the function on different results. The main idea is to consider the gate <i>U</i>
+		as a matrix function operator (to be visualised as a gate) applying the function f to the given
 		inputs.</p>
 
-		</p> The problem could be solved by evaluating f(0) ⊕ f(1). The xor function is the direct equivalent of asking whether f is an injection. Even though the function is evaluated twice in a classical context, the quantum context allows us to evaluate it only once. </p>
+		</p> The problem could be solved by evaluating f(0) <span id="tensor1"></span> f(1). The <i><b>XOR</b></i> function is the direct equivalent of asking whether f is an injection. Even though the function is evaluated twice in a classical context, the quantum context allows us to evaluate it only once. </p>
 	
 		<h3> Breaking down the problem </h3>
 
-		<p>At the moment we know we want to obtain a superstate that will be extracted after measurement to f(0) ⊕ f(1). We only need a superstate that will be transfered to this particular point. The input is 0 and 1 along with any combination. </p>
+		<p>At the moment we know we want to obtain a superstate that will be extracted after measurement to f(0) <span id="tensor2"></span> f(1). We only need a superstate that will be transfered to this particular point. The input is 0 and 1 along with any combination. </p>
 
-		<p id="dt2"> Firstly, we have to keep in mind that we can process two states simultaneously. We need a matrix(gate) that gives us a state that has an equal probability to be measured as a 0 or 1. We can observ that the Hadamard gate gives us a good beahaviour:</p> 
+		<p id="dt2"> Firstly, we have to keep in mind that we can process two states simultaneously. We need a matrix(gate) that gives us a state that has an equal probability to be measured as a 0 or 1. We can observe that the <i><b>Hadamard</b></i> gate gives us a good beahaviour:</p> 
 
 		<p> </p>
 
@@ -88,29 +87,29 @@
 
 		<p> </p>
 
-		<p> At this moment, we have all the information: the input, the desired output, some means of transformations to balanced superstates, and finally, the application of function f. </p>
+		<p>At this moment, we have all the information: the input, the desired output, some means of transformations to balanced superstates, and finally, the application of function f. </p>
 
 		<br>
-		<h3> Putting the bits togeather </h3>
+		<h3>Putting the bits together </h3>
 
-		<p> We will examine the circuit proposed by David Deutsch by looking at each step on the "pipeline". </p>
+		<p> We will examine the circuit proposed by <b><i>David Deutsch</i></b> by looking at each step on the <i>"pipeline"</i>. </p>
 
 		<center>
 		<img src="media/algop1.png" width=50%></img>
 		</center>
 
-		<p id="dt5"> The pipelining mechanism can be expressed strictly in terms of matrices. We have 2 inputs that will be composed using the tensor product. Afterwards, each pair of binary gates will be multiplied(tensor product) so that we keep applying each matrix operator to the combined state.(4-by-1 matrix) Finally, the upper result will be measured. </p>
+		<p id="dt5"> The pipelining mechanism can be expressed strictly in terms of matrices. We have 2 inputs that will be composed using the tensor product. Afterwards, each pair of binary gates will be multiplied (tensor product) so that we keep applying each matrix operator to the combined state. (4-by-1 matrix) Finally, the upper result will be measured. </p>
 
 		<p id="dt_state1"> Let us look at the involved states step by step. Firstly, our state will be the product of the given input qubits.</p>
 
-		<p id="dt_state2"> In the first step, we need to apply the Hadamard transformation to each of the matrices. Observe that it distributes the probabilities evenly. </p>
+		<p id="dt_state2"> In the first step, we need to apply the <b><i>Hadamard</i></b> transformation to each of the matrices. Observe that it distributes the probabilities evenly. </p>
 		
-		<p id="dt_state_gen"> Observe the effect of function f over the state we have obtained. Let us study the effect of function f on the element <img src="https://latex.codecogs.com/gif.latex? \bigg[ \frac{|0\rangle - |1\rangle}{\sqrt{2}} \bigg]"></img>. We only need to apply the tensor product of the current value with the function application. More concisely,
-		the function will look just as <img src="https://latex.codecogs.com/gif.latex? \bigg[ \frac{|0 \otimes f(0) \rangle - |1 \otimes f(1)\rangle}{\sqrt{2}} \bigg]"></img>.</p>
+		<p id="dt_state_gen"> Observe the effect of function f over the state we have obtained. Let us study the effect of function f on the element <span id="adiFormula1"></span>. We only need to apply the tensor product of the current value with the function application. More concisely,
+		the function will look just as <span id="adiFormula2"></span>.</p>
 
 		<p id="dt_state3"> Applying the property to both elements will give two comopsitions similar to the former one. Finally, we need just analyse the outcome of the function in each case.</p>
 		<p id="dt_state4"></p>
-		<p id="dt_state5"> Remember that each gate is reversible, so Hadamard matrix should put its resulting state to the original input. Therefore, reapplying the Hadamard matrix back will drive us into one of the initial states (0 or 1). We are particularly interested in the 0 as it will multiply to a null term after measurement. </p>
+		<p id="dt_state5"> Remember that each gate is reversible, so <b><i>Hadamard</i></b> matrix should put its resulting state to the original input. Therefore, reapplying the <b><i>Hadamard</i></b> matrix back will drive us into one of the initial states (0 or 1). We are particularly interested in the 0 as it will multiply to a null term after measurement. </p>
 		<p id="dt_state6"></p>
 
 		<p> Finally, measuring the top bit will give either 0, or another result. In the case the result is 0, we know that f is a constant function. </p>
@@ -124,9 +123,9 @@
 	<div style="margin-left:10%; margin-right:10%; padding-left:5%; padding-right:5%" class="main even">	
 		<h2 name="title2" id="title2">Grover's Search Algorithm</h2> <!--Quantum book exact citation-->
 
-		<p> Grover’s Search is an algorithm based on searching an element in a list, faster than just going through all the elements and stop at some point. Using a naive brute force strategy of just taking element by element and break at some point when we find an answer will result to an average of (m / 2) operations per searching. Grover’s Search Algorithm aims for <span id="ini1"></span>  such operations. </p>
+		<p> <b><i>Grover’s Search</i></b> is an algorithm based on searching an element in a list, faster than just going through all the elements and stop at some point. Using a naive brute force strategy of just taking element by element and break at some point when we find an answer will result to an average of <span id="adiFormula9"></span> operations per searching. <b><i>Grover’s Search Algorithm</i></b> aims for <span id="ini1"></span> such operations. </p>
 		
-		<p> Imagine that you are given a function <span id="gg1"></span> and you are assured that there exists exactly one binary string x0 such that f(x) = 1 if x = <span id="ini2"></span> and f(x) = 0 otherwise. f will be given to us as the unitary matrix Uf that takes <span id="ini3"></span>. </p> 
+		<p> Imagine that you are given a function <span id="gg1"></span> and you are assured that there exists exactly one binary string <span id="adiFormula5"></span> such that <span id="adiFormula7"></span> if <span id="ini2"></span> and <span id="adiFormula8"></span> otherwise. <i>f</i> will be given to us as the unitary matrix <span id="adiFormula6"></span> that takes <span id="ini3"></span>. </p> 
 		<p id="gg2"> In terms of matrices this becomes: </p>
 		
 		<p> The states are:</p>
@@ -136,7 +135,7 @@
 		
 		<br><br>
 
-		<p> Grover’s search algorithm uses two tricks. The first, called <b>phase inversion </b>, changes the phase of the desired state. It works as follows. Take <span id="ini6"></span> and place the bottom qubit in the superposition state: </p>
+		<p> <i><b>Grover’s search algorithm</b></i> uses two tricks. The first, called <i><b>phase inversion </b></i>, changes the phase of the desired state. It works as follows. Take <span id="ini6"></span> and place the bottom qubit in the superposition state: </p>
 		
 		<p id="ini4"></p>
 		
@@ -144,7 +143,7 @@
 		
 		<br><br>
 
-		<p> Since both <span id="ini7"></span> and H are unitary operations, it is obvious that phase inversion is also a unitary operation. </p>
+		<p> Since both <span id="ini7"></span> and <i>H</i> are unitary operations, it is obvious that <i><b>phase inversion</b></i> is also a unitary operation. </p>
 		
 		<p id="gg6"> The states are: </p>
 		<p id="gg7"></p>
@@ -153,34 +152,34 @@
 
 		<br><br>
 
-		<p> What we need now is a way of boosting the phase separation of the desired binary string from the other binary strings. The second trick is called <b>inversion about the mean</b>. Basically, we are inverting each element around the average (the mean of all elements). </p>
+		<p> What we need now is a way of boosting the phase separation of the desired binary string from the other binary strings. The second trick is called <i><b>inversion about the mean</b></i>. Basically, we are inverting each element around the average (the mean of all elements). </p>
 		
-		<p> Example: Consider a sequence of integers 53, 38, 17, 23 and 79. The average is a = 42. Inverting a number around the average is equivalent with adding the difference between the average and the number to the given mean.  That is each element v becomes v = a + (a - v). (53 becomes 42 + (42 - 53) = 31) </p>
+		<p> <b><i>Example:</i></b> Consider a sequence of integers <span id="adiFormula10"></span>. The average is <span id="adiFormula11"></span>. Inverting a number around the average is equivalent with adding the difference between the average and the number to the given mean. That is each element <span id="adiFormula12"></span> becomes <span id="adiFormula13"></span>. (<span id="adiFormula14"></span> becomes <span id="adiFormula15"></span>).</p>
 		
-		<p id="gg10"> Let us write this in terms of matrices. Consider the vector V = [53, 38,17,23,79] and the matrix:</p>
+		<p id="gg10"> Let us write this in terms of matrices. Consider the vector <span id="adiFormula3"></span> and the matrix:</p>
 		
-		<p> It is easy to see that A is a matrix that finds the average of a sequence: A * V = [42,42,42,42,42]. (this is for the given vector and n = 5) </p>
+		<p> It is easy to see that <i>A</i> is a matrix that finds the average of a sequence: <span id="adiFormula4"></span> (this is for the given vector and <i>n = 5</i>). </p>
 		
-		<p id="gg11"> Starting from this basic matrix, we can construct now the <b>“inversion about the mean matrix”</b>:</p>
+		<p id="gg11"> Starting from this basic matrix, we can construct now the <i><b>“inversion about the mean matrix”</b></i>:</p>
 		
-		<p> If the previous matrix transformed each element into the average, the formed directly apply the second trick of Grover’s search algorithm. </p>
+		<p> If the previous matrix transformed each element into the average, the formed directly apply the second trick of <i><b>Grover’s search algorithm</b></i>. </p>
 		
 	    <p> Doing the inversion about the mean matrix only once is not enough in order to have a proper answer (as it is said above, the purpose of it is just boosting the phase separation). </p>
 	    
-	    <p> Grover’s algorithm consists of repeatedly applying the boosting process a sufficient amount of times. Before discussing the exact complexity and number of steps, let’s analyze the final scheme of Grover’s algorithm: </p>
+	    <p> <i><b>Grover’s algorithm</b></i> consists of repeatedly applying the boosting process a sufficient amount of times. Before discussing the exact complexity and number of steps, let’s analyze the final scheme of <b><i>Grover’s algorithm</i></b>: </p>
 	    
 	    <ul>
-			<li> <b>Step 1:</b>  Start with a state <span id="ini8"></span> </li>
-			<li> <b>Step 2:</b> Apply <span id="ini9"></span> </li>
-			<li> <b>Step 3:</b> Repeat T times (we will see who T is): </li>
+			<li> <b><i>Step 1:</i></b>  Start with a state <span id="ini8"></span> </li>
+			<li> <b><i>Step 2:</i></b> Apply <span id="ini9"></span> </li>
+			<li> <b><i>Step 3:</i></b> Repeat T times (we will see who T is): </li>
 			<ul>
-			    <li><b>Step 3a:</b>  Apply the phase inversion operation (first trick) </li>
-			    <li><b>Step 3b:</b> Apply the inversion about the mean operation (second trick) </li>
+			    <li><b><i>Step 3a:</i></b>  Apply the phase inversion operation (first trick) </li>
+			    <li><b><i>Step 3b:</i></b> Apply the inversion about the mean operation (second trick) </li>
 			</ul>
-			<li> <b>Step 4:</b> Measure the qubits. </li>
+			<li> <b><i>Step 4:</i></b> Measure the qubits. </li>
 		</ul>
 		
-		<p> The final question is who is T? (or how many times do we need to apply step 3) . The answer is <span id="ini10"></span>. If you do it more than that, the process will “overcook”. The proof for this fact use geometry representation which is beyond our current goal. </p>
+		<p> The final question is who is <i>T</i>? (or how many times do we need to apply step 3). The answer is <span id="ini10"></span>. If you do it more than that, the process will <i><b>“overcook”</b></i>. The proof for this fact use geometry representation which is beyond our current goal. </p>
 
 		<div align="center" href="#holder" class="scroller">
 			<img src="media/up.png" width=25></img>
@@ -197,12 +196,12 @@
 		<p id="hhl1"> The problem is solving a system of linear equations. In order for us to be able to model it in the quantum context, we will put it in the following form: </p>
 		<br><br>
 
-		<p id="hhl2"> The matrix A and the vector b are known and we want to find the vector x. In the classical context this problem is well-known and its complexity is polynomial. Our main goal is to find the inverse of the matrix A. </p>
+		<p id="hhl2"> The matrix <i>A</i> and the vector <i>b</i> are known and we want to find the vector <i>x</i>. In the classical context this problem is well-known and its complexity is polynomial. Our main goal is to find the inverse of the matrix <i>A</i>. </p>
 		<br><br>
 
 		<p> The most well known algorithm is Gaussian elimination. The algorithms reduces the augmented matrix each line of the matrix in row echelon form. Each transition between two matrices represents adding up 2 equations. Finally, we get each element of the solution vector from bottom to top. </p>
 
-		<p> The complexity analysis is straight forward, we iterate through N lines, reducing O(N) in O(N) places. It is worth mentioning that in a sparse matrix(meaning the number of non-zero element in each row is much smaller than the number of element in that row), there are algorithms that run in O(N^2 log N). </p>
+		<p> The complexity analysis is straight forward, we iterate through <i>N</i> lines, reducing <i>O(N)</i> in <i>O(N)</i> places. It is worth mentioning that in a sparse matrix(meaning the number of non-zero element in each row is much smaller than the number of element in that row), there are algorithms that run in O(N^2 log N). </p>
 
 		<p id="hhl3">The intuitive advantage of solving the exact same problem in the quantum setting is relying on the fact that we can process multiple states at a moment. Supposing we can successfully represent a state of size O(N) as a set of qubits, the number of necessary qubits is O(log N).</p>
 		<br><br>
@@ -254,6 +253,27 @@
 		parser.staticParse(algoFormulas.system, 'hhl1');
 		parser.staticParse(algoFormulas.system2, 'hhl2');
 		parser.staticParse(algoFormulas.hhl3, 'hhl3');
+		parser.staticParse(algoFormulas.tensor1, 'tensor1');
+		parser.staticParse(algoFormulas.tensor2, 'tensor2');
+		parser.staticParse(algoFormulas.adiFormula1, 'adiFormula1');
+		parser.staticParse(algoFormulas.adiFormula2, 'adiFormula2');
+		parser.staticParse(algoFormulas.adiFormula3, 'adiFormula3');
+		parser.staticParse(algoFormulas.adiFormula4, 'adiFormula4');
+		parser.staticParse(algoFormulas.adiFormula5, 'adiFormula5');
+		parser.staticParse(algoFormulas.adiFormula6, 'adiFormula6');
+		parser.staticParse(algoFormulas.adiFormula7, 'adiFormula7');
+		parser.staticParse(algoFormulas.adiFormula8, 'adiFormula8');
+		parser.staticParse(algoFormulas.adiFormula9, 'adiFormula9');
+		parser.staticParse(algoFormulas.adiFormula10, 'adiFormula10');
+		parser.staticParse(algoFormulas.adiFormula11, 'adiFormula11');
+		parser.staticParse(algoFormulas.adiFormula12, 'adiFormula12');
+		parser.staticParse(algoFormulas.adiFormula13, 'adiFormula13');
+		parser.staticParse(algoFormulas.adiFormula14, 'adiFormula14');
+		parser.staticParse(algoFormulas.adiFormula15, 'adiFormula15');		
+		parser.staticParse(algoFormulas.adiFormula16, 'adiFormula16');
+		parser.staticParse(algoFormulas.adiFormula16, 'adiFormula17');
+		parser.staticParse(algoFormulas.adiFormula18, 'adiFormula18');
+		parser.staticParse(algoFormulas.adiFormula19, 'adiFormula19');				
 	</script>
 	</div> 
 </body>

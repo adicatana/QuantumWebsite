@@ -66,7 +66,7 @@
 		gates will be manipulating quantum bits rather than bits. </p>
 		
 		<div class="well well-sm wellodd">
-			A <b>bit</b> is a unit of information describing a classical system.
+			A <b><i>bit</i></b> is a unit of information describing a classical system.
 		</div>
 		
 		<p>
@@ -86,7 +86,7 @@
 		Hence, we define a qubit:</p>
 		
 		<div class="well well-sm wellodd" id="def1">
-			A <b>quantum bit</b>(or <b>qubit</b>) is a unit of information describing a two-dimensional quantum system.
+			A <b><i>quantum bit</i></b> (or <i><b>qubit</b></i>) is a unit of information describing a two-dimensional quantum system.
 		</div>
 		
 		<p id="eq1">
@@ -118,12 +118,12 @@
 			Classic Gates
 		</h2>
 		
-		<p id="cg1">Starting with a simple gate example, a NOT gate would need to reverse the state of a qubit. 
+		<p id="cg1">Starting with a simple gate example, a <b>NOT</b> gate would need to reverse the state of a qubit. 
 		In order to do that, we need to find a mathematical model that can transform a 0 qubit to a 1 qubit and
 		vice versa. As both the input and the output are 2-by-1 matrices, we can simply multiply the left hand side with 
 		a 2-by-2 matrix.</p>
 		
-		<p id="cg2">Now we can simply define a NOT gate.</p>
+		<p id="cg2">Now we can simply define a <b>NOT</b> gate.</p>
 		<p id="cg3">The idea of using matrices as gates yields us with much more possibilities than in a classical bit architecture.
 		For creating operation on multiple variable we need them to be serialized. For this purpose we will use the tensor product and
 		for defining an operation we will use a 2-by-4 matrix. Following the same principle, gates will get bigger and bigger for composing 
@@ -132,20 +132,20 @@
 		<p id="cg4">The interesting thing is that the input has not necessarily to be a qubit, but rather any member our complex space.</p>
 		
 		<p id="cg5">In the classical world the only possible states are just 1 and 0. We can simulate exactly this process, but quantum 
-		gates have more versatility. To continue with representing the classic gates let us define the OR gate.</p>
+		gates have more versatility. To continue with representing the classic gates let us define the <b>OR</b> gate.</p>
 		
 		<p id="cg6"> Let us take another example. We can simply see determine the form of the gate from the combinations of the output desired.
-		Furthermore, the NAND gate can be decomposed in a NOT gate and an AND gate.</p>
+		Furthermore, the <b>NAND</b> gate can be decomposed in a <b>NOT</b> gate and an <b>AND</b> gate.</p>
 		
-		<p id="cg7"> The concept above is called performing <b>sequential</b> operations. We can similarly compose NOT and OR gates and so on.</p>
+		<p id="cg7"> The concept above is called performing <b>sequential</b> operations. We can similarly compose <b>NOT</b> and <b>OR</b> gates and so on.</p>
 		
 		<p id="cg8"> Also, you can observe that negating not yields the identity matrix.</p>
 		
-		<p id="cg9"> We saw that tensor product can compose two qubits, the result being modeled using binary input gates such as AND. 
+		<p id="cg9"> We saw that tensor product can compose two qubits, the result being modeled using binary input gates such as <b>AND</b>. 
 		This principle can be extended for multiple input gates. Consider we want to process 3 qubits at the same time, to negate the 
 		first qubit and apply nor operation on the other two. </p>
 		
-		<p id="cg10"> Furthermore, we can serialize the below outputs with another gate, say OR.
+		<p id="cg10"> Furthermore, we can serialize the below outputs with another gate, say <b>OR</b>.
 		</p>
 		
 		<div align="center" href="#holder" class="scroller">
@@ -160,39 +160,39 @@
 	
 		<h2 name="rgates" id="rgates"> Reversible Gates </h2> <!-- Quantum book & Gates wiki -->
 			
-			<p> It can be easily seen that a part of the gates we discussed are reversible. A gate is <b>reversible</b> if the output applied to its 
-			results is the input. The concept might be intuitive as one can tell that when AND operation is applied as above, we can not exactly determine 
-			which of the three possible inputs yield the result 0. On the other hand, a NOT get will give an unique result with multiplication. </p>
+			<p> It can be easily seen that a part of the gates we discussed are reversible. A gate is <b><i>reversible</i></b> if the output applied to its 
+			results is the input. The concept might be intuitive as one can tell that when <b>AND</b> operation is applied as above, we can not exactly determine 
+			which of the three possible inputs yield the result 0. On the other hand, a <b>NOT</b> get will give an unique result with multiplication.</p>
 			
-			<p> Before presenting the most frequent reversible gates, we will begin with a simple example: the controlled-NOT gate. The idea is
+			<p> Before presenting the most frequent reversible gates, we will begin with a simple example: the controlled-<b>NOT</b> gate. The idea is
 			simple: we have two inputs, the control qubit is being preserved and the input qubit will be negated if the control qubit is 1. </p>
 			
 			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/CNOT_gate.svg/300px-CNOT_gate.svg.png">
 			
 			<p id="rg1"> By examining the gate's matrix form we can easily observe that the gate is reversible.</p>
 			
-			<p> A more common example is the <b>Toffli gate</b>. This is a gate that has a similar structure to the CNOT gate, but it has two
+			<p> A more common example is the <b>Toffli gate</b>. This is a gate that has a similar structure to the <b>CNOT</b> gate, but it has two
 			control inputs. If both control inputs are switched on, then the result is negated. </p>
 			
 			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Toffoli_gate.svg/225px-Toffoli_gate.svg.png">
 			
-			<p id="rg2"> We can visualize in a simpler way the effect of the Toffli gate by keeping in mind the following state transformation:</p>
+			<p id="rg2"> We can visualize in a simpler way the effect of the <b>Toffli gate</b> by keeping in mind the following state transformation:</p>
 			
-			<p> An important property of the Toffli gate is the face that is universal.</p>
+			<p> An important property of the <b>Toffli gate</b> is the face that is universal.</p>
 			
 			<div class="well well-sm wellodd">
-				A gate is <b>universal</b> if any classic gate can be built using just the mentioned gate.
+				A gate is <b><i>universal</i></b> if any classic gate can be built using just the mentioned gate.
 			</div>
 			
-			<p id="rg3"> It is well known that the NAND gate is universal as if can act as a NOT gate if we fix one of the inputs as 1. We can after 
-			that build a AND gate by NAND and NOT. Applying De Morgan's Law we can build a OR gate from the AND with 3 NOTs. The rest of the
-			gates can be trivial. Reasoning in a similar way, we want to obtain a AND gate and a NOT gate. The NOT gate is trivial as one 
-			can fix both controllers to 1. The AND gate can be made by setting the input to 0. This can be again easily represented as state
+			<p id="rg3"> It is well known that the NAND gate is universal as if can act as a <b>NOT</b> gate if we fix one of the inputs as 1. We can after 
+			that build a <b>AND</b> gate by <b>NAND</b> and <b>NOT</b>. Applying <i><b>De Morgan's Law</b></i> we can build a <b>OR</b> gate from the <b>AND</b> with 3 <b>NOT</b>s. The rest of the
+			gates can be trivial. Reasoning in a similar way, we want to obtain a <b>AND</b> gate and a <b>NOT</b> gate. The <b>NOT</b> gate is trivial as one 
+			can fix both controllers to 1. The <b>AND</b> gate can be made by setting the input to 0. This can be again easily represented as state
 			transformations. </p>
 			
-			<p id="rg4"> As expected, the Toffli gate can be written in matrix form. The size of the matrix will be 8 as we have 3 inputs.</p>
+			<p id="rg4"> As expected, the <b>Toffli gate</b> can be written in matrix form. The size of the matrix will be 8 as we have 3 inputs.</p>
 			
-			<p id="rg5"> The last example will be the Fradkin gate. The gate has also 3 inputs, the first being a controller. If the controller is 0, 
+			<p id="rg5"> The last example will be the <b>Fradkin gate</b>. The gate has also 3 inputs, the first being a controller. If the controller is 0, 
 			the other two inputs remain the same, otherwise they will be swapped. This gate is also universal and representable as a matrix.
 			We leave these as an exercise for the reader.</p>
 			
@@ -213,7 +213,7 @@
 		<h2 name="qgates" id="qgates"> Quantum gates </h2>
 			
 		<div class="well well-sm welleven">
-			A <b>quantum gate</b> is a gate that operates on qubits.
+			A <b><i>quantum gate</i></b> is a gate that operates on qubits.
 		</div>
 			
 		<p> We can represent a quantum gate as a unitary matrix. As a reminder, a unitary matrix is a complex square matrix 
@@ -229,36 +229,36 @@
 		us thinking of a similar representation.</p>
 			
 		<p> We can represent the state as a dependency of two angles. The representation is 
-		called the Bloch sphere. The standard parameterization of the bloch sphere is decomposes x, y and 
-		z by the angel formed between the vector and the plane x-y - usually denoted with theta - and the
-		angle between the projection and x. As a parallel to mapping, theta is called azimuthal(being 
-		proportional to the the length of the "parallels") angle and phi is called polar angle(fixing the 
+		called the <b>Bloch sphere</b>. The standard parameterization of the bloch sphere is decomposes <i>x, y</i> and 
+		<i>z</i> by the angel formed between the vector and the plane <i>x - y</i> - usually denoted with <i><b>theta</b></i> - and the
+		angle between the projection and <i>x</i>. As a parallel to mapping, theta is called azimuthal (being 
+		proportional to the the length of the "parallels") angle and <i><b>phi</b></i> is called polar angle (fixing the 
 		place of the "meridians").  </p>
 		<center><p id="bloch1"><i>Move the cursor over the image to see the polar and azimuthal angles.</i></p></center>
 
-		<p>The uses of the Bloch sphere are mainly manipulation of a single qubit using a 2-
+		<p>The uses of the <i><b>Bloch sphere</b></i> are mainly manipulation of a single qubit using a 2-
 		by-2 matrix. Consider a reflection around the axis Z. The mathematical model is not that 
 		intuitive, thus we can use the Bloch representation.</p>
 		<center><p id="bloch2"><i>Click on the image to see the reflection of a point around the axis Z.</i></p></center>
 
 		<p>The mechanism is quite versatile as we can build matrices to make rotations around 
-		the axes. This matrices are called the Pauli matrices and each are designed to make a full 
-		rotation around each of the axes. We can simply illustrate a 180 degree rotation of the bloch 
-		sphere around axis Y.</p>
-		<center><p id="bloch3"><i>Click on the image to see the rotation of the Bloch sphere around the axis Y.</i></p></center>
+		the axes. This matrices are called the <b><i>Pauli</i></b> matrices and each are designed to make a full 
+		rotation around each of the axes. We can simply illustrate a 180 degree rotation of the <i><b>bloch 
+		sphere</b></i> around axis <i>Y</i>.</p>
+		<center><p id="bloch3"><i>Click on the image to see the rotation of the <b>Bloch sphere</b> around the axis Y.</i></p></center>
 
-		<p id="qg2"> The above bloch sphere shows the effect of the Y Pauli matrix. To fully understand 
-		its effect let us take a look over the Pauli matrices. One can observe that a rotation around X
-		would simply reverse the 0 qubit, therefore the X matrix is exactly the NOT matrix. Intuitively, 
+		<p id="qg2"> The above bloch sphere shows the effect of the Y <b>Pauli matrix</b>. To fully understand 
+		its effect let us take a look over the <b>Pauli</b> matrices. One can observe that a rotation around X
+		would simply reverse the 0 qubit, therefore the X matrix is exactly the <b>NOT</b> matrix. Intuitively, 
 		rotating around the Y axes should give us a similar result, but there is more than one azimuthal 
 		angle at the poles. </p>
 		
-		<p id="qg3">The Pauli gates can be parameterized, obtaining any rotation on each of the axes. Those instruments are very powerful as one can alter a qubit easily. Let us exemplify the process of parameterization on the X axis.</p>
+		<p id="qg3">The <b>Pauli</b> gates can be parameterized, obtaining any rotation on each of the axes. Those instruments are very powerful as one can alter a qubit easily. Let us exemplify the process of parameterization on the X axis.</p>
 			
 		<p id="qg4">Making use of the tensor product will allow this changes to be controlled by different qubits.
-		There are more similar examples with more controllers such as Deutsch gate.</p>
+		There are more similar examples with more controllers such as <b>Deutsch</b> gate.</p>
 
-		<p>Even though we have powerful instruments used for manipulation of a qubit, the major drawback is the lack of coverage over a cluster of bits and the entanglement. Even more, each operation on a quantum gate must be reversible and the No-Cloning Theorem must hold.(it is impossible to clone an arbitrary quantum state without destroying the original) </p>
+		<p>Even though we have powerful instruments used for manipulation of a qubit, the major drawback is the lack of coverage over a cluster of bits and the entanglement. Even more, each operation on a quantum gate must be reversible and the <i><b>No-Cloning Theorem</b></i> must hold (it is impossible to clone an arbitrary quantum state without destroying the original).</p>
 
 		<div align="center" href="#holder" class="scroller">
 			<img src="media/up.png" width=25></img>

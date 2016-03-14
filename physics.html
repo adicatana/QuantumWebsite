@@ -62,21 +62,21 @@
 		
 		<h2 name="title1" id="title1"><br>Quantum History</h2>
 		<!-- <div class="well well-sm"> -->
-			<p>There are a lot of observable effects which cannot be understood using the framework provided by classical physics. At the beginning of the 20th century, a lot of experiments on atoms, molecules and radiation were still not explained.</p>
+			<p>There are a lot of observable effects which cannot be understood using the framework provided by classical physics. At the beginning of the <i>20th century</i>, a lot of experiments on atoms, molecules and radiation were still not explained.</p>
 
 			
-			<p>The history of Quantum Physics starts on 14 December 1900, when Quantum Mechanics was &lsquo;born&rsquo; or, better, proposed by Max Plank.</p>
+			<p>The history of <b><i>Quantum Physics</i></b> starts on <i>14 December 1900</i>, when Quantum Mechanics was "born" or, better, proposed by <b><i>Max Plank</i></b>.</p>
 			<br>
-			<p><b>1900 - Max Plank: Black Body Radiation</b></p>
+			<p><i><b>1900 - Max Plank: Black Body Radiation</b></i></p>
 			<p>A black body is a hypothetical object 
 			which is able to emit and absorb radiation of all possible wavelengths. 
 			Although there were theories describing the correlation between the 
 			radiation intensity and frequency,  it was not able to demonstrate the 
 			theoretical consideration that all the black bodies should have the same behavior. 
-			This spectrum became understandable when Planck published the radiation law <b>E = hν</b>.
-			The constant h is called Planck's constant and its value is approximately h = 6,262.068 x 10<sup>-34</sup>Js</p>
+			This spectrum became understandable when Planck published the radiation law <span id="planck"></span>.
+			The constant h is called Planck's constant and its value is approximately <span id="constant"></span> Js.</p>
 
-			<p><b>1905 - Albert Einstein: Photoelectric Effect</b></p>
+			<p><i><b>1905 - Albert Einstein: Photoelectric Effect</b></i></p>
 
 			<p>Years later, Albert Einstein managed to explain the Photoelectric Effect 
 			on the basis of Planck's quantum hypothesis. 
@@ -93,8 +93,8 @@
 			</center>
 			
 			<p>In 1924, Luis de Broglie introduced the idea that particles may also be described as waves, whose wavelength is given by the relation:<br>
-			λ = h / p, where p is the momentum.</p>
-			<p><b>1925 - Werner Heisenberg: Matrix Mechanics</b></p>
+			<span id="wavelength"></span>, where <i>p</i> is the momentum.</p>
+			<p><i><b>1925 - Werner Heisenberg: Matrix Mechanics</b></i></p>
 			<p>In 1925, Werner Heisenberg, Max Born, and Pascal Jordan interpreted 
 			quantum mechanics using a matrix representation.
 			The premise was that all physical observables can be represented by matrices. 
@@ -106,22 +106,27 @@
 			Because most matrices don't have any eigenvectors in common, most observables cannot
 			be measured precisely at the same moment. This is the uncertainty principle.
 			</p>
-			<p><b>1926 Erwin Schrödinger: Wave Mechanics</b></p>
+			<p><i><b>1926 Erwin Schrödinger: Wave Mechanics</b></i></p>
 			<p>The Schrödinger equation describes the evolution of a quantum system over time.</p>
-			<table cellpadding="5" style="border:2px solid #50C878;background: #ECFCF4; text-align: center;">
+			<i><b>Schrödinger general equation</b></i>
+			<p>
+			<span id="schrodinger"></span>
+				</p>
+
+			<!-- <table cellpadding="5" style="border:2px solid #50C878;background: #ECFCF4; text-align: center;">
 			  <tbody>
 			    <tr>
 			      <td>
 				<b>Schrödinger general equation</b>
 				<p>
-				  <img class="mwe-math-fallback-image-inline tex" alt="i \hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat H \Psi(\mathbf{r},t)" src="//upload.wikimedia.org/math/0/2/8/028d4440f791c4175ea3faf5f8dfd2b7.png">
+				  <img src="https://latex.codecogs.com/gif.latex?i \hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat H \Psi(\mathbf{r},t)" border="0"/>
 				</p>
 			      </td>
 			    </tr>
-			  </tbody>
-			</table>
+			  </tbody> -->
+			<!-- </table> -->
 			<br>
-			<p><b>1932 John von Neumann: Quantum Mechanics<sup class="ref">[1]</sup></b></p>
+			<p><i><b>1932 John von Neumann: Quantum Mechanics<sup class="ref">[1]</sup></b></i></p>
 		<!-- </div> -->
 		<div align="center" href="#holder" class="scroller">
 			<img src="media/up.png" width=25> </img>
@@ -141,7 +146,7 @@
 			computers.
 		  </p>
 		  <p>
-			We denote a particle being at at some point x<sub>i</sub> with the ket notation :
+			We denote a particle being at at some point <span id="xi"></span> with the ket notation:
 		  </p>
 			<p id = "ket1"></p>
 			<br>
@@ -165,16 +170,14 @@
 		  </p>
 		  <p>
 			The norm square of the complex amplitude divided by the norm squared of the 
-			state gives us the probability of observing the particle at position x<sub>i</sub>
-		  </p>
-		  <p id="observ"></p>
-		  <p>
-			<br>
+			state gives us the probability of observing the particle at position <span id = "xj"></span>, 
+		  <span id="observ"></span>.</p>
 			Another fundamental property of the subatomic particles is called <b>spin</b>, a concept which describes 
 			a physical interpretation of a particle spinning along its axis.
 		  </p>
 		  <p>
-			Why is this property useful ?
+			Why is this property useful?
+			<br>
 			It plays a major role in the implementation of qubits. There are only two spin states, so every arbitrary state will be a superposition of the two possible basic spins.
 		  </p>
 		  <p>
@@ -182,7 +185,7 @@
 			the final state for the system after the measurement.
 		  </p>
 		  <p>
-			Suppose there are two normalised states :
+			Suppose there are two normalised states:
 		  </p>
 		  <p id="state1"></p>
 		  <span>, &nbsp &nbsp</span>
@@ -192,45 +195,39 @@
 		  </p>
 		  <p id="bra"></p>
 		  <p>
-			To find the transition amplitude, we just need to do the multiplication (compute the inner product) :
+			To find the transition amplitude, we just need to do the multiplication (compute the inner product):
 		  </p>
 		  <p id="prime"></p>
-		  <p><b>
-			Observables
-		  </b></p>
-		  <p>
-			For our quantum system, we need to also introduce the notion of observable.
-		  </p>
-		  <p>
-			For each observable there exists a hermitian, linear operator A.
-		  </p>
+		  <br>
+		  <b>
+			<i>Observables</i>.
+		  </b>
+			For our quantum system, we need to also introduce the notion of observable. For each observable there exists a hermitian, linear operator A.
 		  <p>
 			Intuitively, in quantum physics we modify the state of the system by measuring a
 			particular value. Therefore, we can model this behaviour making use of this operator
 			which maps states to other states.
-			Furthermore, possible measurement results are (only) the eigen-values λi
-			of the operator A. It can be proven that the eigenvectors form a basis for our state space.
+			Furthermore, possible measurement results are (only) the eigenvalues <span id="lambda"></span>
+			of the operator <i>A</i>. It can be proven that the eigenvectors form a basis for our state space.
 		  </p>
 		  <p>
 
 			Now, the next problem which arises is the correlation between two observables.
 			We want to obtain a very precise measure of both if they are not related, 
-			but as the <b>Heisenberg's principle</b> states, this is not the case.
+			but as the <b><i>Heisenberg's principle</i></b> states, this is not the case.
 		  </p>
 		  <p>
-			Take two observables A and B and an arbitrary state x. Then, the product of the 
+			Take two observables <i>A</i> and <i>B</i> and an arbitrary state <i>x</i>. Then, the product of the 
 			variances of these operators 
 		  </p>
-		  <p id="up"></p>
-		  <p><b>
-			Measurement
-		  </b></p>
-		  <p>
-			Now we know how to represent states and observables. Suppose we have a state <span id="psi2"></span> and
+		  <center><p id="up"></p></center>
+		  <br>
+		  <b>
+			<i>Measurement.</i>
+		  </b> Now we know how to represent states and observables. Suppose we have a state <span id="psi2"></span> and
 			an observable <span id="om"></span>. 
-		  </p>
 		  <p>
-			If our result after the measurement is the eigenvector λ,
+			If our result after the measurement is the eigenvector <span id="lamb"></span>,
 			the final state of the system will always be the eigenvector corresponding to that particular eigenvalue.
 		  </p>
 		<!-- </div> -->
@@ -253,7 +250,7 @@
 			evolution of the state vector.
 		  </p>
 		  <p>
-			The evolution operator, U, must be linear and unitary.
+			The evolution operator, <i>U</i>, must be linear and unitary.
 		  </p>
 		  <p>
 			This gives us the intuition of how the process of quantum computation look.
@@ -264,7 +261,7 @@
 			falls into the final state.
 		  </p>
 		  <p>
-			In order to relate this sequence of steps to real quantum mechanics, we make use of Schrödinger equation :
+			In order to relate this sequence of steps to real quantum mechanics, we make use of Schrödinger equation:
 		  </p>
 		  
 		  <p id="sch"></p>
@@ -283,13 +280,13 @@
 		<h2 name="title4" id="title4"><br>Assembling Quantum States</h2>
 		<!-- <div class="well well-sm"> -->
 		  <p>
-			Two independent quantum systems A and A', with vector spaces V and V', can be merged together such
-			that the state space will be the tensor product V <span id="tens"></span> V'.
+			Two independent quantum systems <i>A</i> and <i>A'</i>, with vector spaces <i>V</i> and <i>V'</i>, can be merged together such
+			that the state space will be the tensor product <i>V</i> <span id="tens"></span> <i>V'</i>.
 		  </p>
 		  <p>
-			The basic states of this merged system will be the tensor product of the basic states of A and A'.
+			The basic states of this merged system will be the tensor product of the basic states of <i>A</i> and <i>A'</i>.
 			However, we are not able to represent a general state vector as a tensor product of two states,
-			one from A and the other one from A'.
+			one from <i>A</i> and the other one from <i>A'</i>.
 		  </p>
 		  <p>
 			States which can be separated into a tensor product of states from its subsystems are called <b>separable</b>,
@@ -332,6 +329,14 @@
 		parser.staticParse(phyFormulas.formula13, 'up');
 		parser.staticParse(phyFormulas.formula0, 'psi3');
 		parser.staticParse(phyFormulas.formula14, 'tens');
+		parser.staticParse(phyFormulas.formula15, 'planck');
+		parser.staticParse(phyFormulas.formula16, 'constant');
+		parser.staticParse(phyFormulas.formula17, 'wavelength');
+		parser.staticParse(phyFormulas.formula18, 'schrodinger');
+		parser.staticParse(phyFormulas.formula19, 'xi');
+		parser.staticParse(phyFormulas.formula19, 'xj');
+		parser.staticParse(phyFormulas.formula20, 'lambda');
+		parser.staticParse(phyFormulas.formula21, 'lamb');
 	</script>
 </body>
 
