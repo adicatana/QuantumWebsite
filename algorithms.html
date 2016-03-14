@@ -63,24 +63,22 @@
 			<li> Measure the qubits, forcing them to collapse in a state.</li>
 		</ul>
 
-		<p> Notice all algorithms are probabilistic ones, not deterministic. That means, we are not guaranteed that they will work for 100% of the cases, but we do have a high probability of success. </p> 
+		<p> Notice all algorithms are probabilistic ones, not deterministic. That means, we are not guaranteed that they will work for <span id="percent"></span> of the cases, but we do have a high probability of success. </p> 
 
 		<h3> The problem </h3> <!-- http://www.cs.xu.edu/~kinne/quantum/deutche.html -->
 
 		<p id="dt1"> Suppose there is a function <i>f</i> that maps from <span id="adiFormula16"></span> to <span id="adiFormula17"></span>. We wish to know whether the function is <i>injective</i> or not (i.e. <span id="adiFormula18"></span> is not equal <span id="adiFormula19"></span>). Opposing to the classic context, 
-		one can not examine the function on different results. The main idea is to consider the gate <i>U</i>
-		as a matrix function operator (to be visualised as a gate) applying the function f to the given
+		one can not examine the function on different results. The main idea is to consider the gate U
+		as a matrix function operator (to be visualised as a gate) applying the function <i>f</i> to the given
 		inputs.</p>
 
-		</p> The problem could be solved by evaluating f(0) <span id="tensor1"></span> f(1). The <i><b>XOR</b></i> function is the direct equivalent of asking whether f is an injection. Even though the function is evaluated twice in a classical context, the quantum context allows us to evaluate it only once. </p>
+		</p> The problem could be solved by evaluating <span id="f0"></span> <span id="tensor1"></span> <span id="f1"></span>. The <i><b>XOR</b></i> function is the direct equivalent of asking whether <i>f</i> is an injection. Even though the function is evaluated twice in a classical context, the quantum context allows us to evaluate it only once. </p>
 	
 		<h3> Breaking down the problem </h3>
 
-		<p>At the moment we know we want to obtain a superstate that will be extracted after measurement to f(0) <span id="tensor2"></span> f(1). We only need a superstate that will be transfered to this particular point. The input is 0 and 1 along with any combination. </p>
+		<p>At the moment we know we want to obtain a superstate that will be extracted after measurement to <span id="f02"></span> <span id="tensor2"></span> <span id="f12"></span>. We only need a superstate that will be transfered to this particular point. The input is 0 and 1 along with any combination. </p>
 
-		<p id="dt2"> Firstly, we have to keep in mind that we can process two states simultaneously. We need a matrix(gate) that gives us a state that has an equal probability to be measured as a 0 or 1. We can observe that the <i><b>Hadamard</b></i> gate gives us a good beahaviour:</p> 
-
-		<p> </p>
+		<p id="dt2"> Firstly, we have to keep in mind that we can process two states simultaneously. We need a matrix (gate) that gives us a state that has an equal probability to be measured as a 0 or 1. We can observe that the <i><b>Hadamard</b></i> gate gives us a good beahaviour:</p> 
 
 		<p id="dt3"> Looking over the effect of the Hammond gate over the 0 and 1 states, we can observe that both bits will be driven to balanced superstates. Also, the products differ only by a sign. </p>
 		<p id="dt4"></p>
@@ -196,17 +194,17 @@
 		<p id="hhl1"> The problem is solving a system of linear equations. In order for us to be able to model it in the quantum context, we will put it in the following form: </p>
 		<br><br>
 
-		<p id="hhl2"> The matrix <i>A</i> and the vector <i>b</i> are known and we want to find the vector <i>x</i>. In the classical context this problem is well-known and its complexity is polynomial. Our main goal is to find the inverse of the matrix <i>A</i>. </p>
+		<p id="hhl2"> The matrix <span id="matrixA"></span> and the vector <span id="b"></span> are known and we want to find the vector <span id="x"></span>. In the classical context this problem is well-known and its complexity is polynomial. Our main goal is to find the inverse of the matrix <span id="mA"></span>. </p>
 		<br><br>
 
 		<p> The most well known algorithm is Gaussian elimination. The algorithms reduces the augmented matrix each line of the matrix in row echelon form. Each transition between two matrices represents adding up 2 equations. Finally, we get each element of the solution vector from bottom to top. </p>
 
-		<p> The complexity analysis is straight forward, we iterate through <i>N</i> lines, reducing <i>O(N)</i> in <i>O(N)</i> places. It is worth mentioning that in a sparse matrix(meaning the number of non-zero element in each row is much smaller than the number of element in that row), there are algorithms that run in O(N^2 log N). </p>
+		<p> The complexity analysis is straight forward, we iterate through <span id="N"></span> lines, reducing <span id="oN"></span> in <span id="oDeN"></span> places. It is worth mentioning that in a sparse matrix (meaning the number of non-zero element in each row is much smaller than the number of element in that row), there are algorithms that run in <span id="oNpatrat"></span>. </p>
 
-		<p id="hhl3">The intuitive advantage of solving the exact same problem in the quantum setting is relying on the fact that we can process multiple states at a moment. Supposing we can successfully represent a state of size O(N) as a set of qubits, the number of necessary qubits is O(log N).</p>
+		<p id="hhl3">The intuitive advantage of solving the exact same problem in the quantum setting is relying on the fact that we can process multiple states at a moment. Supposing we can successfully represent a state of size <span id="oDeN2"></span> as a set of qubits, the number of necessary qubits is <span id="oLogN"></span>.</p>
 		<br><br>
 
-		<p> Supposing we work with an exponential number of states, we can not naturally parse the computed result as this will slow the total speed of our algorithm from polynomial to exponential. Fortunately, we can get sufficient information about the properties of the resulting state from the eigenvalue of the observable. As an example if one has one terrabit of data in the output vector, we can encode the result in around 40 qubits. On the one hand, listing the resulting data will take the original size.(i.e. listing one terra of data). On the other hand, measuring the properties of the observable will give us the possibility to look at particular properties(i.e. eigenvalues) that we are interested in. </p>
+		<p> Supposing we work with an exponential number of states, we can not naturally parse the computed result as this will slow the total speed of our algorithm from polynomial to exponential. Fortunately, we can get sufficient information about the properties of the resulting state from the eigenvalue of the observable. As an example if one has one terrabit of data in the output vector, we can encode the result in around 40 qubits. On the one hand, listing the resulting data will take the original size (i.e. listing one terra of data). On the other hand, measuring the properties of the observable will give us the possibility to look at particular properties (i.e. eigenvalues) that we are interested in. </p>
 
 		<div align="center" href="#holder" class="scroller">
 			<img src="media/up.png" width=25></img>
@@ -273,7 +271,22 @@
 		parser.staticParse(algoFormulas.adiFormula16, 'adiFormula16');
 		parser.staticParse(algoFormulas.adiFormula16, 'adiFormula17');
 		parser.staticParse(algoFormulas.adiFormula18, 'adiFormula18');
-		parser.staticParse(algoFormulas.adiFormula19, 'adiFormula19');				
+		parser.staticParse(algoFormulas.adiFormula19, 'adiFormula19');
+		parser.staticParse(algoFormulas.adiFormula21, 'matrixA');
+		parser.staticParse(algoFormulas.adiFormula21, 'mA');	
+		parser.staticParse(algoFormulas.adiFormula22, 'b');			
+		parser.staticParse(algoFormulas.adiFormula20, 'x');
+		parser.staticParse(algoFormulas.adiFormula23, 'N');
+		parser.staticParse(algoFormulas.adiFormula26, 'oN');
+		parser.staticParse(algoFormulas.adiFormula26, 'oDeN');
+		parser.staticParse(algoFormulas.adiFormula24, 'oNpatrat');
+		parser.staticParse(algoFormulas.adiFormula26, 'oDeN2');
+		parser.staticParse(algoFormulas.adiFormula25, 'oLogN');
+		parser.staticParse(algoFormulas.percent, 'percent');	
+		parser.staticParse(algoFormulas.adiFormula18, 'f1');		
+		parser.staticParse(algoFormulas.adiFormula19, 'f0');
+		parser.staticParse(algoFormulas.adiFormula18, 'f12');		
+		parser.staticParse(algoFormulas.adiFormula19, 'f02');		
 	</script>
 	</div> 
 </body>

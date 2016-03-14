@@ -32,7 +32,7 @@ var algoFormulas = (function() {
 			"f(0) \\neq f(1) \\implies f " + sp + "\\text{injective}"
 		),
 		hadamard : "H = \\frac{1}{\\sqrt{2}} \\cdot (X" + sp + "+" + sp +"Z)" 
-		 	+ " = \\frac{1}{\\sqrt{2}} \\cdot ("+ gates.X + "+" + gates.Z + ") =" + gates.H,
+		 	+ " = \\frac{1}{\\sqrt{2}} \\cdot \\bigg("+ gates.X + "+" + gates.Z + "\\bigg) =" + gates.H,
 		hexample1 : "H \\cdot" + bit(0) + " = "+ gates.H +" \\cdot" + bit0 + "="
 			 + matrix(2,1,["\\frac{1}{\\sqrt{2}}", "\\frac{1}{\\sqrt{2}}"]),
 		hexample2 : "H \\cdot" + bit(1) + " = "+ gates.H +" \\cdot" + bit1 + "="
@@ -100,5 +100,13 @@ var algoFormulas = (function() {
 		adiFormula16 : "\\{0, 1 \\}",
 		adiFormula18 : "f(0)",
 		adiFormula19 : "f(1)",
+		adiFormula20 : "x",
+		adiFormula21 : "A",
+		adiFormula22 : "b",
+		adiFormula23 : "N",
+		adiFormula24 : "O(N^2 \\log(N))",
+		adiFormula25 : "O(\\log(N))",
+		adiFormula26 : "O(N)",
+		percent : "100\\%"		
 	};				
 })();
