@@ -11,14 +11,14 @@ var textMove = (function() {
 		{
 			size : 20,
 			txt : "Maths",
-			x : 7,
+			x : 30,
 			y : 50,
 			dx : 1 
 		},
 		{
 			size : 20,
 			txt : "Qubits",
-			x : 25,
+			x : 100,
 			y : 100,
 			dx : 2
 		},
@@ -32,14 +32,14 @@ var textMove = (function() {
 		{
 			size : 10,
 			txt : "Hilbert spaces",
-			x : 10,
+			x : 24,
 			y : 160,
 			dx : 2.2
 		},
 		{
 			size : 20,
 			txt : "Physics",
-			x : 30,
+			x : 40,
 			y : 180,
 			dx : 1.5
 		}
@@ -69,10 +69,14 @@ var textMove = (function() {
 		context.clearRect(0, 0, canvas.width, canvas.height);
 	};
 
-	setInterval(function() { 
+
+	var intervalSetter = function() { 
 		clear();
 		draw();
-	}, 10);
+	};
+	intervalSetter();
+
+	return intervalSetter;
 })();
 
 var rotating = (function() {
@@ -147,7 +151,7 @@ var rotating = (function() {
 			y[j] = rot.y;
 		}
 	}
-	setInterval(function() { 
+	var intervalSetter = function() { 
 		clear();
 
 		drawStaticText({
@@ -194,5 +198,44 @@ var rotating = (function() {
 		});
 
 		iterator = (iterator + 1) % time;
-	}, time);
+	};
+
+	intervalSetter();
+	return intervalSetter;
 })();
+
+$(function () {
+	var timerId = 0;
+
+  	$('#rotating').mouseenter(function () {
+		timerId = setInterval(rotating, 10);
+  	});
+
+  	$('#rotating').mouseleave(function () {
+  		rotating();
+   		clearInterval(timerId);
+  	});
+});
+
+
+$(function () {
+	var timerId = 0;
+
+  	$('#textMove').mouseenter(function () {
+		timerId = setInterval(textMove, 10);
+  	});
+
+  	$('#textMove').mouseleave(function () {
+  		rotating();
+   		clearInterval(timerId);
+  	});
+});
+
+$(function(){
+	$('#profX').mouseenter(function() {
+		$(this).attr('src', 'media/home.gif');
+	});
+	$('#profX').mouseleave(function() {
+		$(this).attr('src', 'media/home.png');
+	});
+});
