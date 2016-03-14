@@ -123,3 +123,8 @@ canvas {
     padding-bottom: 12px;
   }
 }
+
+.ref {
+   color : black;
+   text-decoration: none;
+}

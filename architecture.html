@@ -73,6 +73,7 @@
 		
 		<p>
 			From the list of a bit's characteristics we remind:
+			<sup><a href="index.php?References=true#b1" class="ref">[1]</a></sup>
 			<ul>
 				<li>A bit holds two possible states: 0 or 1.</li>
 				<li>Bits can be grouped into clusters, therefore being capable of 
@@ -106,6 +107,7 @@
 			Making a parallel with a classic byte, we know that it holds 256 states. 
 			Therefore, it is a member of the set of natural numbers between 0 and 255 inclusively. 
 			Similarly, a qubyte is a member of the complex vector space of dimension 256.
+			<sup><a href="index.php?References=true#b2" class="ref">[2]</a></sup>
 		</p>
 		
 		<div align="center" href="#holder" class="scroller">
@@ -132,7 +134,7 @@
 		for defining an operation we will use a 2-by-4 matrix. Following the same principle, gates will get bigger and bigger for composing 
 		multiple operands or we can add multiple parallel gates of size 2-by-4.</p>
 		
-		<p id="cg4">The interesting thing is that the input has not necessarily to be a qubit, but rather any member our complex space.</p>
+		<p id="cg4">The interesting thing is that the input has not necessarily to be a qubit, but rather any member our complex space. <sup><a href="index.php?References=true#b3" class="ref">[3]</a></sup></p>
 		
 		<p id="cg5">In the classical world the only possible states are just 1 and 0. We can simulate exactly this process, but quantum 
 		gates have more versatility. To continue with representing the classic gates let us define the <b>OR</b> gate.</p>
@@ -188,13 +190,13 @@
 				A gate is <b><i>universal</i></b> if any classic gate can be built using just the mentioned gate.
 			</div>
 			
-			<p id="rg3"> It is well known that the NAND gate is universal as if can act as a <b>NOT</b> gate if we fix one of the inputs as 1. We can after 
+			<p id="rg3"> It is well known that the <b>NAND</b> gate is universal as if can act as a <b>NOT</b> gate if we fix one of the inputs as 1. We can after 
 			that build a <b>AND</b> gate by <b>NAND</b> and <b>NOT</b>. Applying <i><b>De Morgan's Law</b></i> we can build a <b>OR</b> gate from the <b>AND</b> with 3 <b>NOT</b>s. The rest of the
 			gates can be trivial. Reasoning in a similar way, we want to obtain a <b>AND</b> gate and a <b>NOT</b> gate. The <b>NOT</b> gate is trivial as one 
 			can fix both controllers to 1. The <b>AND</b> gate can be made by setting the input to 0. This can be again easily represented as state
-			transformations. </p>
+			transformations. <sup><a href="index.php?References=true#b4" class="ref">[4]</a></sup> </p>
 			
-			<p id="rg4"> As expected, the <b>Toffli gate</b> can be written in matrix form. The size of the matrix will be 8 as we have 3 inputs.</p>
+			<p id="rg4"> As expected, the <b>Toffli gate</b> can be written in matrix form. The size of the matrix will be 8 as we have 3 inputs. <sup><a href="index.php?References=true#b8" class="ref">[8]</a></sup> </p>
 			
 			<p id="rg5"> The last example will be the <b>Fradkin gate</b>. The gate has also 3 inputs, the first being a controller. If the controller is 0, 
 			the other two inputs remain the same, otherwise they will be swapped. This gate is also universal and representable as a matrix.
@@ -238,19 +240,22 @@
 		<i>z</i> by the angel formed between the vector and the plane <i>x - y</i> - usually denoted with <i><b>theta</b></i> - and the
 		angle between the projection and <i>x</i>. As a parallel to mapping, theta is called azimuthal (being 
 		proportional to the the length of the "parallels") angle and <i><b>phi</b></i> is called polar angle (fixing the 
-		place of the "meridians").  </p>
-		<center><p id="bloch1"><i>Move the cursor over the image to see the polar and azimuthal angles.</i></p></center>
+		place of the "meridians"). <sup><a href="index.php?References=true#b5" class="ref">[5]</a></sup> </p>
+		<center><p id="bloch1"><i>Move the cursor over the image to see the polar and azimuthal angles.</i>
+		 </p></center>
 
 		<p>The uses of the <i><b>Bloch sphere</b></i> are mainly manipulation of a single qubit using a 2-
 		by-2 matrix. Consider a reflection around the axis Z. The mathematical model is not that 
-		intuitive, thus we can use the Bloch representation.</p>
-		<center><p id="bloch2"><i>Click on the image to see the reflection of a point around the axis Z.</i></p></center>
+		intuitive, thus we can use the Bloch representation. <sup><a href="index.php?References=true#b6" class="ref">[6]</a></sup> </p>
+		<center><p id="bloch2"><i>Click on the image to see the reflection of a point around the axis Z.</i>
+		 </p> </center>
 
 		<p>The mechanism is quite versatile as we can build matrices to make rotations around 
 		the axes. This matrices are called the <b><i>Pauli</i></b> matrices and each are designed to make a full 
 		rotation around each of the axes. We can simply illustrate a 180 degree rotation of the <i><b>bloch 
-		sphere</b></i> around axis <i>Y</i>.</p>
-		<center><p id="bloch3"><i>Click on the image to see the rotation of the <b>Bloch sphere</b> around the axis Y.</i></p></center>
+		sphere</b></i> around axis <i>Y</i>. <sup><a href="index.php?References=true#b7" class="ref">[7]</a></sup><center> </p>
+		<p id="bloch3"><i>Click on the image to see the rotation of the <b>Bloch sphere</b> around the axis Y.</i>
+		 </p></center>
 
 		<p id="qg2"> The above bloch sphere shows the effect of the Y <b>Pauli matrix</b>. To fully understand 
 		its effect let us take a look over the <b>Pauli</b> matrices. One can observe that a rotation around X
@@ -263,7 +268,7 @@
 		<p id="qg4">Making use of the tensor product will allow this changes to be controlled by different qubits.
 		There are more similar examples with more controllers such as <b>Deutsch</b> gate.</p>
 
-		<p>Even though we have powerful instruments used for manipulation of a qubit, the major drawback is the lack of coverage over a cluster of bits and the entanglement. Even more, each operation on a quantum gate must be reversible and the <i><b>No-Cloning Theorem</b></i> must hold (it is impossible to clone an arbitrary quantum state without destroying the original).</p>
+		<p>Even though we have powerful instruments used for manipulation of a qubit, the major drawback is the lack of coverage over a cluster of bits and the entanglement. Even more, each operation on a quantum gate must be reversible and the <i><b>No-Cloning Theorem</b></i> must hold (it is impossible to clone an arbitrary quantum state without destroying the original).<sup><a href="index.php?References=true#b9" class="ref">[9]</a></sup></p>
 
 		<div align="center" href="#holder" class="scroller">
 			<img src="media/up.png" width=25></img>
