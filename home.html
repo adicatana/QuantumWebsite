@@ -71,10 +71,13 @@
 			<a href="index.php?Videos=true"
 			   style="text-decoration: none; color: black;"> <div class="scroller" algin="center">
 				<div class="col-xs-6 col-sm-4 placeholder" align="center">
-					<img src="media/home1.gif" 
-						width="200" height="200" 
-						class="expandable img-circle" 
-						alt="Generic placeholder thumbnail">
+					<div class="canvas-holder">
+						<image src="media/home.gif"
+							width="200" height="200" 
+							class="expandable img-circle" 
+							alt="Generic placeholder thumbnail">
+						</image>
+					</div>
 					<h4>Video Lessons</h4>
 				</div>
 			</div> </a>
@@ -88,7 +91,6 @@
 							class="expandable img-circle"  
 							alt="Generic placeholder thumbnail">
 						</canvas>
-						<script src="textMove.js"></script>
 					</div>
 					<h4>Algorithms</h4>
 				</div>
@@ -96,16 +98,20 @@
 			<a href="index.php?Architecture=true#bloch1"
 			   style="text-decoration: none; color: black;"><div class="scroller">
 				<div class="col-xs-6 col-sm-4 placeholder" align="center">
-					<img src="media/home2.gif"
-						width="200" height="200" 
-						class="expandable img-circle" 
-						alt="Generic placeholder thumbnail">
+					<div class="canvas-holder">
+						<canvas id="rotating"
+							width="200" height="200" 
+							class="expandable img-circle" 
+							alt="Generic placeholder thumbnail">
+						</canvas>
+					</div>
 					<h4>Dynamic Content</h4>
 				</div>
 			</div> </a>
 		</div> </div>
 	</div>
 
+	<script src="textMove.js"></script>
 	<script src="scroll.js"></script>
 </body>
 
