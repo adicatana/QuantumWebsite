@@ -101,11 +101,16 @@ var algoFormulas = (function() {
 		adiFormula18 : "f(0)",
 		adiFormula19 : "f(1)",
 
-		hhl4 : "A = A^{+}",
+		hhl4 : "A = A^{t}",
 		hhl5 : bit("\\psi(t)") + " = U \\cdot " + bit("\\psi(0)"),
 		hhl6 : "H = \\sum_{j = 1}^{m} H_{j}",
 		hhl7 : bit("\\psi(t)") + " = e ^ {i \\cdot B \\cdot t} \\cdot " + bit("\\psi(0)"),
 		hhl8 : "\\epsilon",
 		hhl9 : bit("\\psi(t)")+ " = \\sum_{j = 1}^{m} " +  bit("\\psi_{j}(t)"),
+		hermite1 : "A = A^t \\Rightarrow A^{-1} = (A^t)^{-1}",
+		invertible : "U A U^{-1} = " + matrix(3, 3, ["\\lambda_1", "...", 0, "...", "...", "...", 0, "...", "\\lambda_n"]),
+		lambdas : "\\lambda_i",
+		inverse : "A = U^{-1}" + matrix(3, 3, ["\\lambda_1", "...", 0, "...", "...", "...", 0, "...", "\\lambda_n"]) + "U",
+		inverse2 : "A^{-1} = U^{-1} " + matrix(3, 3, ["\\frac{1}{\\lambda_1}", "...", 0, "...", "...", "...", 0, "...", "\\frac{1}{\\lambda_n}"]) + "U",
 	};				
 })();

@@ -230,7 +230,9 @@
 		<br>
 		<h3>Finding the inverse</h3>
 
-		<p> We know from linear algebra that if a matrix A is diagonalizable, we can find it's inverse in a simple way. U = U+ => U^(-1) = U. U * A * U+ = (diagonala)  => A^(-1) = U+ * (diagonala) * U</p>
+		<p> We know from linear algebra that if a matrix <i>A</i> is diagonalizable, we can find it's inverse in a simple way.
+		<br> 
+		<span id="hermite1"></span>. Since <i>A</i> is diagonalizable, then there exists an invertible matrix <i>U</i> such that <span id="invertible"></span>, where <span id="lambdas"></span> are the eigenvalues of <i>A</i>. We get <span id="inverse"></span>. Hence, <span id="inverse2"></span>.
 
 		<br>
 		<h3>Phase inversion algorithm</h3>
@@ -308,7 +310,12 @@
 		parser.staticParse(algoFormulas.hhl7,"hhl7");			
 		parser.staticParse(algoFormulas.hhl7,"hhl7p");			
 		parser.staticParse(algoFormulas.hhl8,"hhl8");			
-		parser.staticParse(algoFormulas.hhl9,"hhl9");			
+		parser.staticParse(algoFormulas.hhl9,"hhl9");
+		parser.staticParse(algoFormulas.hermite1, "hermite1");			
+		parser.staticParse(algoFormulas.invertible, "invertible");
+		parser.staticParse(algoFormulas.lambdas, "lambdas");
+		parser.staticParse(algoFormulas.inverse, "inverse");
+		parser.staticParse(algoFormulas.inverse2, "inverse2");
 	</script>
 	</div> 
 </body>
