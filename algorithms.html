@@ -215,13 +215,13 @@
 		<br>
 		<h3> Simulating Hamiltonians </h3>
 
-		<p>From the fact that the matrix A is Hermitian, we know that <span id="hhl4"></span>, therefore A is reversible. Furthermore, the sparse Hamiltionian algorithm is applicable in this context. <sup>[paper]</sup> </p>
+		<p>From the fact that the matrix A is Hermitian, we know that <span id="hhl4"></span>, therefore A is reversible. Furthermore, the sparse Hamiltionian algorithm is applicable in this context. <sup><a href="index.php?References=true#a2" class="ref">[11]</a></sup> </p>
 
 		<div class="well well-sm wellodd" id="hhl5">
 			We denote an <b><i>evolution</i></b> the physical transformations applied over a closed quantum system on a fixed amount of time without any observable interaction. 
 		</div>
 
-		<p><br> A Hamiltonian evolution can be written as <span id="hhl7"></span>, where matrix A is computed with an relative error denoted as <span id="hhl8"></span>. An intuitive reasoning is that there is a mapping from the matrix U to the complex space of vectors with modulus of 1. Having a Hamiltonian decomposed as a sum <span id="hhl6"></span>, we can rewrite the evolution relative to each component of U at the moment t: <span id="hhl9"></span>. Furthermore, Dominic W. Berry, Graeme Ahokas, Richard Cleve and Barry C. Sanders propose a logarithmic complexity method for sparse matrices of finding a series of form <span id="hhl7p"></span> which simulates the previous evolution bounded by the given error. <sup>[paper]</sup>  </p> <!-- http://arxiv.org/pdf/quant-ph/0508139v2.pdf -->
+		<p><br> A Hamiltonian evolution can be written as <span id="hhl7"></span>, where matrix A is computed with an relative error denoted as <span id="hhl8"></span>. An intuitive reasoning is that there is a mapping from the matrix U to the complex space of vectors with modulus of 1. Having a Hamiltonian decomposed as a sum <span id="hhl6"></span>, we can rewrite the evolution relative to each component of U at the moment t: <span id="hhl9"></span>. Furthermore, Dominic W. Berry, Graeme Ahokas, Richard Cleve and Barry C. Sanders propose a logarithmic complexity method for sparse matrices of finding a series of form <span id="hhl7p"></span> which simulates the previous evolution bounded by the given error. <sup><a href="index.php?References=true#a2" class="ref">[11]</a></sup> </p> 
 
 		<p> The details of the method are not as straight forward as the previous algorithms, but we want to empathise its purpose: </p>
 
@@ -235,21 +235,19 @@
 		<span id="hermite1"></span>. Since <i>A</i> is diagonalizable, then there exists an invertible matrix <i>U</i> such that <span id="invertible"></span>, where <span id="lambdas"></span> are the eigenvalues of <i>A</i>. We get <span id="inverse"></span>. Hence, <span id="inverse2"></span>.
 
 		<br>
-		<h3>Application of quantum phase algorithm</h3>
+		<h3><br>Application of quantum phase algorithm</h3>
 
-		<p> Having defined the transformations above, we can see that the Hamiltonian simulation scales over the whole sum. The paper [paper2] determines the eigenvalues using the momentum simlarly to the use of the evolution over time. Intuitively, the momentum resembles to the classical one, therefore applying the transformation over it should yeld some intrinsec property of the matrix. This property has been demonstrated to be(in the same paper) the set of eigenvalues. </p> 
+		<p> Having defined the transformations above, we can see that the Hamiltonian simulation scales over the whole sum. The paper <a href="index.php?References=true#a1" class="ref">[10]</a> determines the eigenvalues using the momentum simlarly to the use of the evolution over time. Intuitively, the momentum resembles to the classical one, therefore applying the transformation over it should yeld some intrinsec property of the matrix. This property has been demonstrated to be(in the same paper) the set of eigenvalues. </p> 
 
 		<p>Let's denote: <span id="rr1"></span> Then: <span id="rr2"></span>. </p>
 
-		<p>Appling <span id="rr3"></span> over the value <span id="rr4"></span> gives us, <span id="rr5"></span> where <span id="rr6"></span> are the eigenvalues of A and  <span id="rr7"></span> is decomposed in terms of the basis.</p>
+		<p>Applying <span id="rr3"></span> over the value <span id="rr4"></span> gives us, <span id="rr5"></span> where <span id="rr6"></span> are the eigenvalues of A and  <span id="rr7"></span> is decomposed in terms of the basis.<sup><a href="index.php?References=true#a3" class="ref">[12]</a></sup></p>
 
-		<p> Applying the transformation once will give us the eigenvalues. By [paper3], each eigenvalue will be introduced in a similar way, obtaining the result: <span id="rr8"></span> </p>
+		<p> Applying the transformation once will give us the eigenvalues. By <a href="index.php?References=true#a3" class="ref">[12]</a>, each eigenvalue will be introduced in a similar way, obtaining the result: <span id="rr8"></span> </p>
 
 		<p> If we apply the phase algorithm transformation we can compress the decomposition of <span id="rr7b"></span>, getting the zero qubit on right hand side - <span id="rr0"></span> - and then <span id="rr9"></span>.</p>
 
 		<p> Shortly, applying the phase algorithm in the right way will give us the eigenvalues and eigenvectors. Appling its inverse after rewriting the evolution for each member of the sum will give us the inverse of the matrix.</p>
-
-		<h3> Property measurement </h3>
 
 		<p id="mes"> As we mentioned initally, even if we obtained the matrix, we would like to measure some of its "properties". Let a property be an observable M, then we can apply: </p>
 
