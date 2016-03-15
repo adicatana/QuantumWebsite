@@ -87,7 +87,7 @@ var archFormulas = (function() {
 			bit("x, y, 0") + sp + "to" + sp + bit("x, y, x \\land y"),
 			bit("1, 1, z") + sp + "to" + sp + bit("1, 1, \\lnot z")
 		),
-		toffliDef : "TOFFLI = " + cgates.toffli,
+		toffliDef : "TOFFOLI = " + cgates.toffli,
 		fredkin : halign( 
 			bit("0, y, z") + sp + "to" + sp + bit("0, y, z"),
 			bit("1, y, z") + sp + "to" + sp + bit("1, z, y")
