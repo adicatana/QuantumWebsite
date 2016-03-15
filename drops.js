@@ -4,6 +4,11 @@ var drops = (function() {
 
 	c.height = window.innerHeight;
 	c.width = window.innerWidth;
+	
+	window.onresize = function() {
+		c.height = window.innerHeight;
+		c.width = window.innerWidth;
+	};
 
 	var values = "αβγδεζηθλμνξρστφψω";
 	values = values.split("");
