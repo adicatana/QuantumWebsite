@@ -77,11 +77,15 @@ var algoFormulas = (function() {
 		ini9 : "H^{\\otimes n}",
 		ini10 : "\\sqrt{m}( \\text{or} \\ \\sqrt{2^{n}})",
 
+		comp1 : "O(N^2 \\log(N))",
+		comp2 : "O(\\log(N))",
+		comp3 : "O(N)",
+
 		system : "A \\cdot \\vec{x} = \\vec{b}",	
 		system2 : "\\vec{x} = A^{-1} \\cdot \\vec{b}",
 		hhl3 : "\\vec{x} = A^{-1} \\cdot \\vec{b}",
-		tensor1 : "\\otimes",
-		tensor2 : "\\otimes",
+		tensor1 : "f(0) \\otimes f(1)",
+		tensor2 : "f(0) \\otimes f(1)",
 		adiFormula1 : "\\bigg[ \\frac{|0 \\rangle - |1 \\rangle}{\\sqrt{2}} \\bigg]",
 		adiFormula2 : "\\bigg[ \\frac{|0 \\otimes f(0) \\rangle - |1 \\otimes f(1)\\rangle}{\\sqrt{2}} \\bigg]",
 		adiFormula3 : "V = [53, 38,17,23,79]",
