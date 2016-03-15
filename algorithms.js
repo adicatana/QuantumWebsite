@@ -100,5 +100,12 @@ var algoFormulas = (function() {
 		adiFormula16 : "\\{0, 1 \\}",
 		adiFormula18 : "f(0)",
 		adiFormula19 : "f(1)",
+
+		hhl4 : "A = A^{+}",
+		hhl5 : bit("\\psi(t)") + " = U \\cdot " + bit("\\psi(0)"),
+		hhl6 : "H = \\sum_{j = 1}^{m} H_{j}",
+		hhl7 : bit("\\psi(t)") + " = e ^ {i \\cdot B \\cdot t} \\cdot " + bit("\\psi(0)"),
+		hhl8 : "\\epsilon",
+		hhl9 : bit("\\psi(t)")+ " = \\sum_{j = 1}^{m} " +  bit("\\psi_{j}(t)"),
 	};				
 })();

@@ -210,6 +210,31 @@
 
 		<p> Supposing we work with an exponential number of states, we can not naturally parse the computed result as this will slow the total speed of our algorithm from polynomial to exponential. Fortunately, we can get sufficient information about the properties of the resulting state from the eigenvalue of the observable. As an example if one has one terrabit of data in the output vector, we can encode the result in around 40 qubits. On the one hand, listing the resulting data will take the original size.(i.e. listing one terra of data). On the other hand, measuring the properties of the observable will give us the possibility to look at particular properties(i.e. eigenvalues) that we are interested in. </p>
 
+		<!-- Caz pt non-Hamiltoniana -->
+
+		<br>
+		<h3> Simulating Hamiltonians </h3>
+
+		<p>From the fact that the matrix A is Hermitian, we know that <span id="hhl4"></span>, therefore A is reversible. Furthermore, the sparse Hamiltionian algorithm is applicable in this context. <sup>[paper]</sup> </p>
+
+		<div class="well well-sm wellodd" id="hhl5">
+			We denote an <b><i>evolution</i></b> the physical transformations applied over a closed quantum system on a fixed amount of time without any observable interaction. 
+		</div>
+
+		<p><br> A Hamiltonian evolution can be written as <span id="hhl7"></span>, where matrix A is computed with an relative error denoted as <span id="hhl8"></span>. An intuitive reasoning is that there is a mapping from the matrix U to the complex space of vectors with modulus of 1. Having a Hamiltonian decomposed as a sum <span id="hhl6"></span>, we can rewrite the evolution relative to each component of U at the moment t: <span id="hhl9"></span>. Furthermore, Dominic W. Berry, Graeme Ahokas, Richard Cleve and Barry C. Sanders propose a logarithmic complexity method for sparse matrices of finding a series of form <span id="hhl7p"></span> which simulates the previous evolution bounded by the given error. <sup>[paper]</sup>  </p> <!-- http://arxiv.org/pdf/quant-ph/0508139v2.pdf -->
+
+		<p> The details of the method are not as straight forward as the previous algorithms, but we want to empathise its purpose: </p>
+
+		<div class="well well-sm wellodd">We can simulate the evolution of a transformation over a small period of time with a fixed error in a complexity squared proportional to the sparsity of the matrix and logaritmically proportional with its size. </div>
+
+		<br>
+		<h3>Finding the inverse</h3>
+
+		<p> We know from linear algebra that if a matrix A is diagonalizable, we can find it's inverse in a simple way. U = U+ => U^(-1) = U. U * A * U+ = (diagonala)  => A^(-1) = U+ * (diagonala) * U</p>
+
+		<br>
+		<h3>Phase inversion algorithm</h3>
+
 		<div align="center" href="#holder" class="scroller">
 			<img src="media/up.png" width=25></img>
 			<p> Go to top </p>
@@ -275,7 +300,15 @@
 		parser.staticParse(algoFormulas.adiFormula16, 'adiFormula16');
 		parser.staticParse(algoFormulas.adiFormula16, 'adiFormula17');
 		parser.staticParse(algoFormulas.adiFormula18, 'adiFormula18');
-		parser.staticParse(algoFormulas.adiFormula19, 'adiFormula19');				
+		parser.staticParse(algoFormulas.adiFormula19, 'adiFormula19');	
+
+		parser.staticParse(algoFormulas.hhl4,"hhl4");			
+		parser.staticParse(algoFormulas.hhl5,"hhl5");			
+		parser.staticParse(algoFormulas.hhl6,"hhl6");			
+		parser.staticParse(algoFormulas.hhl7,"hhl7");			
+		parser.staticParse(algoFormulas.hhl7,"hhl7p");			
+		parser.staticParse(algoFormulas.hhl8,"hhl8");			
+		parser.staticParse(algoFormulas.hhl9,"hhl9");			
 	</script>
 	</div> 
 </body>
