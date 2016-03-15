@@ -26,23 +26,27 @@
 		         	 			<li><a><b>Architecture</b></a></li>
 		         	 		 	<li class="nav-divider"></li>
 		         	 		 	<li class="nav-divider"></li>
-		            			<li class="navbarElem" onclick="change('v1')"><a>Qubits</a></li>
-		            			<li class="navbarElem" onclick="change('v2')"><a>Classic gates</a></li>
-		            			<li class="navbarElem"><a>Reversible gates</a></li>
+		            			<li class="navbarElem" onclick="change('qubits')"><a>Qubits</a></li>
+		            			<li class="navbarElem" onclick="change('classic1')"><a>Classic gates - part 1</a></li>
+		            			<li class="navbarElem" onclick="change('classic2')"><a>Classic gates - part 2</a></li>
+		            			<li class="navbarElem" onclick="change('revg')"><a>Reversible gates</a></li>
 		            			<li class="nav-divider"></li>
 		            			<li class="nav-divider"></li>
 
 		            			<li><a><b>Algorithms</b></a></li>
 		         	 		 	<li class="nav-divider"></li>
 		         	 		 	<li class="nav-divider"></li>
-		            			<li class="navbarElem"><a>Grover's Algorithm</a></li>
+		            			<li class="navbarElem" onclick="change('g1')"><a>Grover's Algorithm - part 1</a></li>
+		            			<li class="navbarElem" onclick="change('g2')"><a>Grover's Algorithm - part 2</a></li>
+		            			<li class="navbarElem" onclick="change('g3')"><a>Grover's Algorithm - part 3</a></li>
+		            			<li class="navbarElem" onclick="change('g4')"><a>Grover's Algorithm - part 4</a></li>
 		          			</ul>
 	        			</div>
 	      			</div>
 	    		</div>
 	  		</div>
 			<div class="col-sm-8">
-				<iframe id="frame" width="840" height="630" src="https://www.youtube.com/embed/pZ2SCNtXFyc">
+				<iframe id="frame" width="840" height="630" src="https://www.youtube.com/embed/RwcaOyJfffM">
 				</iframe>
 	  		</div>
 		</div>
@@ -51,10 +55,14 @@
 
 	<script>
 		var locations = {
-        	"v1" : "https://www.youtube.com/embed/pZ2SCNtXFyc",
-       		"v2" : "https://www.youtube.com/embed/YV1eS9D6t8U",
-       		"v3" : "",
-       		"v4" : ""
+			"qubits" : "https://www.youtube.com/embed/RwcaOyJfffM",
+        	"classic1" : "https://www.youtube.com/embed/oMDFiC8INDs",
+        	"classic2" : "https://www.youtube.com/embed/LkNCsrnEle0",
+       		"revg" : "https://www.youtube.com/embed/QTKTvZveEbk",
+       		"g1" : "https://www.youtube.com/embed/XgzjAacx8B4",
+       		"g2" : "https://www.youtube.com/embed/uFRmVTJ27rk",
+       		"g3" : "https://www.youtube.com/embed/Hin6g19UzQU",
+       		"g4" : "https://www.youtube.com/embed/RwwugHl05y8"
        	};
 		
 		function change(id) {
