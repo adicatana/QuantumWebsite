@@ -112,5 +112,18 @@ var algoFormulas = (function() {
 		lambdas : "\\lambda_i",
 		inverse : "A = U^{-1}" + matrix(3, 3, ["\\lambda_1", "...", 0, "...", "...", "...", 0, "...", "\\lambda_n"]) + "U",
 		inverse2 : "A^{-1} = U^{-1} " + matrix(3, 3, ["\\frac{1}{\\lambda_1}", "...", 0, "...", "...", "...", 0, "...", "\\frac{1}{\\lambda_n}"]) + "U",
+	
+		rr1 : "T_{t} = e^{-i \\cdot A \\cdot t}" + "," + bit("\\psi(t)") + " = T_{t} \\cdot " + bit("\\psi(0)"),
+		rr2 : "T_{\\otime p} = e^{-i \\cdot A \\otimes p}",
+		rr3 : "T_{\\otime p} \\cdot" + bit("b"),
+		rr4 : bit(0),
+		rr5 : "\\sum_{j} B_j"+bit("\\psi_j")+bit("\\lambda_j t"),
+		rr6 : "\\lambda_j",		
+		rr7 : bit("b"),		
+		rr8 : "\\sum_{j} B_j"+"e^{i \\delta \\lambda_j^{-1}}"+bit("\\psi_j")+bit("\\lambda_j t"),
+		rr9 : "e^{i \\delta A^{-1}}"+bit("b")+bit(0),
+		rr0 : "\\sum_{j} B_j"+"e^{i \\delta \\lambda_j^{-1}}"+bit("\\psi_j")+bit(0),
+		
+		mes : "\\langle x | M | x \\rangle" 
 	};				
 })();
